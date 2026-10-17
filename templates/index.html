@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HKU Campus Recycling Rules Helper</title>
+  <style>
+    :root {
+      --hku-green: #00703c;
+      --hku-green-dark: #005a30;
+      --hku-gold: #d8b449;
+      --bg: #f5f7f5;
+      --card: #ffffff;
+      --text: #1f2933;
+      --muted: #6b7280;
+      --border: #e2e8e4;
+      --refuse: #b91c1c;
+      --defer: #b45309;
+      --caveat: #7c2d12;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, var(--hku-green), var(--hku-green-dark));
+      color: #fff;
+      padding: 24px 16px;
+      text-align: center;
+    }
+    header h1 { margin: 0; font-size: 1.5rem; }
+    header p { margin: 4px 0 0; opacity: 0.9; font-size: 0.9rem; }
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 20px 16px 60px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .input-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    textarea {
+      flex: 1 1 100%;
+      min-height: 70px;
+      padding: 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 1rem;
+      resize: vertical;
+      font-family: inherit;
+    }
+    button {
+      background: var(--hku-green);
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.15s;
+    }
+    button:hover { background: var(--hku-green-dark); }
+    button:disabled { opacity: 0.6; cursor: not-allowed; }
+    .examples {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+    .chip {
+      background: #eaf3ed;
+      color: var(--hku-green-dark);
+      border: 1px solid #cfe5d6;
+      border-radius: 999px;
+      padding: 5px 12px;
+      font-size: 0.82rem;
+      cursor: pointer;
+    }
+    .chip:hover { background: #d8ecdf; }
+    .answer-box { white-space: pre-wrap; word-break: break-word; }
+    .citations { margin-top: 14px; }
+    .citation {
+      background: #f9faf9;
+      border-left: 3px solid var(--hku-gold);
+      padding: 10px 12px;
+      margin: 8px 0;
+      border-radius: 0 6px 6px 0;
+      font-size: 0.88rem;
+    }
+    .citation .src { font-weight: 600; color: var(--hku-green-dark); }
+    .citation a { color: var(--hku-green); font-size: 0.8rem; }
+    .reminder {
+      margin-top: 12px;
+      padding: 10px 12px;
+      background: #fff7e6;
+      border: 1px solid #ffe0a3;
+      border-radius: 8px;
+      font-size: 0.9rem;
+    }
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .badge.answer { background: #dcfce7; color: #166534; }
+    .badge.refuse { background: #fee2e2; color: var(--refuse); }
+    .badge.defer { background: #fef3c7; color: var(--defer); }
+    .badge.caveat { background: #fed7aa; color: var(--caveat); }
+    .badge.insufficient { background: #f3f4f6; color: #374151; }
+    .meta { font-size: 0.78rem; color: var(--muted); margin-top: 10px; }
+    .loading { color: var(--muted); font-style: italic; }
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>HKU Campus Recycling Rules Helper</h1>
+    <p>Ask any question about waste sorting &amp; recycling on the HKU campus. Every answer cites an official HKU document.</p>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <div class="input-row">
+        <textarea id="question" placeholder="e.g. Where does a plastic bottle go at HKU?"></textarea>
+        <button id="askBtn" onclick="ask()">Ask</button>
+      </div>
+      <div class="examples">
+        <span class="chip" onclick="setQ(this)">Where does plastic go at HKU?</span>
+        <span class="chip" onclick="setQ(this)">Which bin for aluminium cans?</span>
+        <span class="chip" onclick="setQ(this)">Where can I recycle glass bottles?</span>
+        <span class="chip" onclick="setQ(this)">How do I dispose of used AA batteries?</span>
+        <span class="chip" onclick="setQ(this)">Where do I put an old phone charger?</span>
+        <span class="chip" onclick="setQ(this)">I'm in Causeway Bay, where do I throw this bottle?</span>
+      </div>
+    </div>
+
+    <div id="result"></div>
+
+    <footer>
+      Built with a retrieval-augmented generation (RAG) pipeline over official HKU recycling documents.<br/>
+      Corpus: <span id="corpusCount">loading…</span> entries &middot; LLM: <span id="llmStatus">checking…</span>
+    </footer>
+  </div>
+
+  <script>
+    const badgeMap = {
+      answer: ['answer', 'Answer'],
+      refuse: ['refuse', 'Refused (out of scope)'],
+      defer: ['defer', 'Deferred to on-site signage'],
+      answer_with_caveat: ['caveat', 'Hazardous waste — guidance only'],
+      insufficient_basis: ['insufficient', 'Insufficient basis — not answered'],
+    };
+
+    function setQ(el) {
+      document.getElementById('question').value = el.textContent;
+      ask();
+    }
+
+    async function ask() {
+      const q = document.getElementById('question').value.trim();
+      if (!q) return;
+      const btn = document.getElementById('askBtn');
+      const result = document.getElementById('result');
+      btn.disabled = true;
+      result.innerHTML = '<div class="card"><div class="loading">Retrieving official sources and generating answer…</div></div>';
+
+      try {
+        const res = await fetch('/api/ask', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ question: q }),
+        });
+        const data = await res.json();
+        renderResult(data);
+      } catch (e) {
+        result.innerHTML = '<div class="card"><div style="color:var(--refuse)">Error: ' + e.message + '</div></div>';
+      } finally {
+        btn.disabled = false;
+      }
+    }
+
+    function renderResult(data) {
+      const [cls, label] = badgeMap[data.action] || ['answer', data.action];
+      let html = '<div class="card">';
+      html += '<span class="badge ' + cls + '">' + label + '</span>';
+      html += '<div class="answer-box">' + escapeHtml(data.answer) + '</div>';
+
+      if (data.reminder) {
+        html += '<div class="reminder"><strong>Reminder:</strong> ' + escapeHtml(data.reminder) + '</div>';
+      }
+
+      if (data.citations && data.citations.length) {
+        html += '<div class="citations"><strong style="font-size:0.9rem">Sources cited:</strong>';
+        data.citations.forEach(c => {
+          html += '<div class="citation"><div class="src">' + escapeHtml(c.source_title) + ' &mdash; para. ' + c.paragraph + '</div>';
+          html += '<div>"' + escapeHtml(c.excerpt) + '"</div>';
+          if (c.url) html += '<a href="' + c.url + '" target="_blank" rel="noopener">Open source &rarr;</a>';
+          html += '</div>';
+        });
+        html += '</div>';
+      }
+
+      const parts = [];
+      if (data.boundary_reason) parts.push('boundary: ' + data.boundary_reason);
+      parts.push('cache: ' + (data.used_cache ? 'yes' : 'no'));
+      parts.push('llm: ' + (data.used_llm ? 'yes' : 'no'));
+      html += '<div class="meta">' + parts.join(' &middot; ') + '</div>';
+      html += '</div>';
+      document.getElementById('result').innerHTML = html;
+    }
+
+    function escapeHtml(s) {
+      const d = document.createElement('div');
+      d.textContent = s;
+      return d.innerHTML;
+    }
+
+    // Health check on load.
+    fetch('/api/health').then(r => r.json()).then(d => {
+      document.getElementById('corpusCount').textContent = d.corpus_entries;
+      document.getElementById('llmStatus').textContent = d.llm_available ? 'enabled' : 'template fallback (no API key)';
+    }).catch(() => {
+      document.getElementById('corpusCount').textContent = '?';
+      document.getElementById('llmStatus').textContent = 'unknown';
+    });
+
+    // Enter to submit (Shift+Enter for newline).
+    document.getElementById('question').addEventListener('keydown', e => {
+      if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); ask(); }
+    });
+  </script>
+</body>
+</html>

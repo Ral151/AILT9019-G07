@@ -1,0 +1,865 @@
+{
+  "name": "HKU Recycling Encyclopedia",
+  "version": "1.0",
+  "description": "Built from official HKU recycling documents. Each entry is a paragraph with a stable citation id (source + paragraph number).",
+  "entry_count": 66,
+  "sources": [
+    "greenu_scheme",
+    "green_hero_quiz",
+    "recycling_101",
+    "re_facilities",
+    "plastic_free_policy"
+  ],
+  "entries": [
+    {
+      "id": "green_hero_quiz#1",
+      "source": "green_hero_quiz",
+      "source_title": "Be a Campus Green Hero Online Quiz",
+      "url": "https://www.wastereduction.hku.hk/be-a-campus-green-hero-quiz",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 1,
+      "tags": [],
+      "text": "Be a Campus Green Hero Online Quiz\nSource: HKU Waste Reduction (https://www.wastereduction.hku.hk/be-a-campus-green-hero-quiz)"
+    },
+    {
+      "id": "green_hero_quiz#2",
+      "source": "green_hero_quiz",
+      "source_title": "Be a Campus Green Hero Online Quiz",
+      "url": "https://www.wastereduction.hku.hk/be-a-campus-green-hero-quiz",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 2,
+      "tags": [
+        "smart bin"
+      ],
+      "text": "Q1. How many sets of smart recycling bins are on the HKU Main Campus? (As of 17 March 2026)\nAnswer: C. 3\nThere are 3 sets of smart recycling bins on HKU's main campus, located at:\n- LG2/F, K.K. Leung Building (outside lift lobby)\n- G/F, Hui Oi Chow Science Building (outside Innovation Wing)\n- G/F, Central Podium Levels, Centennial Campus"
+    },
+    {
+      "id": "green_hero_quiz#3",
+      "source": "green_hero_quiz",
+      "source_title": "Be a Campus Green Hero Online Quiz",
+      "url": "https://www.wastereduction.hku.hk/be-a-campus-green-hero-quiz",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 3,
+      "tags": [
+        "greenu",
+        "smart bin"
+      ],
+      "text": "Q2. Which of the following are the features of HKU's smart recycling bins?\ni) Operate 24 hours a day\nii) Earn GreenU points for reward redemption\niii) Have sensors that monitor fill levels for efficient collection\niv) Automatically record the weight of deposited recyclables\nAnswer: D. All of the above\nThe smart bins are self-service and feature 24-hour access, fill level sensors, automatic weight recording, and earn GreenU points for reward redemption."
+    },
+    {
+      "id": "green_hero_quiz#4",
+      "source": "green_hero_quiz",
+      "source_title": "Be a Campus Green Hero Online Quiz",
+      "url": "https://www.wastereduction.hku.hk/be-a-campus-green-hero-quiz",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 4,
+      "tags": [
+        "glass",
+        "metal",
+        "paper",
+        "plastic",
+        "smart bin"
+      ],
+      "text": "Q3. Where on campus can you find a smart recycling bin for recycling glass bottles?\nAnswer: A. G/F, Central Podium Levels, Centennial Campus\nThe smart bin at the Centennial Campus accepts paper, metal, glass bottles, and other plastics. Glass bottles are only accepted at Central Podium Levels and Pine Court smart bins."
+    },
+    {
+      "id": "green_hero_quiz#5",
+      "source": "green_hero_quiz",
+      "source_title": "Be a Campus Green Hero Online Quiz",
+      "url": "https://www.wastereduction.hku.hk/be-a-campus-green-hero-quiz",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 5,
+      "tags": [
+        "battery",
+        "glass",
+        "paper",
+        "re kiosk",
+        "tetra pak"
+      ],
+      "text": "Q4. Which of the following items are accepted at the re Kiosk for recycling?\ni) Carton Boxes\nii) Milk Cartons\niii) Portable Power Banks (rechargeable batteries)\niv) Vinegar Bottles (glass bottles)\nAnswer: D. All of the above\nre Kiosk accepts Paper, Tetra Pak, Rechargeable Battery and Glass Bottle."
+    },
+    {
+      "id": "green_hero_quiz#6",
+      "source": "green_hero_quiz",
+      "source_title": "Be a Campus Green Hero Online Quiz",
+      "url": "https://www.wastereduction.hku.hk/be-a-campus-green-hero-quiz",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 6,
+      "tags": [
+        "greenu",
+        "metal",
+        "smart bin"
+      ],
+      "text": "Q5. What is the correct sequence for using a smart recycling bin to earn GreenU Points?\ni) Start recycling your materials\nii) Press the button on the bin to begin the session\niii) Scan your HKU Access Code from the HKU App\nAnswer: C. ii, iii, i\nStep 1: Press the button to start the session. Step 2: Scan your HKU Access Code. Step 3: Start recycling."
+    },
+    {
+      "id": "green_hero_quiz#7",
+      "source": "green_hero_quiz",
+      "source_title": "Be a Campus Green Hero Online Quiz",
+      "url": "https://www.wastereduction.hku.hk/be-a-campus-green-hero-quiz",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 7,
+      "tags": [
+        "plastic"
+      ],
+      "text": "Q6. From April 2024, which disposable plastic tableware items are banned for takeaway customers?\ni) Expanded polystyrene (EPS/foam) tableware (including cups, bowls, and food boxes)\nii) Plastic forks, knives, and spoons\niii) Plastic straws\niv) Plastic cups, bowls, and food boxes\nAnswer: B. i, ii and iii\nFrom April 2024, the tableware items in categories (i), (ii), and (iii) are banned and should not be sold or provided by restaurants for dine-in or takeaway services. While the tableware items in category (iv) are banned and should not be provided by restaurants for dine-in services only."
+    },
+    {
+      "id": "green_hero_quiz#8",
+      "source": "green_hero_quiz",
+      "source_title": "Be a Campus Green Hero Online Quiz",
+      "url": "https://www.wastereduction.hku.hk/be-a-campus-green-hero-quiz",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 8,
+      "tags": [
+        "metal",
+        "paper",
+        "plastic"
+      ],
+      "text": "Q7. According to the Environmental Protection Department, which two materials were the 2nd and 3rd largest components of Hong Kong landfill waste in 2024?\ni) Food waste\nii) Plastics\niii) Metals\niv) Paper\nAnswer: C. ii and iv\nPlastics and paper were the 2nd and 3rd largest components of municipal solid waste in 2024, with food waste being the largest."
+    },
+    {
+      "id": "green_hero_quiz#9",
+      "source": "green_hero_quiz",
+      "source_title": "Be a Campus Green Hero Online Quiz",
+      "url": "https://www.wastereduction.hku.hk/be-a-campus-green-hero-quiz",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 9,
+      "tags": [],
+      "text": "Q8. In 2024, how much domestic food waste did each person in Hong Kong dispose of every day, excluding commercial and industrial food waste?\nAnswer: B. 0.27 kg\nIn 2024, the total amount of municipal food waste was 3,001 tonnes. Of this, domestic food waste accounted for 1,996 tonnes, while industrial and commercial food waste amounted to 1,004 tonnes. Based on the Hong Kong population of 7.4 million, the daily average domestic food waste per person was 0.27 kg in 2024."
+    },
+    {
+      "id": "green_hero_quiz#10",
+      "source": "green_hero_quiz",
+      "source_title": "Be a Campus Green Hero Online Quiz",
+      "url": "https://www.wastereduction.hku.hk/be-a-campus-green-hero-quiz",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 10,
+      "tags": [
+        "paper",
+        "plastic"
+      ],
+      "text": "Q9. Which of the following is a recommended reusable choice for a B.Y.O. drink container?\ni) A reusable plastic bottle\nii) A container made from coffee grounds\niii) A biodegradable paper cup\niv) A stainless-steel insulated bottle\nAnswer: C. i, ii and iv\nA biodegradable paper cup is not considered reusable."
+    },
+    {
+      "id": "green_hero_quiz#11",
+      "source": "green_hero_quiz",
+      "source_title": "Be a Campus Green Hero Online Quiz",
+      "url": "https://www.wastereduction.hku.hk/be-a-campus-green-hero-quiz",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 11,
+      "tags": [],
+      "text": "Q10. Which of the following are the measures on campus that support B.Y.O.?\ni) Takeaway Discounts at some catering outlets when using your own containers\nii) A reusable tableware rental service at Bijas Vegetarian Restaurant\niii) A \"Borrow A Cup\" system at Starbucks in the Composite Building\niv) Free disposable cutlery is available at all cafés\nAnswer: A. i, ii, and iii\nDisposable cutlery is not reusable and not free."
+    },
+    {
+      "id": "green_hero_quiz#12",
+      "source": "green_hero_quiz",
+      "source_title": "Be a Campus Green Hero Online Quiz",
+      "url": "https://www.wastereduction.hku.hk/be-a-campus-green-hero-quiz",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 12,
+      "tags": [],
+      "text": "Q11. Which of the following materials are suitable choices for reusable cutlery?\ni) Stainless steel\nii) Wood\niii) Bamboo\niv) Silicone\nAnswer: D. All of the above\nStainless steel, wood, bamboo and silicone are durable and washable."
+    },
+    {
+      "id": "green_hero_quiz#13",
+      "source": "green_hero_quiz",
+      "source_title": "Be a Campus Green Hero Online Quiz",
+      "url": "https://www.wastereduction.hku.hk/be-a-campus-green-hero-quiz",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 13,
+      "tags": [
+        "metal"
+      ],
+      "text": "Q12. Which of the following can help to reduce the use of single-use tableware on campus?\ni) Using a personal reusable bottle or cup when buying takeaway coffee or beverages\nii) Bringing your own container for buying takeaway meals\niii) Use your own cutlery for takeaway meals at hall or in office\niv) Bringing your own shopping bag to the campus supermarket\nAnswer: D. All of the above\nAll these can help to reduce the use of single-use tableware on campus."
+    },
+    {
+      "id": "green_hero_quiz#14",
+      "source": "green_hero_quiz",
+      "source_title": "Be a Campus Green Hero Online Quiz",
+      "url": "https://www.wastereduction.hku.hk/be-a-campus-green-hero-quiz",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 14,
+      "tags": [
+        "metal"
+      ],
+      "text": "Q13. Which of the following are the acts to achieve the \"Ultimate Target\" of a Zero Waste Lifestyle?\ni) Reduce unnecessary consumption or purchasing\nii) Repair items before replacing them\niii) Reuse what you already have before buying new\niv) Recycle usable resources from waste\nAnswer: D. All of the above\nAll the acts can lead to the \"Ultimate Target\" of a Zero Waste Lifestyle."
+    },
+    {
+      "id": "green_hero_quiz#15",
+      "source": "green_hero_quiz",
+      "source_title": "Be a Campus Green Hero Online Quiz",
+      "url": "https://www.wastereduction.hku.hk/be-a-campus-green-hero-quiz",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 15,
+      "tags": [
+        "greenu",
+        "metal",
+        "plastic",
+        "smart bin"
+      ],
+      "text": "Q14. How many GreenU Points can you earn for recycling 1.5 kg of plastic bottles at the campus smart recycling bins?\nAnswer: C. 120 points\n1 kg of plastic bottles earns 80 points, while 1.5 kg of plastic bottles earns 120 points."
+    },
+    {
+      "id": "green_hero_quiz#16",
+      "source": "green_hero_quiz",
+      "source_title": "Be a Campus Green Hero Online Quiz",
+      "url": "https://www.wastereduction.hku.hk/be-a-campus-green-hero-quiz",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 16,
+      "tags": [
+        "greenu",
+        "paper",
+        "smart bin"
+      ],
+      "text": "Q15. During a \"Double Points\" promotion, how many GreenU Points do you earn for recycling 4 kg of paper at the campus smart recycling bins?\nAnswer: C. 80 points\nNormal: 1 kg of paper earns 10 points, 4 kg earns 40 points, Double Points promotion earns 80 points."
+    },
+    {
+      "id": "green_hero_quiz#17",
+      "source": "green_hero_quiz",
+      "source_title": "Be a Campus Green Hero Online Quiz",
+      "url": "https://www.wastereduction.hku.hk/be-a-campus-green-hero-quiz",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 17,
+      "tags": [
+        "greenu"
+      ],
+      "text": "Q16. How many GreenU Points are needed to redeem a 4,500 Carbon Wallet Points e-coupon in the GreenU Reward Scheme?\nAnswer: B. 900 points\n900 GreenU Points = 4,500 Carbon Wallet points."
+    },
+    {
+      "id": "green_hero_quiz#18",
+      "source": "green_hero_quiz",
+      "source_title": "Be a Campus Green Hero Online Quiz",
+      "url": "https://www.wastereduction.hku.hk/be-a-campus-green-hero-quiz",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 18,
+      "tags": [
+        "greenu",
+        "metal"
+      ],
+      "text": "Q17. Which of the following descriptions of the GreenU Reward Scheme are correct?\ni) Any HKU student or staff with a valid portal account can join\nii) Earned points expire every 6 months\niii) GreenU Points are transferable or saleable\niv) GreenU Points remain valid as long as your HKU portal account is active\nAnswer: B. i and iv\nGreenU Points remain valid for redemption as long as your HKU portal account is active. Points are forfeited upon graduation or contract termination."
+    },
+    {
+      "id": "green_hero_quiz#19",
+      "source": "green_hero_quiz",
+      "source_title": "Be a Campus Green Hero Online Quiz",
+      "url": "https://www.wastereduction.hku.hk/be-a-campus-green-hero-quiz",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 19,
+      "tags": [
+        "greenu",
+        "smart bin"
+      ],
+      "text": "Q18. To earn GreenU Points at the campus smart recycling bins, what is the minimum weight required per transaction?\nAnswer: A. 0.1 kg\nA minimum of 0.1 kg is required per transaction to register and earn points."
+    },
+    {
+      "id": "green_hero_quiz#20",
+      "source": "green_hero_quiz",
+      "source_title": "Be a Campus Green Hero Online Quiz",
+      "url": "https://www.wastereduction.hku.hk/be-a-campus-green-hero-quiz",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 20,
+      "tags": [
+        "plastic"
+      ],
+      "text": "Q19. Since which year has HKU's Disposable Plastic Free Campus Policy been in effect?\nAnswer: C. 2020\nHKU implemented its Disposable Plastic Free Campus Policy in September 2020."
+    },
+    {
+      "id": "green_hero_quiz#21",
+      "source": "green_hero_quiz",
+      "source_title": "Be a Campus Green Hero Online Quiz",
+      "url": "https://www.wastereduction.hku.hk/be-a-campus-green-hero-quiz",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 21,
+      "tags": [
+        "plastic"
+      ],
+      "text": "Q20. Which of the following items are banned under the HKU's Disposable Plastic Free Campus Policy?\ni) Plastic bags\nii) Plastic bottles of 1 litre or less in volume\niii) Plastic cutlery\niv) Plastic items used in health-related or other emergency situations\nAnswer: C. i, ii, and iii\nPlastic items used in health-related or emergency situations are explicitly allowed as exceptions."
+    },
+    {
+      "id": "greenu_scheme#1",
+      "source": "greenu_scheme",
+      "source_title": "GreenU Reward Scheme",
+      "url": "https://www.wastereduction.hku.hk/greenu-reward-scheme",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 1,
+      "tags": [
+        "greenu"
+      ],
+      "text": "GreenU Reward Scheme\nSource: HKU Waste Reduction (https://www.wastereduction.hku.hk/greenu-reward-scheme)"
+    },
+    {
+      "id": "greenu_scheme#2",
+      "source": "greenu_scheme",
+      "source_title": "GreenU Reward Scheme",
+      "url": "https://www.wastereduction.hku.hk/greenu-reward-scheme",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 2,
+      "tags": [
+        "greenu",
+        "metal"
+      ],
+      "text": "About The Scheme\nGreenU is a campus-wide reward scheme aiming at promoting HKU members to act sustainably. HKU members can earn GreenU Points from their sustainability actions and redeem rewards. Act green to earn more."
+    },
+    {
+      "id": "greenu_scheme#3",
+      "source": "greenu_scheme",
+      "source_title": "GreenU Reward Scheme",
+      "url": "https://www.wastereduction.hku.hk/greenu-reward-scheme",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 3,
+      "tags": [
+        "greenu",
+        "metal",
+        "smart bin"
+      ],
+      "text": "How to Earn GreenU Points?\nHKU students and staff can access the GreenU function in the HKU App (with valid HKU portal accounts) to collect GreenU Points from their sustainability actions. Currently, GreenU Points can be earned from the following sustainability actions:\n- Recycling using HKU Smart Recycling Bins\n- Participating in green campaigns/events/activities under the GreenU Reward Scheme\nMore sustainability actions will be put under the Scheme to give more encouragement to HKU members to act green and earn GreenU Points."
+    },
+    {
+      "id": "greenu_scheme#4",
+      "source": "greenu_scheme",
+      "source_title": "GreenU Reward Scheme",
+      "url": "https://www.wastereduction.hku.hk/greenu-reward-scheme",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 4,
+      "tags": [
+        "glass",
+        "greenu",
+        "metal",
+        "paper",
+        "plastic"
+      ],
+      "text": "GreenU Point Conversion Rate for Recycling:\n- Paper: 10 points per kg\n- Plastic bottles: 80 points per kg\n- Other plastics, metal, glass: points vary; see the GreenU function in the HKU App for the latest conversion rate.\n- A minimum of 0.1 kg is required per transaction to register and earn points.\n- During promotional periods, double points may apply."
+    },
+    {
+      "id": "greenu_scheme#5",
+      "source": "greenu_scheme",
+      "source_title": "GreenU Reward Scheme",
+      "url": "https://www.wastereduction.hku.hk/greenu-reward-scheme",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 5,
+      "tags": [
+        "greenu"
+      ],
+      "text": "Rewards\nRewards available for redemption include: Carbon Wallet Points Coupon, Silicon Food Container, Silicone Foldable Water Bottle, Double Sided Tote Bag, Bamboo Stylus Pen, Bubble Tea Tumbler, Bubble Tea Thermal Tumbler, HKU Bear with Hoodie, HKU Bear Keychain series, Household Cleaning Tablets, and Natural Loofah Washing Sheet. Check the GreenU function in the HKU App for availability and redeem with your GreenU Points. Terms and conditions apply."
+    },
+    {
+      "id": "greenu_scheme#6",
+      "source": "greenu_scheme",
+      "source_title": "GreenU Reward Scheme",
+      "url": "https://www.wastereduction.hku.hk/greenu-reward-scheme",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 6,
+      "tags": [
+        "greenu",
+        "metal"
+      ],
+      "text": "FAQs\nWhy GreenU? GreenU is a campus-wide reward scheme for HKU students and staff. HKU students and staff can easily access the GreenU function through the HKU App to earn GreenU Points and redeem gifts, without installing an additional app. Gifts redemption can be conducted on campus and/or online."
+    },
+    {
+      "id": "greenu_scheme#7",
+      "source": "greenu_scheme",
+      "source_title": "GreenU Reward Scheme",
+      "url": "https://www.wastereduction.hku.hk/greenu-reward-scheme",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 7,
+      "tags": [
+        "greenu",
+        "metal"
+      ],
+      "text": "Who can join this reward scheme? Any HKU student or staff having a valid HKU portal account can join the reward scheme."
+    },
+    {
+      "id": "greenu_scheme#8",
+      "source": "greenu_scheme",
+      "source_title": "GreenU Reward Scheme",
+      "url": "https://www.wastereduction.hku.hk/greenu-reward-scheme",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 8,
+      "tags": [
+        "greenu",
+        "metal"
+      ],
+      "text": "Can I also earn other platforms' rewards in the GreenU Reward Scheme? Currently, the earned GreenU Points can only redeem gifts provided by HKU. Collaboration with other reward platforms is being explored."
+    },
+    {
+      "id": "greenu_scheme#9",
+      "source": "greenu_scheme",
+      "source_title": "GreenU Reward Scheme",
+      "url": "https://www.wastereduction.hku.hk/greenu-reward-scheme",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 9,
+      "tags": [
+        "greenu"
+      ],
+      "text": "Will the GreenU Points expire? All the GreenU Points will be valid for gift redemption as long as your HKU portal account is active. Your GreenU Points will be forfeited when your HKU portal account is expired because of graduation or termination of employment contract."
+    },
+    {
+      "id": "greenu_scheme#10",
+      "source": "greenu_scheme",
+      "source_title": "GreenU Reward Scheme",
+      "url": "https://www.wastereduction.hku.hk/greenu-reward-scheme",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 10,
+      "tags": [
+        "greenu",
+        "metal",
+        "smart bin"
+      ],
+      "text": "How to use Smart Recycling Bins to earn GreenU Points:\nStep 1: Press the button to start the session.\nStep 2: Scan your HKU Access Code from the HKU App.\nStep 3: Start recycling your materials.\nThe smart bin automatically records the weight of deposited recyclables and credits GreenU Points to your account."
+    },
+    {
+      "id": "plastic_free_policy#1",
+      "source": "plastic_free_policy",
+      "source_title": "Disposable Plastic Free Campus Policy",
+      "url": "https://www.hku.hk/en/about-hku/policies/disposable-plastic-free-campus-policy",
+      "organization": "The University of Hong Kong",
+      "paragraph": 1,
+      "tags": [
+        "plastic"
+      ],
+      "text": "Disposable Plastic Free Campus Policy\nSource: The University of Hong Kong (https://www.hku.hk/en/about-hku/policies/disposable-plastic-free-campus-policy)"
+    },
+    {
+      "id": "plastic_free_policy#2",
+      "source": "plastic_free_policy",
+      "source_title": "Disposable Plastic Free Campus Policy",
+      "url": "https://www.hku.hk/en/about-hku/policies/disposable-plastic-free-campus-policy",
+      "organization": "The University of Hong Kong",
+      "paragraph": 2,
+      "tags": [
+        "plastic"
+      ],
+      "text": "HKU implemented its Disposable Plastic Free Campus Policy in September 2020."
+    },
+    {
+      "id": "plastic_free_policy#3",
+      "source": "plastic_free_policy",
+      "source_title": "Disposable Plastic Free Campus Policy",
+      "url": "https://www.hku.hk/en/about-hku/policies/disposable-plastic-free-campus-policy",
+      "organization": "The University of Hong Kong",
+      "paragraph": 3,
+      "tags": [
+        "plastic"
+      ],
+      "text": "The policy bans the following disposable plastic items on campus:\n- Plastic bags\n- Plastic bottles of 1 litre or less in volume\n- Plastic cutlery (including forks, knives, and spoons)"
+    },
+    {
+      "id": "plastic_free_policy#4",
+      "source": "plastic_free_policy",
+      "source_title": "Disposable Plastic Free Campus Policy",
+      "url": "https://www.hku.hk/en/about-hku/policies/disposable-plastic-free-campus-policy",
+      "organization": "The University of Hong Kong",
+      "paragraph": 4,
+      "tags": [
+        "plastic"
+      ],
+      "text": "Plastic items used in health-related or other emergency situations are explicitly allowed as exceptions."
+    },
+    {
+      "id": "plastic_free_policy#5",
+      "source": "plastic_free_policy",
+      "source_title": "Disposable Plastic Free Campus Policy",
+      "url": "https://www.hku.hk/en/about-hku/policies/disposable-plastic-free-campus-policy",
+      "organization": "The University of Hong Kong",
+      "paragraph": 5,
+      "tags": [
+        "plastic"
+      ],
+      "text": "The policy aims to reduce the consumption of single-use disposable plastics on campus and encourage the use of reusable alternatives."
+    },
+    {
+      "id": "plastic_free_policy#6",
+      "source": "plastic_free_policy",
+      "source_title": "Disposable Plastic Free Campus Policy",
+      "url": "https://www.hku.hk/en/about-hku/policies/disposable-plastic-free-campus-policy",
+      "organization": "The University of Hong Kong",
+      "paragraph": 6,
+      "tags": [],
+      "text": "Campus measures that support Bring Your Own (B.Y.O.):\n- Takeaway Discounts at some catering outlets when using your own containers\n- A reusable tableware rental service at Bijas Vegetarian Restaurant\n- A \"Borrow A Cup\" system at Starbucks in the Composite Building"
+    },
+    {
+      "id": "plastic_free_policy#7",
+      "source": "plastic_free_policy",
+      "source_title": "Disposable Plastic Free Campus Policy",
+      "url": "https://www.hku.hk/en/about-hku/policies/disposable-plastic-free-campus-policy",
+      "organization": "The University of Hong Kong",
+      "paragraph": 7,
+      "tags": [
+        "plastic"
+      ],
+      "text": "From April 2024, the Hong Kong-wide ban on disposable plastic tableware for takeaway customers also applies. The banned items for takeaway include:\n- Expanded polystyrene (EPS/foam) tableware (including cups, bowls, and food boxes)\n- Plastic forks, knives, and spoons\n- Plastic straws\nPlastic cups, bowls, and food boxes are banned for dine-in services only."
+    },
+    {
+      "id": "plastic_free_policy#8",
+      "source": "plastic_free_policy",
+      "source_title": "Disposable Plastic Free Campus Policy",
+      "url": "https://www.hku.hk/en/about-hku/policies/disposable-plastic-free-campus-policy",
+      "organization": "The University of Hong Kong",
+      "paragraph": 8,
+      "tags": [
+        "plastic"
+      ],
+      "text": "Recommended reusable choices include reusable plastic bottles, containers made from coffee grounds, and stainless-steel insulated bottles. Suitable materials for reusable cutlery include stainless steel, wood, bamboo, and silicone, which are durable and washable."
+    },
+    {
+      "id": "re_facilities#1",
+      "source": "re_facilities",
+      "source_title": "re Facilities - re Kiosk, re Bin and Smart Recycling Bins",
+      "url": "https://www.wastereduction.hku.hk/re-facilities",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 1,
+      "tags": [],
+      "text": "re Facilities on HKU Campus\nSource: HKU Waste Reduction (https://www.wastereduction.hku.hk/re-facilities)"
+    },
+    {
+      "id": "re_facilities#2",
+      "source": "re_facilities",
+      "source_title": "re Facilities - re Kiosk, re Bin and Smart Recycling Bins",
+      "url": "https://www.wastereduction.hku.hk/re-facilities",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 2,
+      "tags": [
+        "re kiosk"
+      ],
+      "text": "re Kiosk"
+    },
+    {
+      "id": "re_facilities#3",
+      "source": "re_facilities",
+      "source_title": "re Facilities - re Kiosk, re Bin and Smart Recycling Bins",
+      "url": "https://www.wastereduction.hku.hk/re-facilities",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 3,
+      "tags": [
+        "re kiosk"
+      ],
+      "text": "The re Kiosk is just the beginning of a series of recycling initiatives. With the support and participation of the university community, the re Campaign will be empowered to expand its network and scale on campus."
+    },
+    {
+      "id": "re_facilities#4",
+      "source": "re_facilities",
+      "source_title": "re Facilities - re Kiosk, re Bin and Smart Recycling Bins",
+      "url": "https://www.wastereduction.hku.hk/re-facilities",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 4,
+      "tags": [
+        "re kiosk"
+      ],
+      "text": "Location of re Kiosk: Run Run Shaw Podium, Main Campus (next to Subway and opposite to the Runme Shaw Building). The re Kiosk offers 24-hour access."
+    },
+    {
+      "id": "re_facilities#5",
+      "source": "re_facilities",
+      "source_title": "re Facilities - re Kiosk, re Bin and Smart Recycling Bins",
+      "url": "https://www.wastereduction.hku.hk/re-facilities",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 5,
+      "tags": [
+        "battery",
+        "glass",
+        "metal",
+        "paper",
+        "plastic",
+        "re kiosk",
+        "tetra pak"
+      ],
+      "text": "re Kiosk accepts these recyclables: Paper, Tetra Pak, Metal, Glass Bottle, Plastic, and Rechargeable Battery."
+    },
+    {
+      "id": "re_facilities#6",
+      "source": "re_facilities",
+      "source_title": "re Facilities - re Kiosk, re Bin and Smart Recycling Bins",
+      "url": "https://www.wastereduction.hku.hk/re-facilities",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 6,
+      "tags": [
+        "re kiosk"
+      ],
+      "text": "Green Features of re Kiosk: The re Kiosk is designed and constructed in a sustainable manner. A wide variety of plants are grown there, turning the spot into a mini garden with beautiful greenery. With sustainability at the heart of the design, it reinforces HKU's institutional vision, commitments, and goals into all aspects of the University's facilities, operations and activities."
+    },
+    {
+      "id": "re_facilities#7",
+      "source": "re_facilities",
+      "source_title": "re Facilities - re Kiosk, re Bin and Smart Recycling Bins",
+      "url": "https://www.wastereduction.hku.hk/re-facilities",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 7,
+      "tags": [
+        "battery",
+        "metal",
+        "plastic",
+        "re kiosk",
+        "tetra pak"
+      ],
+      "text": "Why re Kiosk?\n- Recycle more: More types of recyclables will be collected at the new kiosk, such as rechargeable batteries, and different types of plastics other than just bottles and beverage cartons.\n- Easy quantification: The recyclables collected by the kiosk can be evaluated easily so our campus is well prepared for the implementation of the Municipal Solid Waste Charging.\n- As an icon: The re Kiosk will become the visual icon of HKU's devotion to be a pioneer in promoting green living.\n- Facilitate waste reduction and recycling: This large-scale, well-managed and user-friendly recycling site can facilitate waste reduction and recycling support for members of HKU, meaning everyone can contribute easily.\n- Education: The iconic, all-rounded kiosk is more educative than the scattered recycling bins."
+    },
+    {
+      "id": "re_facilities#8",
+      "source": "re_facilities",
+      "source_title": "re Facilities - re Kiosk, re Bin and Smart Recycling Bins",
+      "url": "https://www.wastereduction.hku.hk/re-facilities",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 8,
+      "tags": [
+        "smart bin"
+      ],
+      "text": "Smart Recycling Bins"
+    },
+    {
+      "id": "re_facilities#9",
+      "source": "re_facilities",
+      "source_title": "re Facilities - re Kiosk, re Bin and Smart Recycling Bins",
+      "url": "https://www.wastereduction.hku.hk/re-facilities",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 9,
+      "tags": [
+        "greenu",
+        "metal",
+        "smart bin"
+      ],
+      "text": "With the GreenU function in the HKU app, HKU students and staff can use the HKU Smart Recycling Bins for recycling and gain GreenU Points."
+    },
+    {
+      "id": "re_facilities#10",
+      "source": "re_facilities",
+      "source_title": "re Facilities - re Kiosk, re Bin and Smart Recycling Bins",
+      "url": "https://www.wastereduction.hku.hk/re-facilities",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 10,
+      "tags": [
+        "greenu",
+        "metal",
+        "smart bin"
+      ],
+      "text": "How to recycle at HKU Smart Recycling Bins with the GreenU function:\nStep 1: Press the button to start the session.\nStep 2: Scan your HKU Access Code from the HKU App.\nStep 3: Start recycling your materials."
+    },
+    {
+      "id": "re_facilities#11",
+      "source": "re_facilities",
+      "source_title": "re Facilities - re Kiosk, re Bin and Smart Recycling Bins",
+      "url": "https://www.wastereduction.hku.hk/re-facilities",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 11,
+      "tags": [
+        "glass",
+        "metal",
+        "paper",
+        "plastic",
+        "smart bin"
+      ],
+      "text": "Smart Recycling Bins by HKU accept the following recyclables: Paper, Metal, Plastic bottle (except at Central Podium Levels and Pine Court), Other plastic, and Glass bottle (only at Central Podium Levels and Pine Court)."
+    },
+    {
+      "id": "re_facilities#12",
+      "source": "re_facilities",
+      "source_title": "re Facilities - re Kiosk, re Bin and Smart Recycling Bins",
+      "url": "https://www.wastereduction.hku.hk/re-facilities",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 12,
+      "tags": [
+        "smart bin"
+      ],
+      "text": "Smart Recycling Bins network on campus:"
+    },
+    {
+      "id": "re_facilities#13",
+      "source": "re_facilities",
+      "source_title": "re Facilities - re Kiosk, re Bin and Smart Recycling Bins",
+      "url": "https://www.wastereduction.hku.hk/re-facilities",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 13,
+      "tags": [],
+      "text": "Main Campus:\n- LG2/F, K.K. Leung Building (outside lift lobby)\n- Meng Wah Complex (outside 1/F entrance, next to the escalator)\n- G/F, Hui Oi Chow Science Building (outside Innovation Wing)\n- G/F, Central Podium Levels, Centennial Campus"
+    },
+    {
+      "id": "re_facilities#14",
+      "source": "re_facilities",
+      "source_title": "re Facilities - re Kiosk, re Bin and Smart Recycling Bins",
+      "url": "https://www.wastereduction.hku.hk/re-facilities",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 14,
+      "tags": [
+        "re kiosk"
+      ],
+      "text": "Sassoon Road Campus:\n- G/F, Jockey Club Building for Interdisciplinary Research (outside the entrance)\n- Laboratory Block, Faculty of Medicine Building (G/F lift lobby, near food kiosk)"
+    },
+    {
+      "id": "re_facilities#15",
+      "source": "re_facilities",
+      "source_title": "re Facilities - re Kiosk, re Bin and Smart Recycling Bins",
+      "url": "https://www.wastereduction.hku.hk/re-facilities",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 15,
+      "tags": [],
+      "text": "Senior Staff Quarters:\n- Pine Court (Common Area, outside Block 1)"
+    },
+    {
+      "id": "re_facilities#16",
+      "source": "re_facilities",
+      "source_title": "re Facilities - re Kiosk, re Bin and Smart Recycling Bins",
+      "url": "https://www.wastereduction.hku.hk/re-facilities",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 16,
+      "tags": [
+        "glass",
+        "metal",
+        "paper",
+        "plastic",
+        "smart bin"
+      ],
+      "text": "Smart Recycling Bins accept these recyclables: Paper, Metal, Plastic, and Glass Bottle."
+    },
+    {
+      "id": "re_facilities#17",
+      "source": "re_facilities",
+      "source_title": "re Facilities - re Kiosk, re Bin and Smart Recycling Bins",
+      "url": "https://www.wastereduction.hku.hk/re-facilities",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 17,
+      "tags": [
+        "greenu",
+        "smart bin"
+      ],
+      "text": "Features of the Smart Recycling Bins:\n- 24-hour operation\n- Self-serving recycling\n- With sensors monitoring fill levels for efficient recyclable collection\n- Automatic recording of the weight of recyclables\n- Earn GreenU points for reward redemption"
+    },
+    {
+      "id": "recycling_101#1",
+      "source": "recycling_101",
+      "source_title": "Recycling 101 - The Correct Choice Guide",
+      "url": "https://www.wastereduction.hku.hk/recycling-101",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 1,
+      "tags": [],
+      "text": "Recycling 101 - The Correct Choice\nSource: HKU Waste Reduction (https://www.wastereduction.hku.hk/recycling-101)"
+    },
+    {
+      "id": "recycling_101#2",
+      "source": "recycling_101",
+      "source_title": "Recycling 101 - The Correct Choice Guide",
+      "url": "https://www.wastereduction.hku.hk/recycling-101",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 2,
+      "tags": [
+        "battery",
+        "glass",
+        "metal",
+        "paper",
+        "plastic",
+        "re kiosk",
+        "smart bin",
+        "tetra pak"
+      ],
+      "text": "Here is a complete guide to master recycling at the re Kiosk and Smart Recycling Bins. The recyclable categories are Paper, Tetra Pak, Metal, Glass Bottle, Plastic, and Rechargeable Battery."
+    },
+    {
+      "id": "recycling_101#3",
+      "source": "recycling_101",
+      "source_title": "Recycling 101 - The Correct Choice Guide",
+      "url": "https://www.wastereduction.hku.hk/recycling-101",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 3,
+      "tags": [
+        "metal",
+        "paper",
+        "plastic"
+      ],
+      "text": "Paper Recycling\nAccepted paper items include newspapers, flyers, magazines, textbooks, printed A4 paper, carton boxes, cardboard boxes, and office paper. Paper must be clean and dry. Greasy or food-contaminated paper cannot be recycled and should go to general refuse. Remove any non-paper attachments such as plastic windows, staples, and tape before recycling. Flatten cardboard boxes to save space."
+    },
+    {
+      "id": "recycling_101#4",
+      "source": "recycling_101",
+      "source_title": "Recycling 101 - The Correct Choice Guide",
+      "url": "https://www.wastereduction.hku.hk/recycling-101",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 4,
+      "tags": [
+        "paper",
+        "plastic",
+        "re kiosk",
+        "tetra pak"
+      ],
+      "text": "Tetra Pak Recycling\nTetra Pak and beverage cartons (milk cartons, juice boxes) are accepted at the re Kiosk. Rinse the carton before recycling. Flatten it to save space. Tetra Pak is a separate category from paper and plastic because it is a multi-layered composite material."
+    },
+    {
+      "id": "recycling_101#5",
+      "source": "recycling_101",
+      "source_title": "Recycling 101 - The Correct Choice Guide",
+      "url": "https://www.wastereduction.hku.hk/recycling-101",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 5,
+      "tags": [
+        "metal"
+      ],
+      "text": "Metal Recycling\nAccepted metal items include aluminium soft-drink cans, tin cans, and metal food cans. Rinse the cans before recycling. Remove lids where possible. Aerosol cans are not accepted in general recycling bins because they may be pressurized."
+    },
+    {
+      "id": "recycling_101#6",
+      "source": "recycling_101",
+      "source_title": "Recycling 101 - The Correct Choice Guide",
+      "url": "https://www.wastereduction.hku.hk/recycling-101",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 6,
+      "tags": [
+        "glass",
+        "metal",
+        "re kiosk",
+        "smart bin"
+      ],
+      "text": "Glass Bottle Recycling\nGlass bottles are accepted at the re Kiosk and at the Smart Recycling Bins located at G/F, Central Podium Levels (Centennial Campus) and Pine Court. Only clean glass bottles are recycled. Other glass items such as glass mirrors, drinking glasses, fluorescent tubes, and light bulbs cannot be placed in the glass recycling bin and require special handling. Rinse glass bottles before recycling. Do not break the glass."
+    },
+    {
+      "id": "recycling_101#7",
+      "source": "recycling_101",
+      "source_title": "Recycling 101 - The Correct Choice Guide",
+      "url": "https://www.wastereduction.hku.hk/recycling-101",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 7,
+      "tags": [
+        "metal",
+        "plastic",
+        "smart bin"
+      ],
+      "text": "Plastic Recycling\nAccepted plastic items include PET plastic drink bottles, clean plastic packaging, plastic bags, and plastic takeaway containers (if rinsed clean). Plastic bottles are accepted at most Smart Recycling Bins except at Central Podium Levels and Pine Court, which accept other plastics instead. Plastic must be clean and dry. Greasy or food-contaminated plastic cannot be recycled and should go to general refuse. Rinse plastic containers and remove food residue before recycling. Single-use plastic cutlery may be accepted as other plastic at some locations; follow on-site signage."
+    },
+    {
+      "id": "recycling_101#8",
+      "source": "recycling_101",
+      "source_title": "Recycling 101 - The Correct Choice Guide",
+      "url": "https://www.wastereduction.hku.hk/recycling-101",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 8,
+      "tags": [
+        "metal",
+        "paper",
+        "plastic"
+      ],
+      "text": "Cups and Beverage Containers\nMilk tea cups and other beverage cups should be rinsed to remove liquid and residue before sorting. If the cup is made of plastic, it goes into the plastic recycling bin after rinsing. Paper cups with a plastic coating (plastic-coated paper cups) are usually not recyclable because of the plastic lining and should follow official guidance or on-site signage. Empty and clean aluminium cans go into the metal recycling bin."
+    },
+    {
+      "id": "recycling_101#9",
+      "source": "recycling_101",
+      "source_title": "Recycling 101 - The Correct Choice Guide",
+      "url": "https://www.wastereduction.hku.hk/recycling-101",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 9,
+      "tags": [
+        "battery",
+        "re kiosk"
+      ],
+      "text": "Rechargeable Battery Recycling\nRechargeable batteries are accepted at the re Kiosk only. Rechargeable batteries are hazardous waste and must not be placed in general recycling bins or general refuse. The re Kiosk is the designated collection point for rechargeable batteries on campus. For other types of batteries or hazardous waste, consult the official guidance and follow the designated collection procedures."
+    },
+    {
+      "id": "recycling_101#10",
+      "source": "recycling_101",
+      "source_title": "Recycling 101 - The Correct Choice Guide",
+      "url": "https://www.wastereduction.hku.hk/recycling-101",
+      "organization": "HKU Waste Reduction",
+      "paragraph": 10,
+      "tags": [
+        "plastic"
+      ],
+      "text": "Final Check Before Recycling\n- Make sure the item is clean and dry.\n- Remove food residue, grease, and liquids.\n- Flatten items to save space.\n- Remove non-recyclable attachments (lids, caps, plastic windows, tape).\n- When in doubt, check the on-site signage or ask the cleaner.\n- Contaminated items go to general refuse, not the recycling bins."
+    }
+  ]
+}

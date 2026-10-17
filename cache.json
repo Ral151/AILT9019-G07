@@ -1,0 +1,72 @@
+{
+  "where does plastic go at hku": {
+    "answer": "Based on the official HKU recycling documents, here is the answer:\n\nBin category: Plastic recycling bin\n\nAccepted plastic items include PET plastic drink bottles, clean plastic packaging, plastic bags, and plastic takeaway containers (if rinsed clean). Plastic must be clean and dry. [recycling_101#7]\n\nSupporting details: Plastic bottles are accepted at most Smart Recycling Bins except at Central Podium Levels and Pine Court, which accept other plastics instead. [recycling_101#7]",
+    "citations": [
+      {
+        "id": "recycling_101#7",
+        "source_title": "Recycling 101 - The Correct Choice Guide",
+        "paragraph": 7,
+        "url": "https://www.wastereduction.hku.hk/recycling-101",
+        "organization": "HKU Waste Reduction",
+        "excerpt": "Plastic Recycling\nAccepted plastic items include PET plastic drink bottles, clean plastic packaging, plastic bags, and plastic takeaway containers (if rinsed clean)."
+      }
+    ],
+    "reminder": "Greasy or food-contaminated plastic cannot be recycled and should go to general refuse. Rinse plastic containers before recycling."
+  },
+  "which bin does an aluminium can go into": {
+    "answer": "Based on the official HKU recycling documents, here is the answer:\n\nBin category: Metal recycling bin\n\nAccepted metal items include aluminium soft-drink cans, tin cans, and metal food cans. Rinse the cans before recycling. [recycling_101#5]",
+    "citations": [
+      {
+        "id": "recycling_101#5",
+        "source_title": "Recycling 101 - The Correct Choice Guide",
+        "paragraph": 5,
+        "url": "https://www.wastereduction.hku.hk/recycling-101",
+        "organization": "HKU Waste Reduction",
+        "excerpt": "Metal Recycling\nAccepted metal items include aluminium soft-drink cans, tin cans, and metal food cans."
+      }
+    ],
+    "reminder": "Remove lids where possible. Aerosol cans are not accepted in general recycling bins."
+  },
+  "where can i recycle glass bottles on campus": {
+    "answer": "Based on the official HKU recycling documents, here is the answer:\n\nBin category: Glass recycling point (re Kiosk or designated glass bin)\n\nGlass bottles are accepted at the re Kiosk and at the Smart Recycling Bins located at G/F, Central Podium Levels (Centennial Campus) and Pine Court. [recycling_101#6]\n\nSupporting details: Only clean glass bottles are recycled. Rinse glass bottles before recycling. Do not break the glass. [recycling_101#6]",
+    "citations": [
+      {
+        "id": "recycling_101#6",
+        "source_title": "Recycling 101 - The Correct Choice Guide",
+        "paragraph": 6,
+        "url": "https://www.wastereduction.hku.hk/recycling-101",
+        "organization": "HKU Waste Reduction",
+        "excerpt": "Glass Bottle Recycling\nGlass bottles are accepted at the re Kiosk and at the Smart Recycling Bins located at G/F, Central Podium Levels (Centennial Campus) and Pine Court."
+      }
+    ],
+    "reminder": "Other glass items such as mirrors, drinking glasses, and fluorescent tubes cannot go in the glass recycling bin."
+  },
+  "which recycling bin should an empty pet plastic drink bottle go into": {
+    "answer": "Based on the official HKU recycling documents, here is the answer:\n\nBin category: Plastic recycling bin\n\nAccepted plastic items include PET plastic drink bottles. Plastic bottles are accepted at most Smart Recycling Bins except at Central Podium Levels and Pine Court. [recycling_101#7]",
+    "citations": [
+      {
+        "id": "recycling_101#7",
+        "source_title": "Recycling 101 - The Correct Choice Guide",
+        "paragraph": 7,
+        "url": "https://www.wastereduction.hku.hk/recycling-101",
+        "organization": "HKU Waste Reduction",
+        "excerpt": "Plastic Recycling\nAccepted plastic items include PET plastic drink bottles."
+      }
+    ],
+    "reminder": "Make sure the bottle is clean and dry. Remove the cap before recycling."
+  },
+  "which recycling category do old newspapers and flyers belong to": {
+    "answer": "Based on the official HKU recycling documents, here is the answer:\n\nBin category: Paper recycling bin\n\nAccepted paper items include newspapers, flyers, magazines, textbooks, printed A4 paper, carton boxes, and cardboard boxes. Paper must be clean and dry. [recycling_101#3]",
+    "citations": [
+      {
+        "id": "recycling_101#3",
+        "source_title": "Recycling 101 - The Correct Choice Guide",
+        "paragraph": 3,
+        "url": "https://www.wastereduction.hku.hk/recycling-101",
+        "organization": "HKU Waste Reduction",
+        "excerpt": "Paper Recycling\nAccepted paper items include newspapers, flyers, magazines, textbooks, printed A4 paper, carton boxes, cardboard boxes, and office paper."
+      }
+    ],
+    "reminder": "Greasy or food-contaminated paper cannot be recycled and should go to general refuse."
+  }
+}

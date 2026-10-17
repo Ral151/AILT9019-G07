@@ -1,0 +1,39 @@
+{
+  "sources": [
+    {
+      "id": "re_facilities",
+      "title": "re Facilities - re Kiosk, re Bin and Smart Recycling Bins",
+      "url": "https://www.wastereduction.hku.hk/re-facilities",
+      "organization": "HKU Waste Reduction",
+      "fallback_file": "corpus_raw/re_facilities.txt"
+    },
+    {
+      "id": "recycling_101",
+      "title": "Recycling 101 - The Correct Choice Guide",
+      "url": "https://www.wastereduction.hku.hk/recycling-101",
+      "organization": "HKU Waste Reduction",
+      "fallback_file": "corpus_raw/recycling_101.txt"
+    },
+    {
+      "id": "green_hero_quiz",
+      "title": "Be a Campus Green Hero Online Quiz",
+      "url": "https://www.wastereduction.hku.hk/be-a-campus-green-hero-quiz",
+      "organization": "HKU Waste Reduction",
+      "fallback_file": "corpus_raw/green_hero_quiz.txt"
+    },
+    {
+      "id": "greenu_scheme",
+      "title": "GreenU Reward Scheme",
+      "url": "https://www.wastereduction.hku.hk/greenu-reward-scheme",
+      "organization": "HKU Waste Reduction",
+      "fallback_file": "corpus_raw/greenu_scheme.txt"
+    },
+    {
+      "id": "plastic_free_policy",
+      "title": "Disposable Plastic Free Campus Policy",
+      "url": "https://www.hku.hk/en/about-hku/policies/disposable-plastic-free-campus-policy",
+      "organization": "The University of Hong Kong",
+      "fallback_file": "corpus_raw/plastic_free_policy.txt"
+    }
+  ]
+}
