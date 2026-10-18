@@ -1,0 +1,33 @@
+# Chunk annotations for corpus/chunks/re_facilities.txt.
+# Extraction: html_text. Every line of the .txt is copied from the saved page
+# (scripts/ingest.py verifies this against corpus/raw/re_facilities/).
+source_id: re_facilities
+review_status: draft
+
+battery_terms: &battery_terms [battery, batteries, rechargeable, power bank, power banks, lithium]
+
+chunks:
+  # re Kiosk
+  - {id: kiosk-location, lines: [2, 4], section: "re Kiosk > Location of re Kiosk", tier: info, caveats: [location_may_change]}
+  - {id: kiosk-accepts-paper, lines: [6, 6], section: "re Kiosk > re Kiosk accepts these recyclables", tier: general_recyclable, stream: Paper}
+  - {id: kiosk-accepts-tetra, lines: [7, 7], section: "re Kiosk > re Kiosk accepts these recyclables", tier: general_recyclable, stream: Tetra Pak}
+  - {id: kiosk-accepts-metal, lines: [8, 8], section: "re Kiosk > re Kiosk accepts these recyclables", tier: general_recyclable, stream: Metal}
+  - {id: kiosk-accepts-glass, lines: [9, 9], section: "re Kiosk > re Kiosk accepts these recyclables", tier: general_recyclable, stream: Glass Bottle}
+  - {id: kiosk-accepts-plastic, lines: [10, 10], section: "re Kiosk > re Kiosk accepts these recyclables", tier: general_recyclable, stream: Plastic}
+  - {id: kiosk-accepts-battery, lines: [11, 11], section: "re Kiosk > re Kiosk accepts these recyclables", tier: hazardous_unified, stream: Rechargeable Battery, applies_to: *battery_terms}
+  # Smart Recycling Bins
+  - {id: smart-greenu, lines: [13, 13], section: "Smart Recycling Bins", tier: info}
+  - {id: smart-accepts-paper, lines: [15, 15], section: "Smart Recycling Bins > Smart Recycling Bins by HKU accept the following recyclables", tier: general_recyclable, stream: Paper}
+  - {id: smart-accepts-metal, lines: [16, 16], section: "Smart Recycling Bins > Smart Recycling Bins by HKU accept the following recyclables", tier: general_recyclable, stream: Metal}
+  - {id: smart-accepts-plastic-bottle, lines: [17, 17], section: "Smart Recycling Bins > Smart Recycling Bins by HKU accept the following recyclables", tier: general_recyclable, stream: Plastic bottle, caveats: [smart_point_accepted_list]}
+  - {id: smart-accepts-other-plastic, lines: [18, 18], section: "Smart Recycling Bins > Smart Recycling Bins by HKU accept the following recyclables", tier: general_recyclable, stream: Other plastic, caveats: [smart_point_accepted_list]}
+  - {id: smart-accepts-glass, lines: [19, 19], section: "Smart Recycling Bins > Smart Recycling Bins by HKU accept the following recyclables", tier: general_recyclable, stream: Glass Bottle, caveats: [smart_point_accepted_list]}
+  # Smart Recycling Bins network on campus
+  - {id: smart-loc-kk-leung, lines: [22, 23], section: "Smart Recycling Bins network on campus > Main Campus", tier: info, caveats: [location_may_change]}
+  - {id: smart-loc-meng-wah, lines: [24, 25], section: "Smart Recycling Bins network on campus > Main Campus", tier: info, caveats: [location_may_change]}
+  - {id: smart-loc-hui-oi-chow, lines: [26, 27], section: "Smart Recycling Bins network on campus > Main Campus", tier: info, caveats: [location_may_change]}
+  - {id: smart-loc-central-podium, lines: [28, 29], section: "Smart Recycling Bins network on campus > Main Campus", tier: info, caveats: [location_may_change]}
+  - {id: smart-loc-jcbir, lines: [31, 32], section: "Smart Recycling Bins network on campus > Sassoon Road Campus", tier: info, caveats: [location_may_change]}
+  - {id: smart-loc-lab-block, lines: [33, 35], section: "Smart Recycling Bins network on campus > Sassoon Road Campus", tier: info, caveats: [location_may_change]}
+  - {id: smart-loc-pine-court, lines: [37, 38], section: "Smart Recycling Bins network on campus > Senior Staff Quarters", tier: info, caveats: [location_may_change]}
+  - {id: smart-features, lines: [39, 44], section: "Smart Recycling Bins > Features of the Smart Recycling Bins", tier: info}

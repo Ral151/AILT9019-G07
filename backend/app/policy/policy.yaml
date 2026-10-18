@@ -1,0 +1,318 @@
+# Product policy for the deterministic router (FR-2, FR-4).
+#
+# This file holds SCOPE and SAFETY decisions made by the team (what we refuse,
+# what we defer, how templates are worded). It must NOT contain HKU recycling
+# rules, bin categories or locations: those come only from corpus/.
+#
+# Any change here is a policy change: re-run the dev split
+# (python -m eval.run_eval --split dev) before merging.
+
+version: 1
+
+# ---------------------------------------------------------------------------
+# FR-2 deterministic boundary rules. Precision-first: a pattern here forces
+# the intent without asking the LLM. Patterns are case-insensitive regular
+# expressions matched against the user's message.
+# Order matters: the first group that matches wins.
+# ---------------------------------------------------------------------------
+boundary_rules:
+  - intent: offtopic_or_injection
+    patterns:
+      - '\bignore\b.{0,30}\b(rules?|instructions?|prompt|polic(y|ies))\b'
+      - '\bdisregard\b.{0,30}\b(rules?|instructions?|above|previous)\b'
+      - '\b(system|developer) prompt\b'
+      - '\byou are now\b'
+      - '\bpretend (to be|you are)\b'
+      - '\bjailbreak\b'
+      - '\b(say|tell me|answer) that\b.{0,40}\b(goes?|go|belongs?) in\b'
+  - intent: penalty_appeal
+    patterns:
+      - '\bappeal(s|ed|ing)?\b'
+      - '\bfined\b'
+      - '\b(a|my|the|this|recycling|hall) fine\b'
+      - '\bfines\b'
+      - '\bpenalt(y|ies)\b'
+      - '\bpenali[sz]ed\b'
+      - '\bwarning letter\b'
+      - '\bdemerit'
+      - '\bdisciplinary\b'
+  - intent: disposal_application
+    patterns:
+      - '\bapply for\b'
+      - '\bapplication\b'
+      - '\b(book|schedule|arrange|request) (a |an )?(collection|pick-?up)\b'
+      - '\bcollection service\b'
+      - '\bsubmit (a |an )?(form|request)\b'
+  - intent: offcampus
+    patterns:
+      - '\bcauseway bay\b'
+      - '\bmong kok\b'
+      - '\btsim sha tsui\b'
+      - '\bkowloon\b'
+      - '\bsha tin\b'
+      - '\btai po\b'
+      - '\btuen mun\b'
+      - '\byuen long\b'
+      - '\bnorth point\b'
+      - '\bquarry bay\b'
+      - '\bwan chai\b'
+      - '\badmiralty\b'
+      - '\bsheung wan\b'
+      - '\bkennedy town\b'
+      - '\baberdeen\b'
+      - '\blantau\b'
+      - '\btung chung\b'
+      - '\btsuen wan\b'
+      - '\bkwun tong\b'
+      - '\bsai kung\b'
+      - '\bnew territories\b'
+      - '\bshenzhen\b'
+      - '\bmacau\b'
+      # "Central" alone is ambiguous (Central Podium Levels is on campus), so
+      # only phrases that clearly mean the district are matched.
+      - '\b(in|at|near|around) central\b(?!\s+podium)'
+      - '\bcentral (station|mtr|district|pier)\b'
+      - '\b(at|my) home\b'
+      - '\bmy (flat|apartment|house)\b'
+      - '\bhousehold waste\b'
+      - '\boff[- ]campus\b'
+      - '\boutside (of )?(hku|campus|the university)\b'
+  - intent: onsite_sign_conflict
+    patterns:
+      - '\b(sign|signs|signage|notice|poster|label)\b.{0,40}\b(says?|said|shows?|tells?|told)\b'
+      - '\b(staff|cleaner|cleaners|janitor|warden|tutor|hall tutor|security guard)\b.{0,20}\b(says?|said|told|tells)\b'
+      - '\bbut you (said|say|told)\b'
+      - '\b(which|who) (one )?(do|should) i (follow|listen to|believe|trust)\b'
+      - '\bcontradict'
+
+# ---------------------------------------------------------------------------
+# Safety item lists (FR-4 rows 3-4). Matched as whole words/phrases against
+# the message and the items extracted by the intent call.
+# ---------------------------------------------------------------------------
+
+# Hazardous items: the answer can only be official excerpts + links (R2).
+# Which excerpts are shown is decided by chunk `applies_to` terms in the corpus.
+hazardous_items:
+  - battery
+  - batteries
+  - power bank
+  - power banks
+  - rechargeable
+  - lithium
+  - fluorescent
+  - light bulb
+  - light bulbs
+  - chemical
+  - chemicals
+  - paint
+  - solvent
+  - pesticide
+  - syringe
+  - syringes
+  - needle
+  - needles
+  - medication
+  - medicine
+  - medicines
+  - expired drugs
+  - mercury
+
+# Items with no campus-wide standard (R3): refuse with no bin category.
+unsupported_items:
+  - charger
+  - chargers
+  - phone charger
+  - power adapter
+  - charging cable
+  - cable
+  - cables
+  - small electrical appliance
+  - electrical appliance
+  - electrical appliances
+  - small appliance
+  - appliance
+  - appliances
+  - electronics
+  - electronic waste
+  - e-waste
+  - fan
+  - hair dryer
+  - kettle
+  - microwave
+  - rice cooker
+  - toaster
+  - desk lamp
+  - lamp
+  - laptop
+  - computer
+  - monitor
+  - printer
+  - mobile phone
+  - headphones
+  - furniture
+  - mattress
+  - sofa
+  - chair
+  - chairs
+  - desk
+  - table
+  - bed
+  - bed frame
+  - wardrobe
+  - bookshelf
+  - shelf
+  - bulky waste
+  - bulky item
+  - bulky items
+
+# Terms the answer validator treats as "bin or stream names" (FR-6 check 4).
+# Stream names found in the corpus are added automatically at start-up; this
+# list adds generic bin words an LLM might invent.
+bin_vocabulary_extra:
+  - general refuse
+  - general waste
+  - rubbish bin
+  - trash
+  - landfill
+  - blue bin
+  - brown bin
+  - yellow bin
+  - green bin
+  - red bin
+  - orange bin
+  - food waste bin
+  - compost
+
+# ---------------------------------------------------------------------------
+# Redirects and fixed templates. defer/refuse responses use ONLY these texts.
+# ---------------------------------------------------------------------------
+redirects:
+  cedars:
+    label: CEDARS website
+    url: https://www.cedars.hku.hk/
+  re_campaign:
+    label: HKU re Campaign website
+    url: https://www.wastereduction.hku.hk/
+  hk_gov:
+    label: Hong Kong Waste Reduction website
+    url: https://www.wastereduction.gov.hk/en-hk
+
+templates:
+  OUT_OF_SCOPE_LOCATION:
+    action: refuse
+    text: >-
+      I can only help with recycling on the HKU campus. For places outside HKU,
+      please check the Hong Kong Government's waste reduction website.
+    redirect: hk_gov
+  OUT_OF_SCOPE_PENALTY:
+    action: refuse
+    text: >-
+      I can't help with fines, warnings or appeals. Please contact the office
+      that issued the notice, or your hall office.
+    redirect: cedars
+  OUT_OF_SCOPE_APPLICATION:
+    action: refuse
+    text: >-
+      I can't submit or arrange waste-disposal applications or collections.
+      Please contact your hall office or the relevant HKU office.
+    redirect: cedars
+  OUT_OF_SCOPE_OFFTOPIC:
+    action: refuse
+    text: >-
+      I can only answer questions about sorting waste and recycling on the HKU
+      campus, using HKU's official recycling documents.
+    redirect: re_campaign
+  ONSITE_SIGN_CONFLICT:
+    action: defer
+    text: >-
+      Please follow the sign or the staff on site. On-site signs and staff
+      instructions always take priority over this helper, because arrangements
+      can differ between buildings and halls.
+    redirect: null
+  HAZARDOUS_OFFICIAL_LINKS_ONLY:
+    action: defer
+    text: >-
+      This item needs special handling, so I can only show you HKU's official
+      guidance word for word. Please read the excerpts and the official source
+      below, and follow your hall's rules and on-site staff.
+    redirect: null  # the official source of the first excerpt is used
+  NO_UNIFIED_STANDARD:
+    action: refuse
+    text: >-
+      HKU doesn't publish a campus-wide rule for this item, so I can't tell you
+      which bin to use. Please ask your hall tutor or hall office, or check the
+      CEDARS website.
+    redirect: cedars
+  LOW_RETRIEVAL_MATCH:
+    action: refuse
+    text: >-
+      I couldn't find a clear rule for this in HKU's official recycling
+      documents, so I won't guess. Please check the re Campaign website, ask
+      your hall tutor, or check the CEDARS website.
+    redirect: re_campaign
+  VALIDATION_FAILED:
+    action: refuse
+    text: >-
+      I couldn't produce an answer that matches HKU's official documents, so I
+      won't guess. Please check the re Campaign website or ask on-site staff.
+    redirect: re_campaign
+  SERVICE_UNAVAILABLE:
+    action: refuse
+    text: >-
+      The answer service is unavailable right now. Please try again later, or
+      check the CEDARS website.
+    redirect: cedars
+  IMAGE_SERVICE_UNAVAILABLE:
+    # Text-only fallback for photos (§7.6). reason_code SERVICE_UNAVAILABLE.
+    action: refuse
+    text: >-
+      Photo recognition isn't available right now. Please describe the item in
+      words instead, for example "Where does a plastic drink bottle go?"
+    redirect: null
+  IMAGE_UNREADABLE:
+    action: defer
+    text: >-
+      I couldn't read this photo. Please try again with one item, closer to
+      the camera, in good light.
+    redirect: null
+  LOW_IMAGE_CONFIDENCE:
+    action: defer
+    text: >-
+      I'm not sure what this item is. Please take a clearer photo of one item,
+      closer and in good light, or describe it in words.
+    redirect: null
+  MULTIPLE_ITEMS:
+    action: defer
+    text: >-
+      I can see more than one item. Please photograph one item at a time.
+    redirect: null
+
+# Mandatory caveat texts, keyed by the chunk `caveat_tags` in the corpus.
+# Every tag used in corpus/chunks/*.yaml must have an entry here (checked by
+# scripts/ingest.py).
+caveats:
+  smart_point_accepted_list: >-
+    Smart Recycling Bins don't all accept the same items. Check the label on
+    the bin you are using.
+  location_may_change: >-
+    Bin locations may change. Check the official page for the latest list.
+  hall_rules_may_vary: >-
+    Hall rules may vary. Follow your hall's signs and staff.
+  preparation_required: >-
+    Prepare the item as the official guide describes (for example clean and
+    dry) before you recycle it.
+  listed_as_dont: >-
+    The official guide lists this item under DON'Ts for this recycling
+    stream. If you're not sure where it goes, ask on-site staff.
+  re_kiosk_list: >-
+    This list is for the re Kiosk. Other recycling points may accept
+    different items.
+  dated_information: >-
+    This information is dated. The official page may have changed since.
+
+# README sample questions (Appendix B), served by GET /api/samples.
+samples:
+  - Can a bubble tea cup go into the smart recycling bin?
+  - Does a Coke bottle go in the metal category?
+  - Where should I dispose of used batteries?
+  - Where do I put an old phone charger?

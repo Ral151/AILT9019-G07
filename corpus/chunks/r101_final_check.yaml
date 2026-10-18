@@ -1,0 +1,21 @@
+# Chunk annotations for corpus/chunks/r101_final_check.txt.
+# Sources are two images on the Recycling 101 page ("Final Check Before
+# Recycling" and "4 Steps to Recycle Tetra Pak"). The .txt is a MANUAL
+# TRANSCRIPTION of the English text; check it against corpus/raw/r101_final_check/.
+source_id: r101_final_check
+review_status: draft
+
+battery_terms: &battery_terms [battery, batteries, rechargeable, power bank, power banks, lithium]
+
+chunks:
+  - {id: check-general-1, lines: [5, 5], section: "General Guidelines", tier: info, caveats: [preparation_required]}
+  - {id: check-general-2, lines: [6, 6], section: "General Guidelines", tier: info, caveats: [preparation_required]}
+  - {id: check-general-3, lines: [7, 7], section: "General Guidelines", tier: info, caveats: [preparation_required]}
+  - {id: check-mpg-1, lines: [9, 9], section: "For metals, plastics, glass bottles", tier: info, caveats: [preparation_required]}
+  - {id: check-mpg-2, lines: [10, 10], section: "For metals, plastics, glass bottles", tier: info, caveats: [preparation_required]}
+  - {id: check-paper-1, lines: [12, 12], section: "For paper", tier: info, caveats: [preparation_required]}
+  - {id: check-tetra-1, lines: [14, 14], section: "For Tetra Pak", tier: info, caveats: [preparation_required]}
+  - {id: check-tetra-2, lines: [15, 15], section: "For Tetra Pak", tier: info, caveats: [preparation_required]}
+  - {id: check-battery-1, lines: [17, 17], section: "Rechargeable Batteries", tier: hazardous_unified, applies_to: *battery_terms}
+  - {id: check-battery-2, lines: [18, 18], section: "Rechargeable Batteries", tier: hazardous_unified, applies_to: *battery_terms}
+  - {id: tetra-4-steps, lines: [20, 23], section: "4 Steps to Recycle Tetra Pak", tier: info, caveats: [preparation_required]}

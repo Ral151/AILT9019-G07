@@ -1,0 +1,11 @@
+# Chunk annotations for corpus/chunks/greenu_scheme.txt.
+# Extraction: html_text (verified against the saved page by ingest.py).
+source_id: greenu_scheme
+review_status: draft
+
+chunks:
+  - {id: greenu-about, lines: [1, 2], section: "About The Scheme", tier: info}
+  - {id: greenu-how-to-earn, lines: [3, 4], section: "How to Earn GreenU Points?", tier: info}
+  - {id: greenu-actions, lines: [5, 7], section: "How to Earn GreenU Points?", tier: info}
+  - {id: greenu-who-can-join, lines: [9, 10], section: "FAQs", tier: info}
+  - {id: greenu-expiry, lines: [11, 13], section: "FAQs", tier: info}

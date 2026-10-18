@@ -1,0 +1,67 @@
+# Chunk annotations for corpus/chunks/r101_poster.txt (one list item per chunk).
+# Source is an image-only poster (no text layer): the .txt is a MANUAL
+# TRANSCRIPTION of the English text and must be checked line by line against
+# corpus/raw/r101_poster/recycling-101-poster.pdf before review_status is set
+# to "reviewed". The poster is the re Kiosk version of Recycling 101.
+#
+# Fields: lines [start, end] in the .txt (1-based, inclusive) · section ·
+# tier (rule_tier) · stream (canonical name from manifest.yaml, or null) ·
+# caveats (caveat_tags) · applies_to (items a strict-tier chunk covers).
+source_id: r101_poster
+review_status: draft
+
+battery_terms: &battery_terms [battery, batteries, rechargeable, power bank, power banks, lithium]
+battery_dont_terms: &battery_dont_terms [battery, batteries, single use, single-use, AA, AAA, alkaline, lead acid, damaged battery]
+
+chunks:
+  # Paper
+  - {id: poster-paper-do-1, lines: [5, 5], section: "Paper > DOs", tier: general_recyclable, stream: Paper}
+  - {id: poster-paper-do-2, lines: [6, 6], section: "Paper > DOs", tier: general_recyclable, stream: Paper}
+  - {id: poster-paper-do-3, lines: [7, 7], section: "Paper > DOs", tier: general_recyclable, stream: Paper}
+  - {id: poster-paper-do-4, lines: [8, 8], section: "Paper > DOs", tier: general_recyclable, stream: Paper}
+  - {id: poster-paper-do-5, lines: [9, 9], section: "Paper > DOs", tier: general_recyclable, stream: Paper}
+  - {id: poster-paper-do-6, lines: [10, 10], section: "Paper > DOs", tier: general_recyclable, stream: Paper}
+  - {id: poster-paper-dont-1, lines: [12, 12], section: "Paper > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  - {id: poster-paper-dont-2, lines: [13, 13], section: "Paper > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  - {id: poster-paper-dont-3, lines: [14, 14], section: "Paper > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  - {id: poster-paper-dont-4, lines: [15, 15], section: "Paper > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  - {id: poster-paper-dont-5, lines: [16, 16], section: "Paper > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  - {id: poster-paper-dont-6, lines: [17, 17], section: "Paper > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  - {id: poster-paper-dont-7, lines: [18, 18], section: "Paper > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  - {id: poster-paper-dont-8, lines: [19, 19], section: "Paper > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  # Metal
+  - {id: poster-metal-do-1, lines: [22, 22], section: "Metal > DOs", tier: general_recyclable, stream: Metal}
+  - {id: poster-metal-dont-1, lines: [24, 24], section: "Metal > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  - {id: poster-metal-dont-2, lines: [25, 25], section: "Metal > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  - {id: poster-metal-dont-3, lines: [26, 26], section: "Metal > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  - {id: poster-metal-dont-4, lines: [27, 27], section: "Metal > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  - {id: poster-metal-dont-5, lines: [28, 28], section: "Metal > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  # Plastic
+  - {id: poster-plastic-do-1, lines: [31, 31], section: "Plastic > DOs", tier: general_recyclable, stream: Plastic}
+  - {id: poster-plastic-do-2, lines: [32, 32], section: "Plastic > DOs", tier: general_recyclable, stream: Plastic}
+  - {id: poster-plastic-do-3, lines: [33, 33], section: "Plastic > DOs", tier: general_recyclable, stream: Plastic}
+  - {id: poster-plastic-do-4, lines: [34, 34], section: "Plastic > DOs", tier: general_recyclable, stream: Plastic}
+  - {id: poster-plastic-do-5, lines: [35, 35], section: "Plastic > DOs", tier: general_recyclable, stream: Plastic}
+  - {id: poster-plastic-do-6, lines: [36, 36], section: "Plastic > DOs", tier: general_recyclable, stream: Plastic}
+  # Line 37 transcribes icons (resin-code symbols), not printed words. The
+  # photo guide also lists 3 (PVC); see CLAUDE.md §12 open questions.
+  - {id: poster-plastic-do-7, lines: [37, 37], section: "Plastic > DOs", tier: general_recyclable, stream: Plastic}
+  - {id: poster-plastic-dont-1, lines: [39, 39], section: "Plastic > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  - {id: poster-plastic-dont-2, lines: [40, 40], section: "Plastic > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  - {id: poster-plastic-dont-3, lines: [41, 41], section: "Plastic > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  - {id: poster-plastic-dont-4, lines: [42, 42], section: "Plastic > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  - {id: poster-plastic-dont-5, lines: [43, 43], section: "Plastic > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  - {id: poster-plastic-dont-6, lines: [44, 44], section: "Plastic > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  # Tetra Pak
+  - {id: poster-tetra-do-1, lines: [47, 47], section: "Tetra Pak > DOs", tier: general_recyclable, stream: Tetra Pak}
+  - {id: poster-tetra-do-2, lines: [48, 48], section: "Tetra Pak > DOs", tier: general_recyclable, stream: Tetra Pak}
+  - {id: poster-tetra-dont-1, lines: [50, 50], section: "Tetra Pak > DON'Ts", tier: info, caveats: [listed_as_dont, preparation_required]}
+  # Glass Bottle
+  - {id: poster-glass-do-1, lines: [53, 53], section: "Glass Bottle > DOs", tier: general_recyclable, stream: Glass Bottle}
+  - {id: poster-glass-dont-1, lines: [55, 55], section: "Glass Bottle > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  - {id: poster-glass-dont-2, lines: [56, 56], section: "Glass Bottle > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  # Rechargeable Battery (hazardous: shown only as verbatim excerpts, R2)
+  - {id: poster-battery-do-1, lines: [59, 59], section: "Rechargeable Battery > DOs", tier: hazardous_unified, stream: Rechargeable Battery, applies_to: *battery_terms}
+  - {id: poster-battery-dont-1, lines: [61, 61], section: "Rechargeable Battery > DON'Ts", tier: hazardous_unified, applies_to: *battery_dont_terms}
+  - {id: poster-battery-dont-2, lines: [62, 62], section: "Rechargeable Battery > DON'Ts", tier: hazardous_unified, applies_to: *battery_dont_terms}
+  - {id: poster-battery-dont-3, lines: [63, 63], section: "Rechargeable Battery > DON'Ts", tier: hazardous_unified, applies_to: *battery_dont_terms}

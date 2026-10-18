@@ -1,0 +1,110 @@
+# Corpus manifest (M1). Every answer the app gives must trace back to a
+# source listed here. Rebuild the vector store with: python scripts/ingest.py
+#
+# extraction:
+#   html_text            - lines copied from the saved HTML; ingest.py verifies
+#                          every chunk line appears in the snapshot.
+#   manual_transcription - the official document is an image/outlined PDF with
+#                          no text layer; the English text was typed out and
+#                          MUST be checked line by line against the raw file
+#                          by a team member before review.status = reviewed.
+#
+# review.status: draft -> reviewed. `python scripts/ingest.py --require-reviewed`
+# refuses to build until every source and chunk is reviewed (use it to freeze).
+
+corpus_version: "2026-10-18.1"
+language: en  # English text only; the posters also carry Traditional Chinese.
+
+# Bin/stream taxonomy extracted from the documents (§12 Q3). `stream` values in
+# chunk files must be one of these names (case-insensitive).
+streams:
+  - Paper            # re Kiosk list; Recycling 101 poster
+  - Tetra Pak        # re Kiosk list; Recycling 101 poster
+  - Metal            # re Kiosk list; poster ("Metal"), photo guide ("Metals")
+  - Glass Bottle     # re Kiosk list; poster; photo guide ("Glass Bottles")
+  - Plastic          # re Kiosk list; poster; photo guide ("Plastics")
+  - Rechargeable Battery  # re Kiosk list; poster; photo guide ("Rechargeable Batteries")
+  - Plastic bottle   # Smart Recycling Bins compartment (re Facilities page)
+  - Other plastic    # Smart Recycling Bins compartment (re Facilities page)
+
+# Names the answer validator treats as bin/stream names (FR-6 check 4). An
+# answer may only use one of these if a cited excerpt also contains it.
+# "Plastic bottle" is left out on purpose: it is also an ordinary item name.
+bin_vocabulary:
+  - Paper
+  - Tetra Pak
+  - Metal
+  - Glass Bottle
+  - Plastic
+  - Rechargeable Battery
+  - Other plastic
+
+sources:
+  - source_id: r101_poster
+    title: "Recycling 101: The Correct Choices (re Kiosk poster)"
+    url: https://www.wastereduction.hku.hk/_files/ugd/bccd45_652bab3854994da9a05b96ed09580df4.pdf
+    page_url: https://www.wastereduction.hku.hk/recycling-101
+    publisher: HKU re Campaign (Sustainability Unit, Estates Office)
+    retrieved_at: "2026-10-18"
+    raw_files:
+      - raw/r101_poster/recycling-101-poster.pdf
+      - raw/r101_poster/recycling-101-poster.jpg
+      - raw/r101_poster/recycling-101.html
+    extraction: manual_transcription
+    review: {status: draft, reviewer: null, reviewed_at: null}
+
+  - source_id: r101_photo_guide
+    title: "Recycling 101: The Correct Choices (photo guide)"
+    url: https://www.wastereduction.hku.hk/recycling-101
+    page_url: https://www.wastereduction.hku.hk/recycling-101
+    publisher: HKU re Campaign (Sustainability Unit, Estates Office)
+    retrieved_at: "2026-10-18"
+    raw_files:
+      - raw/r101_photo_guide/the-correct-choices.jpg
+    extraction: manual_transcription
+    review: {status: draft, reviewer: null, reviewed_at: null}
+
+  - source_id: r101_final_check
+    title: "Recycling 101: Final Check Before Recycling"
+    url: https://www.wastereduction.hku.hk/recycling-101
+    page_url: https://www.wastereduction.hku.hk/recycling-101
+    publisher: HKU re Campaign (Sustainability Unit, Estates Office)
+    retrieved_at: "2026-10-18"
+    raw_files:
+      - raw/r101_final_check/final-check-before-recycling.png
+      - raw/r101_final_check/4-steps-tetra-pak.jpg
+    extraction: manual_transcription
+    review: {status: draft, reviewer: null, reviewed_at: null}
+
+  - source_id: re_facilities
+    title: "re Facilities (re Kiosk and Smart Recycling Bins)"
+    url: https://www.wastereduction.hku.hk/re-facilities
+    page_url: https://www.wastereduction.hku.hk/re-facilities
+    publisher: HKU re Campaign (Sustainability Unit, Estates Office)
+    retrieved_at: "2026-10-18"
+    raw_files:
+      - raw/re_facilities/re-facilities.html
+    extraction: html_text
+    review: {status: draft, reviewer: null, reviewed_at: null}
+
+  - source_id: green_hero_quiz
+    title: "Be a Campus Green Hero Online Quiz"
+    url: https://www.wastereduction.hku.hk/be-a-campus-green-hero-quiz
+    page_url: https://www.wastereduction.hku.hk/be-a-campus-green-hero-quiz
+    publisher: HKU re Campaign (Sustainability Unit, Estates Office)
+    retrieved_at: "2026-10-18"
+    raw_files:
+      - raw/green_hero_quiz/be-a-campus-green-hero-quiz.html
+    extraction: html_text
+    review: {status: draft, reviewer: null, reviewed_at: null}
+
+  - source_id: greenu_scheme
+    title: "GreenU Reward Scheme"
+    url: https://www.wastereduction.hku.hk/greenu-reward-scheme
+    page_url: https://www.wastereduction.hku.hk/greenu-reward-scheme
+    publisher: HKU re Campaign (Sustainability Unit, Estates Office)
+    retrieved_at: "2026-10-18"
+    raw_files:
+      - raw/greenu_scheme/greenu-reward-scheme.html
+    extraction: html_text
+    review: {status: draft, reviewer: null, reviewed_at: null}

@@ -1,6 +1,7 @@
-# Environment
+# Secrets
 .env
 *.env
+!.env.example
 
 # Python
 __pycache__/
@@ -8,12 +9,21 @@ __pycache__/
 *.egg-info/
 .venv/
 venv/
+.pytest_cache/
 
-# OS
+# Built artefacts (rebuild with: python scripts/ingest.py)
+data/chroma/
+
+# Eval: cached LLM outputs (may hold model text; regenerate any time)
+eval/.llm_cache.json
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# OS / IDE
 .DS_Store
 Thumbs.db
-
-# IDE
 .vscode/
 .idea/
 

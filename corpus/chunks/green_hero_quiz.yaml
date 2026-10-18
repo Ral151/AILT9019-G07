@@ -1,0 +1,17 @@
+# Chunk annotations for corpus/chunks/green_hero_quiz.txt.
+# Extraction: html_text (verified against the saved page by ingest.py).
+# Only questions with self-contained official answers are kept; wrong answer
+# options are left out so they can never be quoted as a rule.
+source_id: green_hero_quiz
+review_status: draft
+
+chunks:
+  # Dated "As of 17 March 2026" and lists 3 bins, while re_facilities lists 4
+  # (incl. Meng Wah Complex). Kept with caveats; see CLAUDE.md §12.
+  - {id: quiz-q1-main-campus-bins, lines: [2, 6], section: "Q1", tier: info, caveats: [dated_information, location_may_change]}
+  - {id: quiz-q3-glass-smart-bin, lines: [7, 8], section: "Q3", tier: info, caveats: [smart_point_accepted_list]}
+  - {id: quiz-q4-re-kiosk-items, lines: [9, 16], section: "Q4", tier: info, caveats: [re_kiosk_list]}
+  - {id: quiz-q5-smart-bin-steps, lines: [17, 20], section: "Q5", tier: info}
+  - {id: quiz-q14-plastic-points, lines: [21, 22], section: "Q14", tier: info}
+  - {id: quiz-q15-paper-points, lines: [23, 24], section: "Q15", tier: info}
+  - {id: quiz-q18-minimum-weight, lines: [25, 26], section: "Q18", tier: info}

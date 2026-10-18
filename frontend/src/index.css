@@ -1,0 +1,77 @@
+@import 'tailwindcss';
+
+@theme {
+  /* HKU green and gold, carried over from the first prototype's palette. */
+  --color-hku-50: #eef7f1;
+  --color-hku-100: #d7ecdf;
+  --color-hku-200: #b1d9bf;
+  --color-hku-600: #00703c;
+  --color-hku-700: #005a30;
+  --color-hku-800: #004424;
+  --color-hku-900: #00301a;
+  --color-gold-200: #f0e2b6;
+  --color-gold-300: #e6cd7d;
+  --color-gold-400: #d8b449;
+  --color-gold-600: #a8862a;
+  --color-canvas: #f4f7f4;
+
+  --animate-rise: rise 0.35s ease-out both;
+  --animate-shimmer: shimmer 1.6s linear infinite;
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes shimmer {
+    from {
+      background-position: 200% 0;
+    }
+    to {
+      background-position: -200% 0;
+    }
+  }
+}
+
+html {
+  /* FR-9: body text at least 16px. */
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+.hero {
+  background:
+    radial-gradient(110% 90% at 90% -10%, rgb(216 180 73 / 0.28), transparent 60%),
+    radial-gradient(80% 70% at -10% 110%, rgb(255 255 255 / 0.08), transparent 60%),
+    linear-gradient(135deg, var(--color-hku-600), var(--color-hku-900));
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #e7ece8 25%, #f4f7f4 50%, #e7ece8 75%);
+  background-size: 200% 100%;
+  animation: var(--animate-shimmer);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

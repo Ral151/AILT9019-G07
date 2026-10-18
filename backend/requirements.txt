@@ -1,0 +1,21 @@
+# Backend (Flask API + LlamaIndex workflow + Chroma). Versions verified
+# together on Python 3.13, 18 Oct 2026.
+Flask[async]==3.1.3
+asgiref==3.12.1
+pydantic==2.14.1
+python-dotenv==1.2.4
+PyYAML==6.0.3
+pillow==13.0.0
+
+# Orchestration + retrieval
+llama-index-core==0.14.25
+llama-index-embeddings-huggingface==0.8.0
+sentence-transformers==5.7.0
+torch==2.14.1
+chromadb==1.5.9
+
+# Qwen on Alibaba Cloud Model Studio (OpenAI-compatible API)
+openai==3.33.0
+
+# Tests
+pytest==9.1.1

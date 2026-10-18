@@ -1,0 +1,63 @@
+# Chunk annotations for corpus/chunks/r101_photo_guide.txt.
+# Source is the tall "The Correct Choices" image on the Recycling 101 page
+# (more examples than the poster). The .txt is a MANUAL TRANSCRIPTION of the
+# English text; check it against corpus/raw/r101_photo_guide/ before review.
+# Stream names use the canonical spelling from manifest.yaml.
+source_id: r101_photo_guide
+review_status: draft
+
+battery_terms: &battery_terms [battery, batteries, rechargeable, power bank, power banks, lithium]
+battery_dont_terms: &battery_dont_terms [battery, batteries, single use, single-use, AA, AAA, alkaline, lead acid, damaged battery]
+
+chunks:
+  # Paper
+  - {id: guide-paper-do-1, lines: [4, 4], section: "Paper > DOs", tier: general_recyclable, stream: Paper}
+  - {id: guide-paper-do-2, lines: [5, 5], section: "Paper > DOs", tier: general_recyclable, stream: Paper}
+  - {id: guide-paper-do-3, lines: [6, 6], section: "Paper > DOs", tier: general_recyclable, stream: Paper}
+  - {id: guide-paper-do-4, lines: [7, 7], section: "Paper > DOs", tier: general_recyclable, stream: Paper}
+  - {id: guide-paper-do-5, lines: [8, 8], section: "Paper > DOs", tier: general_recyclable, stream: Paper}
+  - {id: guide-paper-do-6, lines: [9, 9], section: "Paper > DOs", tier: general_recyclable, stream: Paper}
+  - {id: guide-paper-dont-1, lines: [11, 11], section: "Paper > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  - {id: guide-paper-dont-2, lines: [12, 12], section: "Paper > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  - {id: guide-paper-dont-3, lines: [13, 13], section: "Paper > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  - {id: guide-paper-dont-4, lines: [14, 14], section: "Paper > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  - {id: guide-paper-dont-5, lines: [15, 15], section: "Paper > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  - {id: guide-paper-dont-6, lines: [16, 16], section: "Paper > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  - {id: guide-paper-dont-7, lines: [17, 17], section: "Paper > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  - {id: guide-paper-dont-8, lines: [18, 18], section: "Paper > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  - {id: guide-paper-dont-9, lines: [19, 19], section: "Paper > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  # Metals
+  - {id: guide-metal-do-1, lines: [22, 22], section: "Metals > DOs", tier: general_recyclable, stream: Metal}
+  - {id: guide-metal-dont-1, lines: [24, 24], section: "Metals > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  - {id: guide-metal-dont-2, lines: [25, 25], section: "Metals > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  - {id: guide-metal-dont-3, lines: [26, 26], section: "Metals > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  - {id: guide-metal-dont-4, lines: [27, 27], section: "Metals > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  - {id: guide-metal-dont-5, lines: [28, 28], section: "Metals > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  - {id: guide-metal-dont-6, lines: [29, 29], section: "Metals > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  # Plastics
+  - {id: guide-plastic-do-1, lines: [32, 32], section: "Plastics > DOs", tier: general_recyclable, stream: Plastic}
+  - {id: guide-plastic-do-2, lines: [33, 33], section: "Plastics > DOs", tier: general_recyclable, stream: Plastic}
+  - {id: guide-plastic-do-3, lines: [34, 34], section: "Plastics > DOs", tier: general_recyclable, stream: Plastic}
+  - {id: guide-plastic-do-4, lines: [35, 35], section: "Plastics > DOs", tier: general_recyclable, stream: Plastic}
+  - {id: guide-plastic-do-5, lines: [36, 36], section: "Plastics > DOs", tier: general_recyclable, stream: Plastic}
+  - {id: guide-plastic-do-6, lines: [37, 37], section: "Plastics > DOs", tier: general_recyclable, stream: Plastic}
+  # Resin codes 1-6 (the number is printed inside the recycling symbol).
+  - {id: guide-plastic-do-codes, lines: [38, 43], section: "Plastics > DOs", tier: general_recyclable, stream: Plastic}
+  - {id: guide-plastic-dont-1, lines: [45, 45], section: "Plastics > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  - {id: guide-plastic-dont-2, lines: [46, 46], section: "Plastics > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  - {id: guide-plastic-dont-3, lines: [47, 47], section: "Plastics > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  - {id: guide-plastic-dont-4, lines: [48, 48], section: "Plastics > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  - {id: guide-plastic-dont-5, lines: [49, 49], section: "Plastics > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  - {id: guide-plastic-dont-6, lines: [50, 50], section: "Plastics > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  # Glass Bottles
+  - {id: guide-glass-do-1, lines: [53, 53], section: "Glass Bottles > DOs", tier: general_recyclable, stream: Glass Bottle}
+  - {id: guide-glass-dont-1, lines: [55, 55], section: "Glass Bottles > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  - {id: guide-glass-dont-2, lines: [56, 56], section: "Glass Bottles > DON'Ts", tier: info, caveats: [listed_as_dont]}
+  # Rechargeable Batteries (hazardous: verbatim excerpts only, R2)
+  - {id: guide-battery-do-1, lines: [59, 59], section: "Rechargeable Batteries > DOs", tier: hazardous_unified, stream: Rechargeable Battery, applies_to: *battery_terms}
+  - {id: guide-battery-dont-1, lines: [61, 61], section: "Rechargeable Batteries > DON'Ts", tier: hazardous_unified, applies_to: *battery_dont_terms}
+  - {id: guide-battery-dont-2, lines: [62, 62], section: "Rechargeable Batteries > DON'Ts", tier: hazardous_unified, applies_to: *battery_dont_terms}
+  - {id: guide-battery-dont-3, lines: [63, 63], section: "Rechargeable Batteries > DON'Ts", tier: hazardous_unified, applies_to: *battery_dont_terms}
+  # Tetra Pak
+  - {id: guide-tetra-do-1, lines: [66, 66], section: "Tetra Pak > DOs", tier: general_recyclable, stream: Tetra Pak}
+  - {id: guide-tetra-dont-1, lines: [68, 68], section: "Tetra Pak > DON'Ts", tier: info, caveats: [listed_as_dont, preparation_required]}
