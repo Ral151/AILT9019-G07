@@ -4,7 +4,7 @@
 # English text; check it against corpus/raw/r101_photo_guide/ before review.
 # Stream names use the canonical spelling from manifest.yaml.
 source_id: r101_photo_guide
-review_status: draft
+review_status: reviewed
 
 battery_terms: &battery_terms [battery, batteries, rechargeable, power bank, power banks, lithium]
 battery_dont_terms: &battery_dont_terms [battery, batteries, single use, single-use, AA, AAA, alkaline, lead acid, damaged battery]

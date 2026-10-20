@@ -2,7 +2,7 @@
 # Extraction: html_text. Every line of the .txt is copied from the saved page
 # (scripts/ingest.py verifies this against corpus/raw/re_facilities/).
 source_id: re_facilities
-review_status: draft
+review_status: reviewed
 
 battery_terms: &battery_terms [battery, batteries, rechargeable, power bank, power banks, lithium]
 

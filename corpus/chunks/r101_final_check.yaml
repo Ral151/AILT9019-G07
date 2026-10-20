@@ -3,7 +3,7 @@
 # Recycling" and "4 Steps to Recycle Tetra Pak"). The .txt is a MANUAL
 # TRANSCRIPTION of the English text; check it against corpus/raw/r101_final_check/.
 source_id: r101_final_check
-review_status: draft
+review_status: reviewed
 
 battery_terms: &battery_terms [battery, batteries, rechargeable, power bank, power banks, lithium]
 

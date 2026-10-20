@@ -51,7 +51,7 @@ sources:
       - raw/r101_poster/recycling-101-poster.jpg
       - raw/r101_poster/recycling-101.html
     extraction: manual_transcription
-    review: {status: draft, reviewer: null, reviewed_at: null}
+    review: {status: reviewed, reviewer: Wu Haoyang, reviewed_at: "2026-10-20"}
 
   - source_id: r101_photo_guide
     title: "Recycling 101: The Correct Choices (photo guide)"
@@ -62,7 +62,7 @@ sources:
     raw_files:
       - raw/r101_photo_guide/the-correct-choices.jpg
     extraction: manual_transcription
-    review: {status: draft, reviewer: null, reviewed_at: null}
+    review: {status: reviewed, reviewer: Wu Haoyang, reviewed_at: "2026-10-20"}
 
   - source_id: r101_final_check
     title: "Recycling 101: Final Check Before Recycling"
@@ -74,7 +74,7 @@ sources:
       - raw/r101_final_check/final-check-before-recycling.png
       - raw/r101_final_check/4-steps-tetra-pak.jpg
     extraction: manual_transcription
-    review: {status: draft, reviewer: null, reviewed_at: null}
+    review: {status: reviewed, reviewer: Wu Haoyang, reviewed_at: "2026-10-20"}
 
   - source_id: re_facilities
     title: "re Facilities (re Kiosk and Smart Recycling Bins)"
@@ -85,7 +85,7 @@ sources:
     raw_files:
       - raw/re_facilities/re-facilities.html
     extraction: html_text
-    review: {status: draft, reviewer: null, reviewed_at: null}
+    review: {status: reviewed, reviewer: Wu Haoyang, reviewed_at: "2026-10-20"}
 
   - source_id: green_hero_quiz
     title: "Be a Campus Green Hero Online Quiz"
@@ -96,7 +96,7 @@ sources:
     raw_files:
       - raw/green_hero_quiz/be-a-campus-green-hero-quiz.html
     extraction: html_text
-    review: {status: draft, reviewer: null, reviewed_at: null}
+    review: {status: reviewed, reviewer: Wu Haoyang, reviewed_at: "2026-10-20"}
 
   - source_id: greenu_scheme
     title: "GreenU Reward Scheme"
@@ -107,4 +107,4 @@ sources:
     raw_files:
       - raw/greenu_scheme/greenu-reward-scheme.html
     extraction: html_text
-    review: {status: draft, reviewer: null, reviewed_at: null}
+    review: {status: reviewed, reviewer: Wu Haoyang, reviewed_at: "2026-10-20"}

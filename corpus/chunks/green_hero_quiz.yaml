@@ -3,7 +3,7 @@
 # Only questions with self-contained official answers are kept; wrong answer
 # options are left out so they can never be quoted as a rule.
 source_id: green_hero_quiz
-review_status: draft
+review_status: reviewed
 
 chunks:
   # Dated "As of 17 March 2026" and lists 3 bins, while re_facilities lists 4

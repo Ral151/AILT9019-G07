@@ -1,7 +1,7 @@
 # Chunk annotations for corpus/chunks/greenu_scheme.txt.
 # Extraction: html_text (verified against the saved page by ingest.py).
 source_id: greenu_scheme
-review_status: draft
+review_status: reviewed
 
 chunks:
   - {id: greenu-about, lines: [1, 2], section: "About The Scheme", tier: info}
