@@ -25,10 +25,27 @@ def build_citation(chunk: Chunk) -> Citation:
     )
 
 
+def _strip_plural(word: str) -> str:
+    """Strip a regular English plural ending without mangling words that
+    genuinely end in 's' (glass, bus) or are too short."""
+    if len(word) <= 3:
+        return word
+    if word.endswith("ies") and len(word) > 4:
+        return word[:-3] + "y"  # batteries -> battery
+    # Only true "-es" plurals (ss/x/ch/sh/z + es) lose the "es"; a word like
+    # "bottles" is "bottle" + "s" and must only lose the final "s".
+    if word.endswith(("sses", "xes", "ches", "shes", "zes")) and len(word) > 4:
+        return word[:-2]  # glasses -> glass, boxes -> box
+    if word.endswith("s") and not word.endswith(("ss", "us", "is", "os")):
+        return word[:-1]  # bottles -> bottle
+    return word
+
+
 def _norm(text: str) -> str:
-    """Lowercase, collapse spaces, and drop a plural 's' from each word."""
+    """Lowercase, collapse to alnum tokens, and lightly strip regular English
+    plural endings so singular/plural forms compare equal."""
     words = re.findall(r"[a-z0-9]+", text.lower())
-    return " " + " ".join(w[:-1] if len(w) > 3 and w.endswith("s") else w for w in words) + " "
+    return " " + " ".join(_strip_plural(w) for w in words) + " "
 
 
 def bin_vocabulary(policy: Policy, streams: Iterable[str]) -> list[str]:

@@ -59,18 +59,21 @@ class TextLLM(Protocol):
 def _parse_json(text: str) -> dict[str, Any]:
     text = text.strip()
     if text.startswith("```"):
-        text = text.strip("`")
-        text = text[text.find("{") :]
-    start, end = text.find("{"), text.rfind("}")
-    if start < 0 or end < start:
-        raise ProviderError("model output contained no JSON object")
-    try:
-        value = json.loads(text[start : end + 1])
-    except json.JSONDecodeError as exc:
-        raise ProviderError(f"model output was not valid JSON: {exc}") from exc
-    if not isinstance(value, dict):
-        raise ProviderError("model output JSON was not an object")
-    return value
+        text = text.lstrip("`").lstrip()  # drop a ```json / ``` fence
+    decoder = json.JSONDecoder()
+    idx = text.find("{")
+    while idx != -1:
+        try:
+            value, _ = decoder.raw_decode(text[idx:])
+        except json.JSONDecodeError:
+            # This '{' opened something malformed/truncated; try the next one.
+            idx = text.find("{", idx + 1)
+            continue
+        if isinstance(value, dict):
+            return value
+        # Decoded, but it wasn't an object (e.g. a list); keep looking.
+        idx = text.find("{", idx + 1)
+    raise ProviderError("model output contained no valid JSON object")
 
 
 # Provider-specific request fields that keep reasoning/thinking off, for
