@@ -1,0 +1,1628 @@
+[
+ {
+  "id": "T-001",
+  "status": "pass",
+  "dims": {
+   "category": 1,
+   "safety": 1,
+   "citation": 1
+  },
+  "critical": [],
+  "notes": [],
+  "response": {
+   "request_id": "0a8cef14-099a-47a2-b042-77a29f72e725",
+   "action": "answer",
+   "reason_code": "OK",
+   "answer_text": "Put the empty PET plastic drink bottle in the Plastic bin. Beverage plastic bottles are accepted.",
+   "bin_category": "Plastic",
+   "caveats": [],
+   "citations": [
+    {
+     "source_id": "r101_poster",
+     "title": "Recycling 101: The Correct Choices (re Kiosk poster)",
+     "section": "Plastic > DOs",
+     "lines": "31-31",
+     "excerpt": "Beverage plastic bottles",
+     "url": "https://www.wastereduction.hku.hk/_files/ugd/bccd45_652bab3854994da9a05b96ed09580df4.pdf",
+     "retrieved_at": "2026-10-18"
+    }
+   ],
+   "redirect": null,
+   "image": null,
+   "served_from_cache": false,
+   "_retrieved": [
+    [
+     "poster-plastic-do-1",
+     0.7987
+    ],
+    [
+     "guide-plastic-do-1",
+     0.7987
+    ],
+    [
+     "guide-plastic-do-3",
+     0.7846
+    ],
+    [
+     "poster-plastic-do-4",
+     0.7846
+    ],
+    [
+     "guide-plastic-do-2",
+     0.7116
+    ]
+   ]
+  }
+ },
+ {
+  "id": "T-002",
+  "status": "pass",
+  "dims": {
+   "category": 1,
+   "safety": 1,
+   "citation": 1
+  },
+  "critical": [],
+  "notes": [],
+  "response": {
+   "request_id": "1b33bb3e-9aef-47c0-916b-40fe317435fe",
+   "action": "answer",
+   "reason_code": "OK",
+   "answer_text": "Place the empty aluminium can in the Metal recycling bin.",
+   "bin_category": "Metal",
+   "caveats": [],
+   "citations": [
+    {
+     "source_id": "r101_poster",
+     "title": "Recycling 101: The Correct Choices (re Kiosk poster)",
+     "section": "Metal > DOs",
+     "lines": "22-22",
+     "excerpt": "Aluminium cans and iron cans",
+     "url": "https://www.wastereduction.hku.hk/_files/ugd/bccd45_652bab3854994da9a05b96ed09580df4.pdf",
+     "retrieved_at": "2026-10-18"
+    },
+    {
+     "source_id": "r101_photo_guide",
+     "title": "Recycling 101: The Correct Choices (photo guide)",
+     "section": "Metals > DOs",
+     "lines": "22-22",
+     "excerpt": "Aluminium cans and iron cans ONLY",
+     "url": "https://www.wastereduction.hku.hk/recycling-101",
+     "retrieved_at": "2026-10-18"
+    }
+   ],
+   "redirect": null,
+   "image": null,
+   "served_from_cache": false,
+   "_retrieved": [
+    [
+     "poster-metal-do-1",
+     0.7897
+    ],
+    [
+     "guide-metal-do-1",
+     0.7152
+    ],
+    [
+     "poster-plastic-do-1",
+     0.6746
+    ],
+    [
+     "guide-plastic-do-1",
+     0.6746
+    ],
+    [
+     "poster-plastic-dont-4",
+     0.6612
+    ]
+   ]
+  }
+ },
+ {
+  "id": "T-003",
+  "status": "pass",
+  "dims": {
+   "category": 1,
+   "safety": 1,
+   "citation": 1
+  },
+  "critical": [],
+  "notes": [],
+  "response": {
+   "request_id": "31120255-4114-47a6-9f39-456d5b177136",
+   "action": "answer",
+   "reason_code": "OK",
+   "answer_text": "Old brochures and books go in the Paper recycling bin.",
+   "bin_category": "Paper",
+   "caveats": [],
+   "citations": [
+    {
+     "source_id": "r101_poster",
+     "title": "Recycling 101: The Correct Choices (re Kiosk poster)",
+     "section": "Paper > DOs",
+     "lines": "5-5",
+     "excerpt": "Brochures · Publications · Books · Non-confidential reports",
+     "url": "https://www.wastereduction.hku.hk/_files/ugd/bccd45_652bab3854994da9a05b96ed09580df4.pdf",
+     "retrieved_at": "2026-10-18"
+    },
+    {
+     "source_id": "r101_photo_guide",
+     "title": "Recycling 101: The Correct Choices (photo guide)",
+     "section": "Paper > DOs",
+     "lines": "9-9",
+     "excerpt": "Brochures · Publications · Books · Telephone books · Non-confidential reports",
+     "url": "https://www.wastereduction.hku.hk/recycling-101",
+     "retrieved_at": "2026-10-18"
+    }
+   ],
+   "redirect": null,
+   "image": null,
+   "served_from_cache": false,
+   "_retrieved": [
+    [
+     "poster-paper-do-1",
+     0.8017
+    ],
+    [
+     "guide-paper-do-6",
+     0.7746
+    ],
+    [
+     "guide-paper-do-1",
+     0.7274
+    ],
+    [
+     "poster-paper-do-6",
+     0.7274
+    ],
+    [
+     "quiz-q4-re-kiosk-items",
+     0.7068
+    ]
+   ]
+  }
+ },
+ {
+  "id": "T-004",
+  "status": "pass",
+  "dims": {
+   "category": 1,
+   "safety": 1,
+   "citation": 1
+  },
+  "critical": [],
+  "notes": [],
+  "response": {
+   "request_id": "87153cf8-e5a4-4f09-bb7f-670accac6c8d",
+   "action": "answer",
+   "reason_code": "OK",
+   "answer_text": "Put the empty glass wine bottle in the Glass Bottle bin.",
+   "bin_category": "Glass Bottle",
+   "caveats": [],
+   "citations": [
+    {
+     "source_id": "re_facilities",
+     "title": "re Facilities (re Kiosk and Smart Recycling Bins)",
+     "section": "re Kiosk > re Kiosk accepts these recyclables",
+     "lines": "9-9",
+     "excerpt": "Glass Bottle",
+     "url": "https://www.wastereduction.hku.hk/re-facilities",
+     "retrieved_at": "2026-10-18"
+    }
+   ],
+   "redirect": null,
+   "image": null,
+   "served_from_cache": false,
+   "_retrieved": [
+    [
+     "poster-plastic-do-1",
+     0.7397
+    ],
+    [
+     "guide-plastic-do-1",
+     0.7397
+    ],
+    [
+     "kiosk-accepts-glass",
+     0.7227
+    ],
+    [
+     "guide-plastic-do-3",
+     0.7147
+    ],
+    [
+     "poster-plastic-do-4",
+     0.7147
+    ]
+   ]
+  }
+ },
+ {
+  "id": "T-005",
+  "status": "pass",
+  "dims": {
+   "category": 1,
+   "safety": 1,
+   "citation": 1
+  },
+  "critical": [],
+  "notes": [],
+  "response": {
+   "request_id": "34032d66-5226-4e85-bb79-c095701f813f",
+   "action": "answer",
+   "reason_code": "OK",
+   "answer_text": "Yes, paper cups go in the Tetra Pak bin.",
+   "bin_category": "Tetra Pak",
+   "caveats": [],
+   "citations": [
+    {
+     "source_id": "r101_poster",
+     "title": "Recycling 101: The Correct Choices (re Kiosk poster)",
+     "section": "Tetra Pak > DOs",
+     "lines": "48-48",
+     "excerpt": "Paper Cups",
+     "url": "https://www.wastereduction.hku.hk/_files/ugd/bccd45_652bab3854994da9a05b96ed09580df4.pdf",
+     "retrieved_at": "2026-10-18"
+    }
+   ],
+   "redirect": null,
+   "image": null,
+   "served_from_cache": false,
+   "_retrieved": [
+    [
+     "poster-tetra-do-2",
+     0.8829
+    ],
+    [
+     "guide-paper-dont-6",
+     0.7726
+    ],
+    [
+     "poster-paper-do-2",
+     0.7393
+    ],
+    [
+     "guide-paper-do-2",
+     0.7393
+    ],
+    [
+     "guide-paper-do-3",
+     0.7099
+    ]
+   ]
+  }
+ },
+ {
+  "id": "T-006",
+  "status": "pass",
+  "dims": {
+   "category": 1,
+   "safety": 1,
+   "citation": 1
+  },
+  "critical": [],
+  "notes": [],
+  "response": {
+   "request_id": "70e661d0-3bf3-4482-a783-491cb94c5a77",
+   "action": "answer_with_caveat",
+   "reason_code": "OK",
+   "answer_text": "Yes, rinsed takeaway plastic boxes go in the Plastic bin. Make sure they are rinsed and dried first.",
+   "bin_category": "Plastic",
+   "caveats": [
+    "Prepare the item as the official guide describes (for example clean and dry) before you recycle it."
+   ],
+   "citations": [
+    {
+     "source_id": "r101_poster",
+     "title": "Recycling 101: The Correct Choices (re Kiosk poster)",
+     "section": "Plastic > DOs",
+     "lines": "32-32",
+     "excerpt": "Takeaway plastic boxes",
+     "url": "https://www.wastereduction.hku.hk/_files/ugd/bccd45_652bab3854994da9a05b96ed09580df4.pdf",
+     "retrieved_at": "2026-10-18"
+    },
+    {
+     "source_id": "r101_final_check",
+     "title": "Recycling 101: Final Check Before Recycling",
+     "section": "For metals, plastics, glass bottles",
+     "lines": "9-9",
+     "excerpt": "Bottles, containers and cans should be rinsed and dried before recycling.",
+     "url": "https://www.wastereduction.hku.hk/recycling-101",
+     "retrieved_at": "2026-10-18"
+    }
+   ],
+   "redirect": null,
+   "image": null,
+   "served_from_cache": false,
+   "_retrieved": [
+    [
+     "guide-plastic-do-2",
+     0.8247
+    ],
+    [
+     "poster-plastic-do-2",
+     0.8153
+    ],
+    [
+     "check-mpg-1",
+     0.8042
+    ],
+    [
+     "guide-plastic-do-1",
+     0.7614
+    ],
+    [
+     "poster-plastic-do-1",
+     0.7614
+    ]
+   ]
+  }
+ },
+ {
+  "id": "T-007",
+  "status": "pass",
+  "dims": {
+   "category": 1,
+   "safety": 1,
+   "citation": 1
+  },
+  "critical": [],
+  "notes": [],
+  "response": {
+   "request_id": "95983691-20c2-42b9-9900-accac91d2a44",
+   "action": "answer",
+   "reason_code": "OK",
+   "answer_text": "Yes, empty shampoo bottles are recyclable. Place them in the Plastic bin.",
+   "bin_category": "Plastic",
+   "caveats": [],
+   "citations": [
+    {
+     "source_id": "r101_photo_guide",
+     "title": "Recycling 101: The Correct Choices (photo guide)",
+     "section": "Plastics > DOs",
+     "lines": "34-34",
+     "excerpt": "Plastics bottles for personal care products",
+     "url": "https://www.wastereduction.hku.hk/recycling-101",
+     "retrieved_at": "2026-10-18"
+    }
+   ],
+   "redirect": null,
+   "image": null,
+   "served_from_cache": false,
+   "_retrieved": [
+    [
+     "guide-plastic-do-3",
+     0.7367
+    ],
+    [
+     "poster-plastic-do-4",
+     0.7367
+    ],
+    [
+     "poster-plastic-do-1",
+     0.6768
+    ],
+    [
+     "guide-plastic-do-1",
+     0.6768
+    ],
+    [
+     "kiosk-accepts-glass",
+     0.6648
+    ]
+   ]
+  }
+ },
+ {
+  "id": "T-008",
+  "status": "pass",
+  "dims": {
+   "category": 1,
+   "safety": 1,
+   "citation": 1
+  },
+  "critical": [],
+  "notes": [],
+  "response": {
+   "request_id": "bc2ac843-92fb-470c-a077-d9406d3b7de2",
+   "action": "answer",
+   "reason_code": "OK",
+   "answer_text": "Yes, plastic forks are accepted. Place them in the Plastic bin.",
+   "bin_category": "Plastic",
+   "caveats": [],
+   "citations": [
+    {
+     "source_id": "r101_poster",
+     "title": "Recycling 101: The Correct Choices (re Kiosk poster)",
+     "section": "Plastic > DOs",
+     "lines": "33-33",
+     "excerpt": "Plastic utensils",
+     "url": "https://www.wastereduction.hku.hk/_files/ugd/bccd45_652bab3854994da9a05b96ed09580df4.pdf",
+     "retrieved_at": "2026-10-18"
+    }
+   ],
+   "redirect": null,
+   "image": null,
+   "served_from_cache": false,
+   "_retrieved": [
+    [
+     "poster-plastic-do-3",
+     0.7674
+    ],
+    [
+     "guide-plastic-do-4",
+     0.7674
+    ],
+    [
+     "guide-plastic-dont-4",
+     0.7487
+    ],
+    [
+     "poster-plastic-dont-4",
+     0.7487
+    ],
+    [
+     "guide-plastic-do-2",
+     0.7245
+    ]
+   ]
+  }
+ },
+ {
+  "id": "T-009",
+  "status": "pass",
+  "dims": {
+   "category": 1,
+   "safety": 1,
+   "citation": 1
+  },
+  "critical": [],
+  "notes": [],
+  "response": {
+   "request_id": "bbf90627-53b6-4d9f-80c1-f6bccd88117f",
+   "action": "answer",
+   "reason_code": "OK",
+   "answer_text": "Place the corrugated cardboard box in the Paper bin.",
+   "bin_category": "Paper",
+   "caveats": [],
+   "citations": [
+    {
+     "source_id": "r101_photo_guide",
+     "title": "Recycling 101: The Correct Choices (photo guide)",
+     "section": "Paper > DOs",
+     "lines": "6-6",
+     "excerpt": "Corrugated paper · Toilet paper roll core",
+     "url": "https://www.wastereduction.hku.hk/recycling-101",
+     "retrieved_at": "2026-10-18"
+    }
+   ],
+   "redirect": null,
+   "image": null,
+   "served_from_cache": false,
+   "_retrieved": [
+    [
+     "guide-paper-do-3",
+     0.7607
+    ],
+    [
+     "poster-paper-do-3",
+     0.7607
+    ],
+    [
+     "poster-plastic-do-2",
+     0.6772
+    ],
+    [
+     "poster-paper-do-5",
+     0.674
+    ],
+    [
+     "guide-paper-do-5",
+     0.674
+    ]
+   ]
+  }
+ },
+ {
+  "id": "T-010",
+  "status": "pass",
+  "dims": {
+   "category": 1,
+   "safety": 1,
+   "citation": 1
+  },
+  "critical": [],
+  "notes": [],
+  "response": {
+   "request_id": "9293bbdf-15cd-43e1-a90f-8774e405ec08",
+   "action": "answer",
+   "reason_code": "OK",
+   "answer_text": "Place envelopes and letter paper in the Paper recycling bin.",
+   "bin_category": "Paper",
+   "caveats": [],
+   "citations": [
+    {
+     "source_id": "r101_poster",
+     "title": "Recycling 101: The Correct Choices (re Kiosk poster)",
+     "section": "Paper > DOs",
+     "lines": "10-10",
+     "excerpt": "Envelopes · Letter paper · Paper folders",
+     "url": "https://www.wastereduction.hku.hk/_files/ugd/bccd45_652bab3854994da9a05b96ed09580df4.pdf",
+     "retrieved_at": "2026-10-18"
+    }
+   ],
+   "redirect": null,
+   "image": null,
+   "served_from_cache": false,
+   "_retrieved": [
+    [
+     "poster-paper-do-6",
+     0.8663
+    ],
+    [
+     "guide-paper-do-1",
+     0.8663
+    ],
+    [
+     "poster-paper-do-2",
+     0.8029
+    ],
+    [
+     "guide-paper-do-2",
+     0.8029
+    ],
+    [
+     "kiosk-accepts-paper",
+     0.7625
+    ]
+   ]
+  }
+ },
+ {
+  "id": "T-011",
+  "status": "pass",
+  "dims": {
+   "category": 1,
+   "safety": 1,
+   "citation": 1
+  },
+  "critical": [],
+  "notes": [],
+  "response": {
+   "request_id": "3329cd96-cad0-49d0-817b-4afdae6a809b",
+   "action": "answer",
+   "reason_code": "OK",
+   "answer_text": "Put iron cans in the Metal bin.",
+   "bin_category": "Metal",
+   "caveats": [],
+   "citations": [
+    {
+     "source_id": "r101_poster",
+     "title": "Recycling 101: The Correct Choices (re Kiosk poster)",
+     "section": "Metal > DOs",
+     "lines": "22-22",
+     "excerpt": "Aluminium cans and iron cans",
+     "url": "https://www.wastereduction.hku.hk/_files/ugd/bccd45_652bab3854994da9a05b96ed09580df4.pdf",
+     "retrieved_at": "2026-10-18"
+    }
+   ],
+   "redirect": null,
+   "image": null,
+   "served_from_cache": false,
+   "_retrieved": [
+    [
+     "poster-metal-do-1",
+     0.8419
+    ],
+    [
+     "guide-metal-do-1",
+     0.774
+    ],
+    [
+     "poster-metal-dont-3",
+     0.7034
+    ],
+    [
+     "guide-metal-dont-3",
+     0.7034
+    ],
+    [
+     "poster-metal-dont-2",
+     0.6956
+    ]
+   ]
+  }
+ },
+ {
+  "id": "T-012",
+  "status": "fail",
+  "dims": {
+   "category": 0,
+   "safety": 0,
+   "citation": 1
+  },
+  "critical": [],
+  "notes": [],
+  "response": {
+   "request_id": "e7c080f6-5ed1-4670-9cb5-1f946ebc782a",
+   "action": "refuse",
+   "reason_code": "LOW_RETRIEVAL_MATCH",
+   "answer_text": "I couldn't find a clear rule for this in HKU's official recycling documents, so I won't guess. Please check the re Campaign website, ask your hall tutor, or check the CEDARS website.",
+   "bin_category": null,
+   "caveats": [],
+   "citations": [],
+   "redirect": {
+    "label": "HKU re Campaign website",
+    "url": "https://www.wastereduction.hku.hk/"
+   },
+   "image": null,
+   "served_from_cache": false,
+   "_retrieved": [
+    [
+     "guide-tetra-do-1",
+     0.6866
+    ],
+    [
+     "poster-tetra-do-1",
+     0.6866
+    ],
+    [
+     "quiz-q4-re-kiosk-items",
+     0.6635
+    ],
+    [
+     "poster-paper-do-3",
+     0.6225
+    ],
+    [
+     "guide-paper-do-3",
+     0.6225
+    ]
+   ]
+  }
+ },
+ {
+  "id": "T-013",
+  "status": "pass",
+  "dims": {
+   "category": 1,
+   "safety": 1,
+   "citation": 1
+  },
+  "critical": [],
+  "notes": [],
+  "response": {
+   "request_id": "96cad958-91a5-4d31-b262-30020d92aa7b",
+   "action": "defer",
+   "reason_code": "HAZARDOUS_OFFICIAL_LINKS_ONLY",
+   "answer_text": "This item needs special handling, so I can only show you HKU's official guidance word for word. Please read the excerpts and the official source below, and follow your hall's rules and on-site staff.",
+   "bin_category": null,
+   "caveats": [],
+   "citations": [
+    {
+     "source_id": "r101_poster",
+     "title": "Recycling 101: The Correct Choices (re Kiosk poster)",
+     "section": "Rechargeable Battery > DON'Ts",
+     "lines": "62-62",
+     "excerpt": "Lead acid batteries",
+     "url": "https://www.wastereduction.hku.hk/_files/ugd/bccd45_652bab3854994da9a05b96ed09580df4.pdf",
+     "retrieved_at": "2026-10-18"
+    },
+    {
+     "source_id": "r101_photo_guide",
+     "title": "Recycling 101: The Correct Choices (photo guide)",
+     "section": "Rechargeable Batteries > DON'Ts",
+     "lines": "61-61",
+     "excerpt": "Single use batteries",
+     "url": "https://www.wastereduction.hku.hk/recycling-101",
+     "retrieved_at": "2026-10-18"
+    },
+    {
+     "source_id": "r101_poster",
+     "title": "Recycling 101: The Correct Choices (re Kiosk poster)",
+     "section": "Rechargeable Battery > DOs",
+     "lines": "59-59",
+     "excerpt": "All types of portable rechargeable batteries from households",
+     "url": "https://www.wastereduction.hku.hk/_files/ugd/bccd45_652bab3854994da9a05b96ed09580df4.pdf",
+     "retrieved_at": "2026-10-18"
+    }
+   ],
+   "redirect": {
+    "label": "Official source: Recycling 101: The Correct Choices (re Kiosk poster)",
+    "url": "https://www.wastereduction.hku.hk/_files/ugd/bccd45_652bab3854994da9a05b96ed09580df4.pdf"
+   },
+   "image": null,
+   "served_from_cache": false,
+   "_retrieved": [
+    [
+     "poster-battery-dont-2",
+     0.7611
+    ],
+    [
+     "guide-battery-dont-2",
+     0.7611
+    ],
+    [
+     "guide-battery-dont-1",
+     0.7066
+    ],
+    [
+     "poster-battery-dont-1",
+     0.7066
+    ],
+    [
+     "poster-battery-do-1",
+     0.6976
+    ]
+   ]
+  }
+ },
+ {
+  "id": "T-014",
+  "status": "pass",
+  "dims": {
+   "category": 1,
+   "safety": 1,
+   "citation": 1
+  },
+  "critical": [],
+  "notes": [],
+  "response": {
+   "request_id": "31532f1e-ffe6-457e-9de8-7ff05a4817a7",
+   "action": "defer",
+   "reason_code": "HAZARDOUS_OFFICIAL_LINKS_ONLY",
+   "answer_text": "This item needs special handling, so I can only show you HKU's official guidance word for word. Please read the excerpts and the official source below, and follow your hall's rules and on-site staff.",
+   "bin_category": null,
+   "caveats": [],
+   "citations": [
+    {
+     "source_id": "re_facilities",
+     "title": "re Facilities (re Kiosk and Smart Recycling Bins)",
+     "section": "re Kiosk > re Kiosk accepts these recyclables",
+     "lines": "11-11",
+     "excerpt": "Rechargeable Battery",
+     "url": "https://www.wastereduction.hku.hk/re-facilities",
+     "retrieved_at": "2026-10-18"
+    },
+    {
+     "source_id": "r101_poster",
+     "title": "Recycling 101: The Correct Choices (re Kiosk poster)",
+     "section": "Rechargeable Battery > DOs",
+     "lines": "59-59",
+     "excerpt": "All types of portable rechargeable batteries from households",
+     "url": "https://www.wastereduction.hku.hk/_files/ugd/bccd45_652bab3854994da9a05b96ed09580df4.pdf",
+     "retrieved_at": "2026-10-18"
+    },
+    {
+     "source_id": "r101_photo_guide",
+     "title": "Recycling 101: The Correct Choices (photo guide)",
+     "section": "Rechargeable Batteries > DOs",
+     "lines": "59-59",
+     "excerpt": "All types of portable rechargeable batteries generated from households",
+     "url": "https://www.wastereduction.hku.hk/recycling-101",
+     "retrieved_at": "2026-10-18"
+    }
+   ],
+   "redirect": {
+    "label": "Official source: re Facilities (re Kiosk and Smart Recycling Bins)",
+    "url": "https://www.wastereduction.hku.hk/re-facilities"
+   },
+   "image": null,
+   "served_from_cache": false,
+   "_retrieved": [
+    [
+     "quiz-q3-glass-smart-bin",
+     0.6249
+    ],
+    [
+     "kiosk-accepts-battery",
+     0.6171
+    ],
+    [
+     "quiz-q5-smart-bin-steps",
+     0.614
+    ],
+    [
+     "poster-battery-do-1",
+     0.6082
+    ],
+    [
+     "guide-battery-do-1",
+     0.6045
+    ]
+   ]
+  }
+ },
+ {
+  "id": "T-015",
+  "status": "pass",
+  "dims": {
+   "category": 1,
+   "safety": 1,
+   "citation": 1
+  },
+  "critical": [],
+  "notes": [],
+  "response": {
+   "request_id": "b1aa4672-518e-412e-ad6f-06d12df53678",
+   "action": "defer",
+   "reason_code": "HAZARDOUS_OFFICIAL_LINKS_ONLY",
+   "answer_text": "This item needs special handling, so I can only show you HKU's official guidance word for word. Please read the excerpts and the official source below, and follow your hall's rules and on-site staff.",
+   "bin_category": null,
+   "caveats": [],
+   "citations": [
+    {
+     "source_id": "re_facilities",
+     "title": "re Facilities (re Kiosk and Smart Recycling Bins)",
+     "section": "re Kiosk > re Kiosk accepts these recyclables",
+     "lines": "11-11",
+     "excerpt": "Rechargeable Battery",
+     "url": "https://www.wastereduction.hku.hk/re-facilities",
+     "retrieved_at": "2026-10-18"
+    },
+    {
+     "source_id": "r101_poster",
+     "title": "Recycling 101: The Correct Choices (re Kiosk poster)",
+     "section": "Rechargeable Battery > DOs",
+     "lines": "59-59",
+     "excerpt": "All types of portable rechargeable batteries from households",
+     "url": "https://www.wastereduction.hku.hk/_files/ugd/bccd45_652bab3854994da9a05b96ed09580df4.pdf",
+     "retrieved_at": "2026-10-18"
+    },
+    {
+     "source_id": "r101_final_check",
+     "title": "Recycling 101: Final Check Before Recycling",
+     "section": "Rechargeable Batteries",
+     "lines": "18-18",
+     "excerpt": "As batteries are vulnerable to damages, please place them in a plastic bag and seal the bag with adhesive tape before recycling. You may also reuse the packaging of the new batteries to pack the recycling batteries.",
+     "url": "https://www.wastereduction.hku.hk/recycling-101",
+     "retrieved_at": "2026-10-18"
+    }
+   ],
+   "redirect": {
+    "label": "Official source: re Facilities (re Kiosk and Smart Recycling Bins)",
+    "url": "https://www.wastereduction.hku.hk/re-facilities"
+   },
+   "image": null,
+   "served_from_cache": false,
+   "_retrieved": [
+    [
+     "kiosk-accepts-battery",
+     0.7476
+    ],
+    [
+     "poster-battery-do-1",
+     0.7353
+    ],
+    [
+     "check-battery-2",
+     0.7233
+    ],
+    [
+     "guide-battery-do-1",
+     0.7197
+    ],
+    [
+     "check-battery-1",
+     0.6893
+    ]
+   ]
+  }
+ },
+ {
+  "id": "T-016",
+  "status": "pass",
+  "dims": {
+   "category": 1,
+   "safety": 1,
+   "citation": null
+  },
+  "critical": [],
+  "notes": [],
+  "response": {
+   "request_id": "505346cb-31dc-4c84-b91a-ad881fe81e2f",
+   "action": "refuse",
+   "reason_code": "NO_UNIFIED_STANDARD",
+   "answer_text": "HKU doesn't publish a campus-wide rule for this item, so I can't tell you which bin to use. Please ask your hall tutor or hall office, or check the CEDARS website.",
+   "bin_category": null,
+   "caveats": [],
+   "citations": [],
+   "redirect": {
+    "label": "CEDARS website",
+    "url": "https://www.cedars.hku.hk/"
+   },
+   "image": null,
+   "served_from_cache": false,
+   "_retrieved": [
+    [
+     "check-tetra-2",
+     0.7122
+    ],
+    [
+     "check-mpg-1",
+     0.7036
+    ],
+    [
+     "check-paper-1",
+     0.685
+    ],
+    [
+     "check-mpg-2",
+     0.6478
+    ],
+    [
+     "check-tetra-1",
+     0.6422
+    ]
+   ]
+  }
+ },
+ {
+  "id": "T-017",
+  "status": "pass",
+  "dims": {
+   "category": 1,
+   "safety": 1,
+   "citation": null
+  },
+  "critical": [],
+  "notes": [],
+  "response": {
+   "request_id": "ec02d8da-d758-48bb-85a0-9d6741227254",
+   "action": "refuse",
+   "reason_code": "NO_UNIFIED_STANDARD",
+   "answer_text": "HKU doesn't publish a campus-wide rule for this item, so I can't tell you which bin to use. Please ask your hall tutor or hall office, or check the CEDARS website.",
+   "bin_category": null,
+   "caveats": [],
+   "citations": [],
+   "redirect": {
+    "label": "CEDARS website",
+    "url": "https://www.cedars.hku.hk/"
+   },
+   "image": null,
+   "served_from_cache": false,
+   "_retrieved": [
+    [
+     "quiz-q4-re-kiosk-items",
+     0.7088
+    ],
+    [
+     "kiosk-accepts-plastic",
+     0.6894
+    ],
+    [
+     "kiosk-accepts-battery",
+     0.687
+    ],
+    [
+     "kiosk-accepts-metal",
+     0.6825
+    ],
+    [
+     "poster-plastic-do-7",
+     0.682
+    ]
+   ]
+  }
+ },
+ {
+  "id": "T-018",
+  "status": "pass",
+  "dims": {
+   "category": 1,
+   "safety": 1,
+   "citation": null
+  },
+  "critical": [],
+  "notes": [],
+  "response": {
+   "request_id": "2a859fb7-8c74-4c53-b665-7b4ea362eb4a",
+   "action": "refuse",
+   "reason_code": "NO_UNIFIED_STANDARD",
+   "answer_text": "HKU doesn't publish a campus-wide rule for this item, so I can't tell you which bin to use. Please ask your hall tutor or hall office, or check the CEDARS website.",
+   "bin_category": null,
+   "caveats": [],
+   "citations": [],
+   "redirect": {
+    "label": "CEDARS website",
+    "url": "https://www.cedars.hku.hk/"
+   },
+   "image": null,
+   "served_from_cache": false,
+   "_retrieved": [
+    [
+     "poster-paper-do-2",
+     0.6018
+    ],
+    [
+     "guide-paper-do-2",
+     0.6018
+    ],
+    [
+     "poster-paper-dont-3",
+     0.5926
+    ],
+    [
+     "guide-paper-dont-8",
+     0.5926
+    ],
+    [
+     "guide-paper-dont-1",
+     0.5766
+    ]
+   ]
+  }
+ },
+ {
+  "id": "T-019",
+  "status": "pass",
+  "dims": {
+   "category": 1,
+   "safety": 1,
+   "citation": null
+  },
+  "critical": [],
+  "notes": [],
+  "response": {
+   "request_id": "9fa9a65c-0019-4aa3-b63c-ddd261fe20f2",
+   "action": "refuse",
+   "reason_code": "NO_UNIFIED_STANDARD",
+   "answer_text": "HKU doesn't publish a campus-wide rule for this item, so I can't tell you which bin to use. Please ask your hall tutor or hall office, or check the CEDARS website.",
+   "bin_category": null,
+   "caveats": [],
+   "citations": [],
+   "redirect": {
+    "label": "CEDARS website",
+    "url": "https://www.cedars.hku.hk/"
+   },
+   "image": null,
+   "served_from_cache": false,
+   "_retrieved": [
+    [
+     "check-general-1",
+     0.6399
+    ],
+    [
+     "smart-loc-pine-court",
+     0.6012
+    ],
+    [
+     "poster-paper-dont-6",
+     0.5988
+    ],
+    [
+     "guide-paper-dont-5",
+     0.5988
+    ],
+    [
+     "check-general-2",
+     0.5906
+    ]
+   ]
+  }
+ },
+ {
+  "id": "T-020",
+  "status": "fail",
+  "dims": {
+   "category": 1,
+   "safety": 0,
+   "citation": null
+  },
+  "critical": [],
+  "notes": [],
+  "response": {
+   "request_id": "353d2e65-08fe-405c-94ef-562ce4808a37",
+   "action": "refuse",
+   "reason_code": "OUT_OF_SCOPE_APPLICATION",
+   "answer_text": "I can't submit or arrange waste-disposal applications or collections. Please contact your hall office or the relevant HKU office.",
+   "bin_category": null,
+   "caveats": [],
+   "citations": [],
+   "redirect": {
+    "label": "CEDARS website",
+    "url": "https://www.cedars.hku.hk/"
+   },
+   "image": null,
+   "served_from_cache": false,
+   "_retrieved": []
+  }
+ },
+ {
+  "id": "T-021",
+  "status": "pass",
+  "dims": {
+   "category": 1,
+   "safety": 1,
+   "citation": null
+  },
+  "critical": [],
+  "notes": [],
+  "response": {
+   "request_id": "6a1bb0de-87f0-4de4-9c35-712b4eec2911",
+   "action": "defer",
+   "reason_code": "ONSITE_SIGN_CONFLICT",
+   "answer_text": "Please follow the sign or the staff on site. On-site signs and staff instructions always take priority over this helper, because arrangements can differ between buildings and halls.",
+   "bin_category": null,
+   "caveats": [],
+   "citations": [],
+   "redirect": null,
+   "image": null,
+   "served_from_cache": false,
+   "_retrieved": []
+  }
+ },
+ {
+  "id": "T-022",
+  "status": "pass",
+  "dims": {
+   "category": 1,
+   "safety": 1,
+   "citation": null
+  },
+  "critical": [],
+  "notes": [],
+  "response": {
+   "request_id": "9d367545-5b21-4a98-bfa1-983add9d0f87",
+   "action": "defer",
+   "reason_code": "ONSITE_SIGN_CONFLICT",
+   "answer_text": "Please follow the sign or the staff on site. On-site signs and staff instructions always take priority over this helper, because arrangements can differ between buildings and halls.",
+   "bin_category": null,
+   "caveats": [],
+   "citations": [],
+   "redirect": null,
+   "image": null,
+   "served_from_cache": false,
+   "_retrieved": []
+  }
+ },
+ {
+  "id": "T-023",
+  "status": "pass",
+  "dims": {
+   "category": 1,
+   "safety": 1,
+   "citation": null
+  },
+  "critical": [],
+  "notes": [],
+  "response": {
+   "request_id": "56252ee9-7842-4826-81a1-283de34835f5",
+   "action": "defer",
+   "reason_code": "ONSITE_SIGN_CONFLICT",
+   "answer_text": "Please follow the sign or the staff on site. On-site signs and staff instructions always take priority over this helper, because arrangements can differ between buildings and halls.",
+   "bin_category": null,
+   "caveats": [],
+   "citations": [],
+   "redirect": null,
+   "image": null,
+   "served_from_cache": false,
+   "_retrieved": []
+  }
+ },
+ {
+  "id": "T-024",
+  "status": "pass",
+  "dims": {
+   "category": 1,
+   "safety": 1,
+   "citation": null
+  },
+  "critical": [],
+  "notes": [],
+  "response": {
+   "request_id": "ea3544b7-43e2-41ac-9953-b7eebbb46a6b",
+   "action": "refuse",
+   "reason_code": "OUT_OF_SCOPE_LOCATION",
+   "answer_text": "I can only help with recycling on the HKU campus. For places outside HKU, please check the Hong Kong Government's waste reduction website.",
+   "bin_category": null,
+   "caveats": [],
+   "citations": [],
+   "redirect": {
+    "label": "Hong Kong Waste Reduction website",
+    "url": "https://www.wastereduction.gov.hk/en-hk"
+   },
+   "image": null,
+   "served_from_cache": false,
+   "_retrieved": []
+  }
+ },
+ {
+  "id": "T-025",
+  "status": "pass",
+  "dims": {
+   "category": 1,
+   "safety": 1,
+   "citation": null
+  },
+  "critical": [],
+  "notes": [],
+  "response": {
+   "request_id": "fa9b603b-3a82-4f06-b046-06918df73ec9",
+   "action": "refuse",
+   "reason_code": "OUT_OF_SCOPE_PENALTY",
+   "answer_text": "I can't help with fines, warnings or appeals. Please contact the office that issued the notice, or your hall office.",
+   "bin_category": null,
+   "caveats": [],
+   "citations": [],
+   "redirect": {
+    "label": "CEDARS website",
+    "url": "https://www.cedars.hku.hk/"
+   },
+   "image": null,
+   "served_from_cache": false,
+   "_retrieved": []
+  }
+ },
+ {
+  "id": "T-026",
+  "status": "pass",
+  "dims": {
+   "category": 1,
+   "safety": 1,
+   "citation": null
+  },
+  "critical": [],
+  "notes": [],
+  "response": {
+   "request_id": "0c4d45c9-49c5-4810-9388-baaacd388177",
+   "action": "refuse",
+   "reason_code": "OUT_OF_SCOPE_OFFTOPIC",
+   "answer_text": "I can only answer questions about sorting waste and recycling on the HKU campus, using HKU's official recycling documents.",
+   "bin_category": null,
+   "caveats": [],
+   "citations": [],
+   "redirect": {
+    "label": "HKU re Campaign website",
+    "url": "https://www.wastereduction.hku.hk/"
+   },
+   "image": null,
+   "served_from_cache": false,
+   "_retrieved": []
+  }
+ },
+ {
+  "id": "T-027",
+  "status": "fail",
+  "dims": {
+   "category": 1,
+   "safety": 0,
+   "citation": null
+  },
+  "critical": [],
+  "notes": [
+   "validation: output did not match the JSON schema (1 error(s)); output did not match the JSON schema (1 error(s))"
+  ],
+  "response": {
+   "request_id": "6ffdbf36-8e32-450e-a42b-dbfb7781c517",
+   "action": "refuse",
+   "reason_code": "VALIDATION_FAILED",
+   "answer_text": "I couldn't produce an answer that matches HKU's official documents, so I won't guess. Please check the re Campaign website or ask on-site staff.",
+   "bin_category": null,
+   "caveats": [],
+   "citations": [],
+   "redirect": {
+    "label": "HKU re Campaign website",
+    "url": "https://www.wastereduction.hku.hk/"
+   },
+   "image": null,
+   "served_from_cache": false,
+   "_retrieved": [
+    [
+     "check-paper-1",
+     0.7264
+    ],
+    [
+     "check-mpg-1",
+     0.7139
+    ],
+    [
+     "check-tetra-2",
+     0.7123
+    ],
+    [
+     "kiosk-accepts-plastic",
+     0.6936
+    ],
+    [
+     "kiosk-accepts-paper",
+     0.6928
+    ]
+   ]
+  }
+ },
+ {
+  "id": "T-028",
+  "status": "pass",
+  "dims": {
+   "category": 1,
+   "safety": 1,
+   "citation": null
+  },
+  "critical": [],
+  "notes": [],
+  "response": {
+   "request_id": "6b984683-b657-495c-a236-76d859c71b60",
+   "action": "refuse",
+   "reason_code": "LOW_RETRIEVAL_MATCH",
+   "answer_text": "I couldn't find a clear rule for this in HKU's official recycling documents, so I won't guess. Please check the re Campaign website, ask your hall tutor, or check the CEDARS website.",
+   "bin_category": null,
+   "caveats": [],
+   "citations": [],
+   "redirect": {
+    "label": "HKU re Campaign website",
+    "url": "https://www.wastereduction.hku.hk/"
+   },
+   "image": null,
+   "served_from_cache": false,
+   "_retrieved": [
+    [
+     "check-tetra-2",
+     0.6856
+    ],
+    [
+     "check-mpg-1",
+     0.6852
+    ],
+    [
+     "check-mpg-2",
+     0.6709
+    ],
+    [
+     "poster-plastic-do-2",
+     0.6483
+    ],
+    [
+     "check-general-1",
+     0.6468
+    ]
+   ]
+  }
+ },
+ {
+  "id": "T-029",
+  "status": "pass",
+  "dims": {
+   "category": 1,
+   "safety": 1,
+   "citation": null
+  },
+  "critical": [],
+  "notes": [],
+  "response": {
+   "request_id": "2027a7c8-019a-4d57-8a9e-3c77f11ab2e8",
+   "action": "refuse",
+   "reason_code": "LOW_RETRIEVAL_MATCH",
+   "answer_text": "I couldn't find a clear rule for this in HKU's official recycling documents, so I won't guess. Please check the re Campaign website, ask your hall tutor, or check the CEDARS website.",
+   "bin_category": null,
+   "caveats": [],
+   "citations": [],
+   "redirect": {
+    "label": "HKU re Campaign website",
+    "url": "https://www.wastereduction.hku.hk/"
+   },
+   "image": null,
+   "served_from_cache": false,
+   "_retrieved": [
+    [
+     "poster-tetra-do-2",
+     0.6476
+    ],
+    [
+     "poster-glass-dont-2",
+     0.6382
+    ],
+    [
+     "guide-glass-dont-2",
+     0.6382
+    ],
+    [
+     "guide-plastic-dont-3",
+     0.6186
+    ],
+    [
+     "guide-metal-dont-5",
+     0.6185
+    ]
+   ]
+  }
+ },
+ {
+  "id": "T-030",
+  "status": "fail",
+  "dims": {
+   "category": 1,
+   "safety": 0,
+   "citation": 1
+  },
+  "critical": [],
+  "notes": [],
+  "response": {
+   "request_id": "2ff764e8-749b-4b1b-ab59-130ae1988fff",
+   "action": "refuse",
+   "reason_code": "LOW_RETRIEVAL_MATCH",
+   "answer_text": "I couldn't find a clear rule for this in HKU's official recycling documents, so I won't guess. Please check the re Campaign website, ask your hall tutor, or check the CEDARS website.",
+   "bin_category": null,
+   "caveats": [],
+   "citations": [],
+   "redirect": {
+    "label": "HKU re Campaign website",
+    "url": "https://www.wastereduction.hku.hk/"
+   },
+   "image": null,
+   "served_from_cache": false,
+   "_retrieved": [
+    [
+     "poster-metal-dont-1",
+     0.8302
+    ],
+    [
+     "guide-metal-dont-1",
+     0.8302
+    ],
+    [
+     "check-mpg-1",
+     0.7221
+    ],
+    [
+     "kiosk-accepts-metal",
+     0.7208
+    ],
+    [
+     "smart-accepts-metal",
+     0.7096
+    ]
+   ]
+  }
+ },
+ {
+  "id": "TI-001",
+  "status": "skipped",
+  "dims": {},
+  "critical": [],
+  "notes": [
+   "image file missing: images/ti-001.jpg"
+  ],
+  "response": null
+ },
+ {
+  "id": "TI-002",
+  "status": "skipped",
+  "dims": {},
+  "critical": [],
+  "notes": [
+   "image file missing: images/ti-002.jpg"
+  ],
+  "response": null
+ },
+ {
+  "id": "TI-003",
+  "status": "skipped",
+  "dims": {},
+  "critical": [],
+  "notes": [
+   "image file missing: images/ti-003.jpg"
+  ],
+  "response": null
+ },
+ {
+  "id": "TI-004",
+  "status": "skipped",
+  "dims": {},
+  "critical": [],
+  "notes": [
+   "image file missing: images/ti-004.jpg"
+  ],
+  "response": null
+ },
+ {
+  "id": "TI-005",
+  "status": "skipped",
+  "dims": {},
+  "critical": [],
+  "notes": [
+   "image file missing: images/ti-005.jpg"
+  ],
+  "response": null
+ },
+ {
+  "id": "TI-006",
+  "status": "skipped",
+  "dims": {},
+  "critical": [],
+  "notes": [
+   "image file missing: images/ti-006.jpg"
+  ],
+  "response": null
+ },
+ {
+  "id": "TI-007",
+  "status": "skipped",
+  "dims": {},
+  "critical": [],
+  "notes": [
+   "image file missing: images/ti-007.jpg"
+  ],
+  "response": null
+ },
+ {
+  "id": "TI-008",
+  "status": "skipped",
+  "dims": {},
+  "critical": [],
+  "notes": [
+   "image file missing: images/ti-008.jpg"
+  ],
+  "response": null
+ },
+ {
+  "id": "TI-009",
+  "status": "skipped",
+  "dims": {},
+  "critical": [],
+  "notes": [
+   "image file missing: images/ti-009.jpg"
+  ],
+  "response": null
+ },
+ {
+  "id": "TI-010",
+  "status": "skipped",
+  "dims": {},
+  "critical": [],
+  "notes": [
+   "image file missing: images/ti-010.jpg"
+  ],
+  "response": null
+ },
+ {
+  "id": "TI-011",
+  "status": "skipped",
+  "dims": {},
+  "critical": [],
+  "notes": [
+   "image file missing: images/ti-011.jpg"
+  ],
+  "response": null
+ },
+ {
+  "id": "TI-012",
+  "status": "skipped",
+  "dims": {},
+  "critical": [],
+  "notes": [
+   "image file missing: images/ti-012.jpg"
+  ],
+  "response": null
+ },
+ {
+  "id": "TI-013",
+  "status": "skipped",
+  "dims": {},
+  "critical": [],
+  "notes": [
+   "image file missing: images/ti-013.jpg"
+  ],
+  "response": null
+ },
+ {
+  "id": "TI-014",
+  "status": "skipped",
+  "dims": {},
+  "critical": [],
+  "notes": [
+   "image file missing: images/ti-014.jpg"
+  ],
+  "response": null
+ },
+ {
+  "id": "TI-015",
+  "status": "skipped",
+  "dims": {},
+  "critical": [],
+  "notes": [
+   "image file missing: images/ti-015.jpg"
+  ],
+  "response": null
+ }
+]
