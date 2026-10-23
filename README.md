@@ -86,6 +86,7 @@ re-scoring an unchanged run is free.
 | `npm --prefix frontend run dev \| build \| test` | Frontend |
 | `flask --app backend.app run --debug` | Backend |
 | `python scripts/ingest.py` | Validate `corpus/` and rebuild Chroma (`--check` to validate only, `--require-reviewed` to freeze) |
+| `python scripts/check_transcription.py` | Cross-check each source's transcription against its raw file (`--source` to pick one) |
 | `python -m eval.run_eval --split dev\|test --report` | Score cases; exits non-zero on any critical failure or failed must-have case |
 | `python -m eval.calibrate_tau --split dev` | Re-calibrate `RETRIEVE_TAU` (dev split only) |
 | `python scripts/build_demo_cache.py` | Pre-generate demo answers for the sample questions (needs a key; review before use) |
@@ -122,7 +123,7 @@ backend/app/
   providers/   Qwen text LLM (+ mock, + eval cache); vision interface
   prompts/     versioned prompt files (intent_v1, answer_v1)
   retrieval/   corpus loader, Chroma store, query normalisation
-backend/tests/ pytest suite
+backend/tests/ pytest suite (rules, router, validators, pipeline, API, corpus, eval harness)
 corpus/
   manifest.yaml  sources, URLs, retrieval dates, stream taxonomy, review status
   raw/           saved snapshots (HTML, poster PDF and images)
@@ -130,9 +131,10 @@ corpus/
 data/chroma/     built by scripts/ingest.py (git-ignored)
 eval/
   cases/{dev,test}/  text.jsonl, image.jsonl 
-  run_eval.py, calibrate_tau.py, reports/
+  run_eval.py, calibrate_tau.py, faithfulness_review.md, reports/
 frontend/src/    components, hooks, api, types
-scripts/         ingest.py, htmltext.py, build_demo_cache.py
+scripts/         ingest.py, htmltext.py, check_transcription.py, build_demo_cache.py
+transcription_checklist.md  poster transcription line-by-line review checklist
 ```
 
 ### Corpus review
@@ -148,3 +150,9 @@ scripts/         ingest.py, htmltext.py, build_demo_cache.py
 Then check each chunk's `tier`, `stream` and `caveats` in the `.yaml`, and set
 `review_status: reviewed`. `python scripts/ingest.py --require-reviewed` must
 pass before the test set is frozen.
+
+`scripts/check_transcription.py` automates the first pass (it verifies the
+`html_text` sources and flags suspect lines in the posters), and
+`transcription_checklist.md` is the line-by-line checklist used for the
+`manual_transcription` posters. `eval/faithfulness_review.md` records the
+answer-path faithfulness sign-off for the test split.
