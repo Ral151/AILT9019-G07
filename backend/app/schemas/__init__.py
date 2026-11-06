@@ -99,12 +99,15 @@ class GenerationOutput(BaseModel):
     `answers_question` extends A3: when the model says the excerpts do not
     answer the question, the router turns the reply into LOW_RETRIEVAL_MATCH.
     It can only make the outcome stricter, never looser.
+
+    When `answers_question` is false the model must not cite anything, so
+    `used_chunk_ids` is allowed to be empty for that case only.
     """
 
     answers_question: bool = True
     bin_category: str | None
     answer_text: str = Field(min_length=1, max_length=600)
-    used_chunk_ids: list[str] = Field(min_length=1, max_length=3)
+    used_chunk_ids: list[str] = Field(default_factory=list, max_length=3)
 
     @field_validator("bin_category")
     @classmethod
@@ -113,6 +116,12 @@ class GenerationOutput(BaseModel):
             return None
         v = v.strip()
         return v or None
+
+    @model_validator(mode="after")
+    def _answer_requires_chunks(self) -> "GenerationOutput":
+        if self.answers_question and not self.used_chunk_ids:
+            raise ValueError("used_chunk_ids must be non-empty when answers_question is true")
+        return self
 
 
 # --------------------------------------------------------------------------

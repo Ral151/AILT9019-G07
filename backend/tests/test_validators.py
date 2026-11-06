@@ -89,3 +89,16 @@ def test_generation_schema_rejects_bad_output():
     with pytest.raises(ValidationError):
         GenerationOutput.model_validate({"bin_category": "Plastic", "answer_text": "", "used_chunk_ids": []})
     assert GenerationOutput.model_validate({"bin_category": " ", "answer_text": "x", "used_chunk_ids": ["a"]}).bin_category is None
+
+
+def test_not_covered_may_cite_nothing_but_answer_must_cite():
+    # "I don't know" (answers_question=false) may legally return no chunks.
+    out = GenerationOutput.model_validate(
+        {"answers_question": False, "bin_category": None, "answer_text": "The documents don't cover this.", "used_chunk_ids": []}
+    )
+    assert out.used_chunk_ids == []
+    # A real answer must cite at least one excerpt.
+    with pytest.raises(ValidationError):
+        GenerationOutput.model_validate(
+            {"answers_question": True, "bin_category": "Plastic", "answer_text": "Plastic bin.", "used_chunk_ids": []}
+        )
