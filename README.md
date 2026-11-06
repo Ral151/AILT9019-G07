@@ -2,6 +2,14 @@
 
 A question-and-answer web app that tells you how to sort waste on the HKU campus, based exclusively on official HKU recycling documents. Every answer comes with an exact citation from the source text.
 
+## Current status
+
+- Text questions work end-to-end. The test split passes 30/30 text cases with
+  0 critical failures (`eval/reports/test-20261106-215811.md`, 6 Nov 2026);
+  retrieval threshold `RETRIEVE_TAU` is `0.686`.
+- The answer-path faithfulness review covers 13 cases
+  (`eval/faithfulness_review.md`).
+
 ## Try these questions
 
 - "Can a bubble tea cup go into the smart recycling bin?"
@@ -88,7 +96,7 @@ re-scoring an unchanged run is free.
 | `python scripts/ingest.py` | Validate `corpus/` and rebuild Chroma (`--check` to validate only, `--require-reviewed` to freeze) |
 | `python scripts/check_transcription.py` | Cross-check each source's transcription against its raw file (`--source` to pick one) |
 | `python -m eval.run_eval --split dev\|test --report` | Score cases; exits non-zero on any critical failure or failed must-have case |
-| `python -m eval.calibrate_tau --split dev` | Re-calibrate `RETRIEVE_TAU` (dev split only) |
+| `python -m eval.calibrate_tau --split dev` | Re-calibrate `RETRIEVE_TAU` (dev split only; current default `0.686`) |
 | `python scripts/build_demo_cache.py` | Pre-generate demo answers for the sample questions (needs a key; review before use) |
 | `pytest backend/tests` | Unit tests (rules, router, validators, schemas, pipeline, API, corpus) |
 
