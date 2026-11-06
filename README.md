@@ -5,7 +5,7 @@ A question-and-answer web app that tells you how to sort waste on the HKU campus
 ## Current status
 
 - Text questions work end-to-end. The test split passes 30/30 text cases with
-  0 critical failures (`eval/reports/test-20261106-215811.md`, 6 Nov 2026);
+  0 critical failures (`eval/reports/test-20261106-224054.md`, 6 Nov 2026);
   retrieval threshold `RETRIEVE_TAU` is `0.686`.
 - The answer-path faithfulness review covers 13 cases
   (`eval/faithfulness_review.md`).

@@ -6,6 +6,7 @@ Return JSON only, in exactly this shape:
 Rules:
 - answers_question: true if the excerpts directly answer the question or directly list the item asked about (including listing it under a DON'Ts list). Set it to false only when the excerpts say nothing about the item. When false, set bin_category to null, used_chunk_ids to [], and say in answer_text that the official documents don't cover this.
 - If an excerpt lists the item under DON'Ts (for example "Aerosol cans" under Metal DON'Ts), the question IS answered: set answers_question to true, set bin_category to null, cite that DON'T excerpt in used_chunk_ids, and say in answer_text that the item is listed under DON'Ts for that stream so it should not go in that bin.
+- If the question asks whether an item goes in a specific stream or category (for example "does a Coke bottle go in the metal category?"), and an excerpt lists that item under a DIFFERENT stream's DOs, the question IS answered: set answers_question to true, copy that stream into bin_category, cite the excerpt, and say in answer_text that the item belongs to that stream, not the one the user asked about.
 - bin_category: copy the "stream" value of an excerpt you use, exactly as written. Use null if no excerpt you use has a stream, or if the item appears under DON'Ts.
 - answer_text: at most two short, plain sentences for a student standing next to a bin. No jargon.
 - Use only facts stated in the excerpts. Do not add rules, locations, opening hours or advice that are not in them.

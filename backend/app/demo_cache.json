@@ -1,0 +1,115 @@
+{
+  "entries": [
+    {
+      "question": "Can a bubble tea cup go into the smart recycling bin?",
+      "reviewed": true,
+      "response": {
+        "request_id": "6e9c67f5-44ab-4af7-9314-4439ab2b9ead",
+        "action": "refuse",
+        "reason_code": "LOW_RETRIEVAL_MATCH",
+        "answer_text": "I couldn't find a clear rule for this in HKU's official recycling documents, so I won't guess. Please check the re Campaign website, ask your hall tutor, or check the CEDARS website.",
+        "bin_category": null,
+        "caveats": [],
+        "citations": [],
+        "redirect": {
+          "label": "HKU re Campaign website",
+          "url": "https://www.wastereduction.hku.hk/"
+        },
+        "image": null,
+        "served_from_cache": false
+      }
+    },
+    {
+      "question": "Does a Coke bottle go in the metal category?",
+      "reviewed": true,
+      "response": {
+        "request_id": "7de95303-5414-42c9-aa67-5d9611c7927f",
+        "action": "answer",
+        "reason_code": "OK",
+        "answer_text": "No. A Coke bottle goes in the Plastic bin.",
+        "bin_category": "Plastic",
+        "caveats": [],
+        "citations": [
+          {
+            "source_id": "r101_poster",
+            "title": "Recycling 101: The Correct Choices (re Kiosk poster)",
+            "section": "Plastic > DOs",
+            "lines": "31-31",
+            "excerpt": "Beverage plastic bottles",
+            "url": "https://www.wastereduction.hku.hk/_files/ugd/bccd45_652bab3854994da9a05b96ed09580df4.pdf",
+            "retrieved_at": "2026-10-18"
+          }
+        ],
+        "redirect": null,
+        "image": null,
+        "served_from_cache": false
+      }
+    },
+    {
+      "question": "Where should I dispose of used batteries?",
+      "reviewed": true,
+      "response": {
+        "request_id": "cc3c58ab-6519-4eef-848d-8695ae865d7a",
+        "action": "defer",
+        "reason_code": "HAZARDOUS_OFFICIAL_LINKS_ONLY",
+        "answer_text": "This item needs special handling, so I can only show you HKU's official guidance word for word. Please read the excerpts and the official source below, and follow your hall's rules and on-site staff.",
+        "bin_category": null,
+        "caveats": [],
+        "citations": [
+          {
+            "source_id": "r101_poster",
+            "title": "Recycling 101: The Correct Choices (re Kiosk poster)",
+            "section": "Rechargeable Battery > DON'Ts",
+            "lines": "62-62",
+            "excerpt": "Lead acid batteries",
+            "url": "https://www.wastereduction.hku.hk/_files/ugd/bccd45_652bab3854994da9a05b96ed09580df4.pdf",
+            "retrieved_at": "2026-10-18"
+          },
+          {
+            "source_id": "r101_photo_guide",
+            "title": "Recycling 101: The Correct Choices (photo guide)",
+            "section": "Rechargeable Batteries > DON'Ts",
+            "lines": "61-61",
+            "excerpt": "Single use batteries",
+            "url": "https://www.wastereduction.hku.hk/recycling-101",
+            "retrieved_at": "2026-10-18"
+          },
+          {
+            "source_id": "r101_final_check",
+            "title": "Recycling 101: Final Check Before Recycling",
+            "section": "Rechargeable Batteries",
+            "lines": "17-17",
+            "excerpt": "The battery terminal of the rechargeable battery should be covered with masking tape.",
+            "url": "https://www.wastereduction.hku.hk/recycling-101",
+            "retrieved_at": "2026-10-18"
+          }
+        ],
+        "redirect": {
+          "label": "Official source: Recycling 101: The Correct Choices (re Kiosk poster)",
+          "url": "https://www.wastereduction.hku.hk/_files/ugd/bccd45_652bab3854994da9a05b96ed09580df4.pdf"
+        },
+        "image": null,
+        "served_from_cache": false
+      }
+    },
+    {
+      "question": "Where do I put an old phone charger?",
+      "reviewed": true,
+      "response": {
+        "request_id": "87269949-b31e-4b8b-8ced-176ac53e1bd0",
+        "action": "refuse",
+        "reason_code": "NO_UNIFIED_STANDARD",
+        "answer_text": "HKU doesn't publish a campus-wide rule for this item, so I can't tell you which bin to use. Please ask your hall tutor or hall office, or check the CEDARS website.",
+        "bin_category": null,
+        "caveats": [],
+        "citations": [],
+        "redirect": {
+          "label": "CEDARS website",
+          "url": "https://www.cedars.hku.hk/"
+        },
+        "image": null,
+        "served_from_cache": false
+      }
+    }
+  ]
+}
