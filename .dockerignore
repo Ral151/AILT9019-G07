@@ -1,0 +1,29 @@
+# Secrets — never bake into the image
+.env
+*.env
+!.env.example
+
+# VCS / IDE
+.git
+.gitignore
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# Built artefacts — rebuilt inside the image
+data/chroma/
+frontend/node_modules/
+frontend/dist/
+eval/.llm_cache.json
+
+# Logs / temp
+*.log
