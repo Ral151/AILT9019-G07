@@ -11,6 +11,10 @@ A question-and-answer web app that tells you how to sort waste on the HKU campus
   retrieval threshold `RETRIEVE_TAU` is `0.686`.
 - The answer-path faithfulness review covers 13 cases
   (`eval/faithfulness_review.md`).
+- Known quirk: a text answer occasionally fails its JSON-schema validation and
+  returns a safe refusal ("couldn't produce an answer… won't guess") instead of
+  guessing. This is transient LLM-output variance — re-ask once and it usually
+  answers correctly. Recorded in `eval/reports/fresh-clone-20261113.md`.
 
 ## Try these questions
 
