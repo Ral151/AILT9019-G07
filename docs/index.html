@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>HKU Recycling Rules Helper — AILT9019 Group 7</title>
+<meta name="description" content="A question-and-answer assistant that tells HKU students and staff how to sort waste on campus, based exclusively on official HKU recycling documents, with a citation for every answer." />
+<style>
+  :root {
+    --green-900: #123a26;
+    --green-700: #1e5e3f;
+    --green-600: #2c7a52;
+    --green-500: #3c9668;
+    --green-100: #e6f3ec;
+    --green-050: #f2f9f5;
+    --ink: #1c2a23;
+    --ink-soft: #47574f;
+    --line: #dfe9e3;
+    --bg: #ffffff;
+    --amber-100: #fdf3dd;
+    --amber-700: #8a5a00;
+    --red-100: #fdeaea;
+    --red-700: #a33232;
+    --radius: 14px;
+    --maxw: 980px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--green-700); }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+
+  /* Nav */
+  nav {
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(255,255,255,0.92); backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 58px; }
+  .brand { font-weight: 700; color: var(--green-900); text-decoration: none; font-size: 15px; }
+  .brand span { color: var(--green-600); }
+  .nav-links { display: flex; gap: 20px; }
+  .nav-links a { text-decoration: none; color: var(--ink-soft); font-size: 14px; }
+  .nav-links a:hover { color: var(--green-700); }
+  .nav-cta {
+    background: var(--green-700); color: #fff; text-decoration: none;
+    padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 600;
+  }
+  .nav-cta:hover { background: var(--green-900); }
+
+  /* Hero */
+  header.hero {
+    background:
+      radial-gradient(1200px 500px at 80% -20%, var(--green-100), transparent 60%),
+      linear-gradient(180deg, var(--green-050), #fff);
+    border-bottom: 1px solid var(--line);
+    padding: 72px 0 60px;
+  }
+  .hero .wrap { max-width: var(--maxw); }
+  .tag {
+    display: inline-block; background: var(--green-100); color: var(--green-700);
+    font-size: 12.5px; font-weight: 600; padding: 5px 12px; border-radius: 999px;
+    letter-spacing: 0.02em; margin-bottom: 18px;
+  }
+  h1 { font-size: clamp(30px, 5vw, 46px); line-height: 1.12; margin: 0 0 16px; color: var(--green-900); letter-spacing: -0.01em; }
+  .lede { font-size: 18px; color: var(--ink-soft); max-width: 640px; margin: 0 0 26px; }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 11px 18px; border-radius: 10px; font-size: 15px; font-weight: 600; text-decoration: none;
+  }
+  .btn-primary { background: var(--green-700); color: #fff; }
+  .btn-primary:hover { background: var(--green-900); }
+  .btn-ghost { background: #fff; color: var(--green-700); border: 1px solid var(--line); }
+  .btn-ghost:hover { border-color: var(--green-500); }
+
+  /* Sections */
+  section { padding: 60px 0; }
+  section.alt { background: var(--green-050); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  h2 { font-size: 26px; margin: 0 0 10px; color: var(--green-900); }
+  .sub { color: var(--ink-soft); max-width: 720px; margin: 0 0 28px; }
+  .grid { display: grid; gap: 18px; }
+  .grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+  .grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .card {
+    background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 20px 20px 18px;
+  }
+  .card h3 { margin: 0 0 8px; font-size: 16px; color: var(--green-900); }
+  .card p { margin: 0; color: var(--ink-soft); font-size: 14.5px; }
+  .card .ico { font-size: 22px; display: block; margin-bottom: 10px; }
+
+  /* Pipeline */
+  .pipeline { display: flex; flex-wrap: wrap; gap: 8px; align-items: stretch; }
+  .step {
+    flex: 1 1 150px; background: #fff; border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 12px; text-align: center;
+  }
+  .step .n { font-size: 11px; font-weight: 700; color: var(--green-600); letter-spacing: 0.05em; }
+  .step .t { font-size: 13px; font-weight: 600; color: var(--ink); margin-top: 4px; }
+  .step .d { font-size: 11.5px; color: var(--ink-soft); margin-top: 3px; line-height: 1.4; }
+  .arrow { align-self: center; color: var(--green-500); font-size: 18px; font-weight: 700; }
+
+  /* Chat mock */
+  .chat { max-width: 640px; margin: 0 auto; }
+  .bubble { border-radius: 16px; padding: 13px 16px; margin: 12px 0; font-size: 14.5px; }
+  .q { background: var(--green-700); color: #fff; margin-left: 48px; border-bottom-right-radius: 4px; }
+  .a { background: #fff; border: 1px solid var(--line); margin-right: 48px; border-bottom-left-radius: 4px; }
+  .cite { margin-top: 10px; background: var(--green-050); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; font-size: 13px; }
+  .cite .k { color: var(--green-700); font-weight: 600; }
+  .cite .src { color: var(--ink-soft); font-size: 12px; }
+  .note { font-size: 12.5px; color: var(--ink-soft); text-align: center; margin-top: 10px; }
+
+  /* Refusal / safety cards */
+  .case { border-left: 4px solid; border-radius: 10px; background: #fff; border: 1px solid var(--line); padding: 14px 16px; }
+  .case.refuse { border-left-color: var(--red-700); }
+  .case.defer { border-left-color: var(--amber-700); }
+  .case .head { font-weight: 700; font-size: 14.5px; }
+  .case .body { color: var(--ink-soft); font-size: 13.5px; margin-top: 4px; }
+  .badge { font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 999px; }
+  .badge.refuse { background: var(--red-100); color: var(--red-700); }
+  .badge.defer { background: var(--amber-100); color: var(--amber-700); }
+
+  /* Stat strip */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .stat { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 16px; text-align: center; }
+  .stat .v { font-size: 30px; font-weight: 800; color: var(--green-700); }
+  .stat .l { font-size: 13px; color: var(--ink-soft); margin-top: 4px; }
+
+  /* Two-column split */
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .split .card h4 { margin: 0 0 6px; font-size: 15px; color: var(--green-900); }
+  .split .card ul { margin: 0; padding-left: 18px; }
+  .split .card li { color: var(--ink-soft); font-size: 14px; margin-bottom: 6px; }
+
+  /* Run box */
+  .run { background: var(--green-900); color: #eaf3ee; border-radius: var(--radius); padding: 26px 28px; }
+  .run h3 { margin: 0 0 10px; color: #fff; font-size: 18px; }
+  .run p, .run li { color: #d6e5dd; font-size: 14px; }
+  .run code { background: rgba(255,255,255,0.12); padding: 2px 7px; border-radius: 6px; font-size: 13px; }
+  .run a { color: #9fd6ba; }
+
+  /* Team */
+  .team { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .member { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; text-align: center; }
+  .member .avatar { width: 54px; height: 54px; border-radius: 50%; background: var(--green-100); color: var(--green-700); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 20px; margin: 0 auto 10px; }
+  .member .nm { font-weight: 700; font-size: 14px; }
+  .member .role { color: var(--ink-soft); font-size: 12.5px; margin-top: 3px; }
+
+  footer { border-top: 1px solid var(--line); padding: 34px 0 44px; color: var(--ink-soft); font-size: 13.5px; }
+  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+
+  @media (max-width: 720px) {
+    .nav-links { display: none; }
+    .grid.cols-2, .grid.cols-3, .split, .team { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .q { margin-left: 16px; }
+    .a { margin-right: 16px; }
+    section { padding: 42px 0; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">♻ HKU Recycling <span>Rules Helper</span></a>
+    <div class="nav-links">
+      <a href="#problem">Problem</a>
+      <a href="#how">How it works</a>
+      <a href="#example">Example</a>
+      <a href="#results">Results</a>
+      <a href="#run">Run it</a>
+    </div>
+    <a class="nav-cta" href="https://github.com/Ral151/AILT9019-G07" target="_blank" rel="noopener">View repository</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <span class="tag">AILT9019 · AI Literacy II · Group 7</span>
+    <h1>Sort it right, with a cited answer.</h1>
+    <p class="lede">A question-and-answer assistant that tells HKU students and staff how to sort waste on campus — based exclusively on official HKU recycling documents, and every answer shows the exact source line it came from.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#example">See a real answer ↓</a>
+      <a class="btn btn-ghost" href="https://github.com/Ral151/AILT9019-G07" target="_blank" rel="noopener">GitHub repository</a>
+    </div>
+  </div>
+</header>
+
+<section id="problem">
+  <div class="wrap">
+    <h2>The problem</h2>
+    <p class="sub">HKU's official recycling rules are scattered across the CEDARS and re‑Campaign websites and hall notices. Students often sort waste incorrectly, or only find out at the bin that their item isn't accepted there.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <span class="ico">🧋</span>
+        <h3>Unclear boundaries</h3>
+        <p>Bubble-tea cups and takeaway containers have non-obvious sorting rules.</p>
+      </div>
+      <div class="card">
+        <span class="ico">📋</span>
+        <h3>Inconsistent lists</h3>
+        <p>The materials accepted at each smart recycling point are not standardised.</p>
+      </div>
+      <div class="card">
+        <span class="ico">🔋</span>
+        <h3>Hazardous &amp; bulky items</h3>
+        <p>Batteries, appliances and furniture have special procedures students don't know.</p>
+      </div>
+    </div>
+    <p class="sub" style="margin-top:20px;">The tool answers everyday sorting questions from HKU official documents only. It does <strong>not</strong> handle off-campus waste, fines, appeals, or disposal applications.</p>
+  </div>
+</section>
+
+<section id="how" class="alt">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <p class="sub">A request flows through a deterministic pipeline. Safety decisions are made by code, not by the language model — the LLM can only make an outcome stricter, never turn a refusal into an answer.</p>
+    <div class="pipeline">
+      <div class="step"><div class="n">1</div><div class="t">Validate</div><div class="d">size caps, re-encode</div></div>
+      <div class="arrow">→</div>
+      <div class="step"><div class="n">2</div><div class="t">Boundary check</div><div class="d">scope rules + intent</div></div>
+      <div class="arrow">→</div>
+      <div class="step"><div class="n">3</div><div class="t">Retrieve</div><div class="d">Chroma top‑k</div></div>
+      <div class="arrow">→</div>
+      <div class="step"><div class="n">4</div><div class="t">Route</div><div class="d">hazard / unsupported / answer</div></div>
+      <div class="arrow">→</div>
+      <div class="step"><div class="n">5</div><div class="t">Generate</div><div class="d">LLM drafts ≤2 sentences</div></div>
+      <div class="arrow">→</div>
+      <div class="step"><div class="n">6</div><div class="t">Validate &amp; cite</div><div class="d">check, retry, excerpt</div></div>
+    </div>
+
+    <div class="split" style="margin-top:28px;">
+      <div class="card">
+        <h4>What we built</h4>
+        <ul>
+          <li>Curated HKU corpus (6 official sources, reviewed line-by-line)</li>
+          <li>Retrieval + citation pipeline (Flask · LlamaIndex · ChromaDB)</li>
+          <li>Deterministic router and validators (safety rules)</li>
+          <li>Refusal / deferral behaviour for hazardous &amp; unsupported items</li>
+          <li>React chat interface</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>What we reuse</h4>
+        <ul>
+          <li>Text LLM via API (Qwen on Alibaba Cloud Model Studio)</li>
+          <li>Local embeddings (BAAI/bge-small-en-v1.5)</li>
+          <li>Frameworks: Flask, LlamaIndex, ChromaDB, React</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="example">
+  <div class="wrap">
+    <h2>A real answer</h2>
+    <p class="sub">A genuine run of the pipeline. The answer is short, names the bin, and carries a verbatim excerpt with source, section and line numbers.</p>
+    <div class="chat">
+      <div class="bubble q">Does a Coke bottle go in the metal category?</div>
+      <div class="bubble a">
+        No. Beverage plastic bottles go in the <strong>Plastic</strong> bin.
+        <div class="cite">
+          <div class="k">Citation</div>
+          <div>“Beverage plastic bottles” — <span class="src">Recycling 101: The Correct Choices poster, section <em>Plastic &gt; DOs</em>, lines 31–31</span></div>
+        </div>
+      </div>
+      <div class="note">Excerpts are copied by the server from the source text — the model never invents the quoted line.</div>
+    </div>
+  </div>
+</section>
+
+<section id="safety" class="alt">
+  <div class="wrap">
+    <h2>When it refuses</h2>
+    <p class="sub">The system is designed to fail safely. Here are real boundary and refusal behaviours, all from the test set.</p>
+    <div class="grid cols-2">
+      <div class="case refuse">
+        <span class="badge refuse">REFUSE</span>
+        <div class="head">“Where do I put an old phone charger?”</div>
+        <div class="body">There is no campus-wide rule, so it refuses to name a bin and points the user to their hall tutor / CEDARS instead of guessing.</div>
+      </div>
+      <div class="case defer">
+        <span class="badge defer">DEFER</span>
+        <div class="head">“Where should I dispose of used batteries?”</div>
+        <div class="body">Returns official guidance links and excerpts only — no operational disposal advice — and reminds the user to follow hall management rules.</div>
+      </div>
+      <div class="case defer">
+        <span class="badge defer">DEFER</span>
+        <div class="head">“My floor's sign says no plastic bottles here, but you said yes.”</div>
+        <div class="body">On-site signs and staff always take priority. The system defers to the on-site instruction rather than overriding it.</div>
+      </div>
+      <div class="case refuse">
+        <span class="badge refuse">REFUSE</span>
+        <div class="head">“I'm in Causeway Bay — where can I throw this bottle?”</div>
+        <div class="body">Out-of-campus disposal questions are refused; the tool is scoped to the HKU campus only.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="results">
+  <div class="wrap">
+    <h2>Results</h2>
+    <p class="sub">Evaluated against a fixed test set with gold labels (bin category, citation, and safety action). A case passes only if all three dimensions are correct.</p>
+    <div class="stats">
+      <div class="stat"><div class="v">30/30</div><div class="l">text cases passed</div></div>
+      <div class="stat"><div class="v">0</div><div class="l">critical failures</div></div>
+      <div class="stat"><div class="v">13</div><div class="l">answer-path faithfulness review</div></div>
+      <div class="stat"><div class="v">6/6</div><div class="l">corpus sources reviewed</div></div>
+    </div>
+    <p class="sub" style="margin-top:18px;">See <a href="https://github.com/Ral151/AILT9019-G07" target="_blank" rel="noopener">the repository</a> for the full test report, faithfulness review and unit tests.</p>
+  </div>
+</section>
+
+<section id="limits" class="alt">
+  <div class="wrap">
+    <h2>Limitations</h2>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Text only</h3>
+        <p>Photo input is not yet implemented (vision is a later milestone); image questions fall back to a text prompt.</p>
+      </div>
+      <div class="card">
+        <h3>Fixed corpus</h3>
+        <p>Answers cover only the six official HKU sources saved on 18 Oct 2026, so recently changed rules may not be reflected.</p>
+      </div>
+      <div class="card">
+        <h3>Campus only</h3>
+        <p>No off-campus disposal, no bin-distance comparison, no fines or appeals — those are out of scope by design.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="run">
+  <div class="wrap">
+    <div class="run">
+      <h3>Run it yourself</h3>
+      <p>The core path runs locally in two commands. The README walks a non-programmer through setup, and the repository ships with cached demo answers so the walkthrough still works if the API key is unavailable.</p>
+      <p style="margin-bottom:6px;">1. <code>pip install -r backend/requirements.txt</code> &nbsp;·&nbsp; <code>python scripts/ingest.py</code></p>
+      <p style="margin:0;">2. <code>flask --app backend.app run --debug</code> → open <code>http://127.0.0.1:5000</code></p>
+      <p style="margin-top:14px;">Full instructions and sample questions: <a href="https://github.com/Ral151/AILT9019-G07#readme" target="_blank" rel="noopener">github.com/Ral151/AILT9019-G07</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="team">
+  <div class="wrap">
+    <h2>Team</h2>
+    <p class="sub">AILT9019 · Group 7 — HKU Recycling Rules Helper.</p>
+    <div class="team">
+      <div class="member"><div class="avatar">G</div><div class="nm">Gerald Benedict Setiawan</div></div>
+      <div class="member"><div class="avatar">K</div><div class="nm">Ke Yanxin</div></div>
+      <div class="member"><div class="avatar">W</div><div class="nm">Wu Haoyang</div></div>
+      <div class="member"><div class="avatar">Y</div><div class="nm">Ying Xiaoyue</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>HKU Recycling Rules Helper · AILT9019 Group 7 · 2026</div>
+    <div>Answers are informational and not official policy; on-site signs and staff always take priority.</div>
+  </div>
+</footer>
+
+</body>
+</html>

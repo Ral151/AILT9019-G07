@@ -2,6 +2,8 @@
 
 A question-and-answer web app that tells you how to sort waste on the HKU campus, based exclusively on official HKU recycling documents. Every answer comes with an exact citation from the source text.
 
+> **Project webpage:** <https://Ral151.github.io/AILT9019-G07/> — a one-page overview (problem, pipeline, results, limitations) published with GitHub Pages for the final submission.
+
 ## Current status
 
 - Text questions work end-to-end. The test split passes 30/30 text cases with
