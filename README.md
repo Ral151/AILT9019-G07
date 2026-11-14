@@ -7,8 +7,10 @@ A question-and-answer web app that tells you how to sort waste on the HKU campus
 ## Current status
 
 - Text questions work end-to-end. The test split passes 30/30 text cases with
-  0 critical failures (`eval/reports/test-20261106-224054.md`, 6 Nov 2026);
-  retrieval threshold `RETRIEVE_TAU` is `0.686`.
+  0 critical failures on `qwen3.8-flash` (`eval/reports/test-20261115-012523.md`,
+  15 Nov 2026; earlier also 30/30 on `qwen3.7-plus`). Dev split: 35/42, 0
+  critical failures (`eval/reports/dev-20261115-012010.md`). Retrieval threshold
+  `RETRIEVE_TAU` is `0.686`.
 - The answer-path faithfulness review covers 13 cases
   (`eval/faithfulness_review.md`).
 - Photo input (backend): the vision model (`qwen3.8-flash`, fallback
@@ -70,7 +72,7 @@ location) before sending it.
 | Pipeline | LlamaIndex Workflow (`backend/app/workflow/pipeline.py`) |
 | Vector DB | ChromaDB `PersistentClient` in `data/chroma/`, built offline, read-only at runtime |
 | Embeddings | Local `BAAI/bge-small-en-v1.5` via LlamaIndex HuggingFace |
-| Text LLM | Any OpenAI-compatible API. Default: OpenRouter `nvidia/nemotron-3.5-super-vl:free`; alternative: Qwen on Alibaba Cloud Model Studio |
+| Text LLM | Any OpenAI-compatible API. Current: `qwen3.8-flash` on the course-sponsored Alibaba Cloud Model Studio key (`TEXT_PROVIDER=qwen`, key expires 19 Nov 2026); alternative: OpenRouter `nvidia/nemotron-3.5-super-vl:free` |
 
 ### Run it locally
 
@@ -87,7 +89,7 @@ pip install -r backend/requirements.txt
 python scripts/ingest.py
 
 # 3. Configuration
-cp .env.example .env              # then set OPENROUTER_API_KEY (optional, see below)
+cp .env.example .env              # then set QWEN_API_KEY + QWEN_BASE_URL, or OPENROUTER_API_KEY (optional, see below)
 
 # 4. Start the API on http://127.0.0.1:5000
 flask --app backend.app run --debug
@@ -106,7 +108,9 @@ work, because they are fixed templates. Normal answers return
 `SERVICE_UNAVAILABLE` (or a reviewed demo-cache answer) until you set
 `OPENROUTER_API_KEY` (or `QWEN_API_KEY`) in `.env` and restart Flask. Check
 `GET /api/health`: it shows `text_provider: "openrouter"`, the model, and
-whether the provider is reachable.
+whether the provider is reachable. With `TEXT_PROVIDER=qwen` it shows `qwen` and
+`qwen3.8-flash`. After the sponsored key expires (19 Nov 2026), set
+`TEXT_PROVIDER=openrouter` unless the key is renewed.
 
 **Free-model limits.** OpenRouter `:free` models allow 20 requests per minute
 and 50 per day (1,000 per day once the account has bought at least $10 of
@@ -139,7 +143,7 @@ POST /api/ask (multipart: message, optional image)
   3 Vision          photo -> closed-list item label -> confidence gate (never the bin)
   4 Retrieve        Chroma top-5 for the question and each extracted item
   5 Route           deterministic router: hazardous -> unsupported -> low match -> answer
-  6 Generate        Qwen writes <= 2 sentences from the selected excerpts (JSON)
+  6 Generate        the text LLM writes <= 2 sentences from the selected excerpts (JSON)
   7 Validate        checks; one retry; else VALIDATION_FAILED
   8 Respond         excerpts copied from the store by the server, caveats from chunk tags
 ```

@@ -40,7 +40,7 @@ def test_qwen_key_selects_qwen_defaults(env):
     s = env(QWEN_API_KEY="sk-qwen-test")
     assert s.text_provider == "qwen"
     assert "dashscope" in s.llm_base_url
-    assert s.text_model == "qwen-plus"
+    assert s.text_model == "qwen3.8-flash"
 
 
 def test_openrouter_wins_when_both_keys_set(env):

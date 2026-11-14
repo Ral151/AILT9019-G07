@@ -36,7 +36,7 @@ PROVIDER_DEFAULTS: dict[str, dict[str, str]] = {
         "key_env": "QWEN_API_KEY",
         "url_env": "QWEN_BASE_URL",
         "base_url": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
-        "model": "qwen-plus",
+        "model": "qwen3.8-flash",
     },
 }
 LIVE_PROVIDERS = tuple(PROVIDER_DEFAULTS)
