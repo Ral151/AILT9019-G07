@@ -54,6 +54,28 @@ describe('ResponseCard', () => {
     expect(screen.getByRole('link', { name: 'Ask your hall tutor or CEDARS' })).toBeInTheDocument();
   });
 
+  it('says what the photo was identified as, but not for an unclear photo', () => {
+    render(<ResponseCard response={{ ...base, image: { item_label: 'PET bottle', confidence: 0.95, needs_clearer_input: false } }} />);
+    expect(screen.getByText(/Photo identified as/)).toHaveTextContent('Photo identified as: PET bottle');
+  });
+
+  it('shows no identified item when it asks for a clearer photo', () => {
+    render(
+      <ResponseCard
+        response={{
+          ...base,
+          action: 'defer',
+          reason_code: 'MULTIPLE_ITEMS',
+          bin_category: null,
+          citations: [],
+          answer_text: 'I can see more than one item.',
+          image: { item_label: '', confidence: 0, needs_clearer_input: true },
+        }}
+      />,
+    );
+    expect(screen.queryByText(/Photo identified as/)).not.toBeInTheDocument();
+  });
+
   it('always shows the on-site priority notice', () => {
     render(<ResponseCard response={{ ...base, served_from_cache: true }} />);
     expect(screen.getByText(/On-site signs and staff always take priority/)).toBeInTheDocument();

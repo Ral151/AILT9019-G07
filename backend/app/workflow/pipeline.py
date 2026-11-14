@@ -2,7 +2,7 @@
 
   1 ValidateInput   re-validate + re-encode the photo in memory
   2 BoundaryCheck   rules, then LLM intent/items -> early refuse/defer (rows 1-2)
-  3 Vision          photo -> item name (M4; text-only fallback for now)
+  3 Vision          photo -> closed-list item label -> R7 gate (never the bin)
   4 Retrieve        Chroma top-k for the message and each item
   5 Route           deterministic FR-4 router (rows 3-6)
   6 Generate        LLM answer, answer path only
@@ -33,6 +33,7 @@ from ..policy.router import Route, route_intent, route_retrieval
 from ..policy.rules import check_boundary_rules, match_terms
 from ..policy.templates import template_response
 from ..policy.validators import build_citation, canonical_stream, check_excerpts, validate_generation
+from ..policy.vision_gate import gate_vision
 from ..prompts import ANSWER_PROMPT, INTENT_PROMPT, load_prompt
 from ..providers.llm import LLMResult, ProviderError, TextLLM, UsageTotals
 from ..providers.vision import VisionProvider, VisionUnavailable
@@ -69,6 +70,11 @@ class Trace:
     hazard_candidates: list[tuple[str, float]] = field(default_factory=list)
     selected: list[str] = field(default_factory=list)
     router_row: int | None = None
+    # Vision outcome (closed-list label, never image bytes or free text).
+    vision_model: str | None = None
+    vision_quality: str | None = None
+    vision_labels: list[tuple[str, float]] = field(default_factory=list)
+    vision_gate: str | None = None
     generation_attempts: int = 0
     validation_errors: list[str] = field(default_factory=list)
     provider_errors: list[str] = field(default_factory=list)
@@ -131,18 +137,23 @@ class Validated(Event):
 
 class RecyclingWorkflow(Workflow):
     def __init__(self, deps: PipelineDeps, request_id: str) -> None:
-        super().__init__(timeout=deps.settings.provider_timeout_s * 6 + 10, verbose=False)
+        # Text: 2 calls x 3 SDK tries; vision: up to 4 calls (2 models x 2 attempts).
+        super().__init__(timeout=deps.settings.provider_timeout_s * 10 + 10, verbose=False)
         self.deps = deps
         self.request_id = request_id
         self.trace = Trace()
+        # Set once a photo passes the gate; attached to every later response.
+        self.image_info: ImageInfo | None = None
 
     # -- helpers
 
     def _template(self, key: str, **kwargs: Any) -> StopEvent:
+        kwargs.setdefault("image", self.image_info)
         return StopEvent(result=template_response(self.deps.policy, key, self.request_id, **kwargs))
 
     def _unavailable(self, message: str) -> StopEvent:
-        if self.deps.settings.demo_cache in ("on", "auto"):
+        # Photos never get a demo-cache answer (FR-10).
+        if self.deps.settings.demo_cache in ("on", "auto") and self.image_info is None:
             cached = self.deps.demo_cache.lookup(message, self.request_id)
             if cached is not None:
                 return StopEvent(result=cached)
@@ -224,16 +235,41 @@ class RecyclingWorkflow(Workflow):
                 self.trace.validation_errors.append(f"intent: {exc.error_count()} schema error(s)")
         return self._template("VALIDATION_FAILED")
 
-    # -- 3 Vision (M4)
+    # -- 3 Vision
 
     @step
     async def vision(self, ev: VisionNeeded) -> QueryReady | StopEvent:
+        """The model only names the item (R6). Only a closed-list label goes
+        on, so no text the model read in the photo reaches later steps."""
+        s = self.deps.settings
         try:
-            await asyncio.to_thread(self.deps.vision.classify, ev.image.data, ev.image.mime)
-        except VisionUnavailable:
+            result = await asyncio.to_thread(self.deps.vision.classify, ev.image.data, ev.image.mime)
+        except VisionUnavailable as exc:
+            self.trace.provider_errors.append(str(exc))
             return self._template("IMAGE_SERVICE_UNAVAILABLE", image=ImageInfo(needs_clearer_input=True))
-        # M4: confidence gate (R7), then synthesise "Where does {label} go?".
-        return self._template("IMAGE_SERVICE_UNAVAILABLE", image=ImageInfo(needs_clearer_input=True))
+        t = self.trace
+        t.vision_model, t.vision_quality = result.model, result.image_quality
+        t.vision_labels = [(i.label, i.confidence) for i in result.items]
+        t.provider_errors.extend(result.errors)
+        t.usage.calls += result.calls
+        t.usage.prompt_tokens += result.prompt_tokens
+        t.usage.completion_tokens += result.completion_tokens
+        if result.calls:
+            t.usage.models.add(result.model)
+
+        decision = gate_vision(result, self.deps.policy.vision_labels, min_conf=s.vision_min_conf, margin=s.vision_margin)
+        t.vision_gate = decision.template_key or "pass"
+        if decision.template_key is not None:  # R7: ask for clearer input, never classify
+            return self._template(
+                decision.template_key,
+                image=ImageInfo(item_label=decision.label, confidence=decision.confidence, needs_clearer_input=True),
+            )
+        self.image_info = ImageInfo(item_label=decision.label, confidence=decision.confidence)
+        synthetic = f"Where does a {decision.label} go?"
+        message = f"{ev.message} (The photo shows: {decision.label}.)" if ev.message else synthetic
+        item_names = list(dict.fromkeys([decision.label, *ev.item_names]))
+        t.items = item_names
+        return QueryReady(message=message, item_names=item_names)
 
     # -- 4 Retrieve
 
@@ -351,6 +387,7 @@ class RecyclingWorkflow(Workflow):
             bin_category=canonical_stream(ev.output.bin_category, cited),
             caveats=caveats,
             citations=[build_citation(c) for c in cited],
+            image=self.image_info,
         )
         if check_excerpts(response, self.deps.store):  # defensive; should never fire
             self.trace.validation_errors.append("final excerpt check failed")

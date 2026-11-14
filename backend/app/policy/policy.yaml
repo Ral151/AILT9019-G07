@@ -165,6 +165,29 @@ unsupported_items:
   - bulky item
   - bulky items
 
+# Closed label list for the vision model (§7.3, prompt A2). The model may
+# only name the item with one of these labels (or "other"); the bin is still
+# decided by retrieval + citation (R6). Each label is used as the item name in
+# the synthetic query "Where does a {label} go?", so the hazardous and
+# unsupported lists above must match labels for those items. Seeded from items
+# named in the corpus and the eval cases; extend with the team.
+vision_labels:
+  - PET bottle
+  - plastic container
+  - bubble tea cup
+  - takeaway container
+  - aluminium or iron can
+  - aerosol can
+  - glass bottle
+  - paper
+  - corrugated cardboard
+  - paper cup
+  - tetra pak carton
+  - battery
+  - phone charger
+  - small electrical appliance
+  - furniture
+
 # Terms the answer validator treats as "bin or stream names" (FR-6 check 4).
 # Stream names found in the corpus are added automatically at start-up; this
 # list adds generic bin words an LLM might invent.

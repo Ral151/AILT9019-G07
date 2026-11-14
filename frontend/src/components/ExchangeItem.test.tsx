@@ -18,13 +18,13 @@ const caveatAnswer: ApiResponse = {
 
 describe('ExchangeItem', () => {
   it('shows a loading state while waiting', () => {
-    render(<ExchangeItem exchange={{ id: 1, question: 'Q?', response: null, error: null }} busy onRetry={() => {}} />);
+    render(<ExchangeItem exchange={{ id: 1, question: 'Q?', photo: null, photoUrl: null, response: null, error: null }} busy onRetry={() => {}} />);
     expect(screen.getByRole('status')).toHaveTextContent(/Checking HKU/);
   });
 
   it('shows the caveat note with the answer', () => {
     render(
-      <ExchangeItem exchange={{ id: 1, question: 'Q?', response: caveatAnswer, error: null }} busy={false} onRetry={() => {}} />,
+      <ExchangeItem exchange={{ id: 1, question: 'Q?', photo: null, photoUrl: null, response: caveatAnswer, error: null }} busy={false} onRetry={() => {}} />,
     );
     expect(screen.getByText('Answer with note')).toBeInTheDocument();
     expect(screen.getByText('Please note')).toBeInTheDocument();
@@ -34,7 +34,7 @@ describe('ExchangeItem', () => {
   it('offers a retry after an error', () => {
     const onRetry = vi.fn();
     render(
-      <ExchangeItem exchange={{ id: 7, question: 'Q?', response: null, error: 'Server down' }} busy={false} onRetry={onRetry} />,
+      <ExchangeItem exchange={{ id: 7, question: 'Q?', photo: null, photoUrl: null, response: null, error: 'Server down' }} busy={false} onRetry={onRetry} />,
     );
     expect(screen.getByRole('alert')).toHaveTextContent('Server down');
     fireEvent.click(screen.getByRole('button', { name: 'Try again' }));

@@ -6,6 +6,7 @@ import {
   CheckCircleIcon,
   ChevronDownIcon,
   ExternalLinkIcon,
+  ImageIcon,
   RecycleIcon,
   ShieldCheckIcon,
   UsersIcon,
@@ -134,6 +135,15 @@ export function ResponseCard({ response }: { response: ApiResponse }) {
             </span>
           )}
         </div>
+
+        {response.image && response.image.item_label && !response.image.needs_clearer_input && (
+          <p className="mt-3 flex items-center gap-2 text-stone-700">
+            <ImageIcon className="h-5 w-5 shrink-0 text-hku-600" />
+            <span>
+              Photo identified as: <span className="font-semibold text-stone-900">{response.image.item_label}</span>
+            </span>
+          </p>
+        )}
 
         {response.bin_category && <BinCategory name={response.bin_category} />}
 

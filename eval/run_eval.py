@@ -35,6 +35,7 @@ from backend.app.workflow import Pipeline, PipelineResult  # noqa: E402
 CASES_DIR = REPO_ROOT / "eval" / "cases"
 REPORTS_DIR = REPO_ROOT / "eval" / "reports"
 LLM_CACHE = REPO_ROOT / "eval" / ".llm_cache.json"
+VISION_CACHE = REPO_ROOT / "eval" / ".vision_cache.json"  # image hashes + labels only
 FAITHFULNESS_REVIEW = REPO_ROOT / "eval" / "faithfulness_review.md"
 
 
@@ -147,6 +148,13 @@ async def run_cases(cases: list[dict[str, Any]], pipeline: Pipeline, store: dict
             notes.append("validation: " + "; ".join(result.trace.validation_errors[:3]))
         if result.trace.provider_errors:
             notes.append("provider: " + "; ".join(result.trace.provider_errors[:2]))
+        if case["modality"] == "image":
+            # Informational: §9.2 scores category/citation/safety only.
+            seen = ", ".join(f"{label} {conf:.2f}" for label, conf in result.trace.vision_labels) or "none"
+            notes.append(
+                f"vision: {result.trace.vision_quality or '-'} [{seen}] gate {result.trace.vision_gate or '-'}"
+                f" (gold item: {case['gold'].get('item_label') or '-'})"
+            )
         results.append(
             CaseResult(
                 case=case,
@@ -170,6 +178,13 @@ def build_report(split: str, settings: Settings, llm_mode: str, results: list[Ca
         f"- Run: {now}",
         f"- Text provider: `{settings.text_provider}` (mode `{llm_mode}`), text model `{settings.text_model}`, intent model `{settings.intent_model}`",
         f"- Retrieval: `{settings.embed_model}`, top-k {settings.retrieve_top_k}, tau {settings.retrieve_tau}",
+        f"- Vision: `{settings.vision_provider}`"
+        + (
+            f", models `{settings.vision_model_primary}` -> `{settings.vision_model_fallback}`,"
+            f" min confidence {settings.vision_min_conf}, margin {settings.vision_margin}"
+            if settings.vision_enabled
+            else " (photos get the text-only message)"
+        ),
         f"- Cases: {len(results)} ({len(ran)} run, {len(results) - len(ran)} skipped); passed {passed}",
         f"- Critical failures: {sum(len(r.critical) for r in results)}",
         f"- Release gate: {'PASS' if not gate else 'FAIL'}",
@@ -208,6 +223,8 @@ def main() -> None:
         overrides["text_provider"] = args.llm
     if not args.no_cache and args.llm != "mock":
         overrides["llm_cache_path"] = LLM_CACHE
+    if not args.no_cache:
+        overrides["vision_cache_path"] = VISION_CACHE
     settings = load_settings(**overrides)
 
     from backend.app.services import build_deps

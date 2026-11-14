@@ -69,6 +69,7 @@ export interface HealthResponse {
   text_provider: string;
   text_model: string | null;
   text_provider_reachable: boolean | null;
+  vision_enabled: boolean;
   demo_cache: string;
   demo_cache_entries: number;
 }

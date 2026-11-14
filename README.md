@@ -11,6 +11,12 @@ A question-and-answer web app that tells you how to sort waste on the HKU campus
   retrieval threshold `RETRIEVE_TAU` is `0.686`.
 - The answer-path faithfulness review covers 13 cases
   (`eval/faithfulness_review.md`).
+- Photo input (backend): the vision model (`qwen3.8-flash`, fallback
+  `qwen3.6-flash`, on the course-sponsored Model Studio key) only names the
+  item from a closed label list; the bin still comes from retrieval and a
+  citation. Unclear, multi-item or low-confidence photos ask for a clearer
+  photo. Not yet scored: the 21 eval photos still have to be taken, and
+  `VISION_MIN_CONF` (provisionally 0.7) must be set from the dev photos.
 - Known quirk: a text answer occasionally fails its JSON-schema validation and
   returns a safe refusal ("couldn't produce an answer… won't guess") instead of
   guessing. This is transient LLM-output variance — re-ask once and it usually
@@ -22,6 +28,21 @@ A question-and-answer web app that tells you how to sort waste on the HKU campus
 - "Does a Coke bottle go in the metal category?"
 - "Where should I dispose of used batteries?" (you get official excerpts and links only)
 - "Where do I put an old phone charger?" (you get a polite refusal and where to ask)
+
+## Ask with a photo
+
+Tap **Take photo** (phones) to use the camera, or **Upload photo** to pick a
+photo you already have. Photograph **one item at a time**, close up and in good
+light. You can send the photo on its own or add a question. The app only uses
+the photo to name the item (for example "aluminium or iron can"); the bin
+still comes from HKU's documents, with a citation. If the photo is blurry,
+dark or shows several items, it asks you for a clearer one.
+
+**Privacy:** Photos are processed in memory and are not saved or logged by this
+app. To identify the item, the photo is sent to a third-party AI service under
+its own terms. Please don't upload photos that show people, faces, or
+documents. Your browser shrinks the photo and removes its metadata (including
+location) before sending it.
 
 ## What it will and won't do
 
@@ -115,7 +136,7 @@ re-scoring an unchanged run is free.
 POST /api/ask (multipart: message, optional image)
   1 ValidateInput   size caps; photo re-validated and re-encoded in memory
   2 BoundaryCheck   keyword rules (policy.yaml), then the LLM intent call -> early refuse/defer
-  3 Vision          photo -> item name (text-only fallback for now)
+  3 Vision          photo -> closed-list item label -> confidence gate (never the bin)
   4 Retrieve        Chroma top-5 for the question and each extracted item
   5 Route           deterministic router: hazardous -> unsupported -> low match -> answer
   6 Generate        Qwen writes <= 2 sentences from the selected excerpts (JSON)
@@ -134,8 +155,8 @@ backend/app/
   schemas/     pydantic models for the API contract and LLM outputs
   workflow/    LlamaIndex Workflow 
   policy/      policy.yaml (scope keywords, templates, caveat texts), rules, router, validators
-  providers/   Qwen text LLM (+ mock, + eval cache); vision interface
-  prompts/     versioned prompt files (intent_v1, answer_v1)
+  providers/   text LLM (+ mock, + eval cache); Qwen vision with fallback chain (+ eval cache)
+  prompts/     versioned prompt files (intent_v1, answer_v1, vision_v1)
   retrieval/   corpus loader, Chroma store, query normalisation
 backend/tests/ pytest suite (rules, router, validators, pipeline, API, corpus, eval harness)
 corpus/

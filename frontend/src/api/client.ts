@@ -21,11 +21,12 @@ async function readError(res: Response): Promise<string> {
   }
 }
 
-export async function ask(message: string, signal?: AbortSignal): Promise<ApiResponse> {
-  // Multipart, as specified in FR-7. The optional `image` field is added by
-  // the photo flow (milestone M4).
+export async function ask(message: string, photo?: Blob | null, signal?: AbortSignal): Promise<ApiResponse> {
+  // Multipart, as specified in FR-7. `photo` is already resized and
+  // re-encoded by prepareImage().
   const form = new FormData();
   form.append('message', message);
+  if (photo) form.append('image', photo, 'photo.jpg');
   const res = await fetch('/api/ask', { method: 'POST', body: form, signal: signal ?? null });
   if (!res.ok) {
     throw new ApiRequestError(await readError(res), res.status);

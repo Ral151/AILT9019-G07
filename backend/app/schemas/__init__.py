@@ -124,6 +124,43 @@ class GenerationOutput(BaseModel):
         return self
 
 
+ImageQuality = Literal["ok", "blurry", "dark", "no_waste_item"]
+MaterialGuess = Literal["plastic", "paper", "metal", "glass", "organic", "electronic", "battery", "mixed", "unknown"]
+
+
+class VisionAlternative(BaseModel):
+    label: str = Field(max_length=80)
+    confidence: float = Field(ge=0.0, le=1.0)
+
+
+class VisionItemOutput(BaseModel):
+    label: str = Field(max_length=80)
+    free_text_name: str = Field(default="", max_length=120)
+    material_guess: MaterialGuess = "unknown"
+    confidence: float = Field(ge=0.0, le=1.0)
+    alternatives: list[VisionAlternative] = Field(default_factory=list, max_length=5)
+
+    @field_validator("label")
+    @classmethod
+    def _norm_label(cls, v: str) -> str:
+        return " ".join(v.split()).casefold()
+
+    @field_validator("material_guess", mode="before")
+    @classmethod
+    def _unknown_material(cls, v: object) -> object:
+        # Informational only; an unexpected value is not worth a retry.
+        allowed = MaterialGuess.__args__  # type: ignore[attr-defined]
+        return v if v in allowed else "unknown"
+
+
+class VisionOutput(BaseModel):
+    """Output of prompt A2 (vision, §7.3). The model only names the item (R6);
+    the closed-label and confidence checks are deterministic code (§7.4)."""
+
+    image_quality: ImageQuality
+    items: list[VisionItemOutput] = Field(default_factory=list, max_length=10)
+
+
 # --------------------------------------------------------------------------
 # API response (FR-7)
 # --------------------------------------------------------------------------

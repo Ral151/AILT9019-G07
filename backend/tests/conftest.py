@@ -124,13 +124,17 @@ def policy() -> Policy:
 
 @pytest.fixture
 def make_pipeline(policy: Policy, tmp_path: Path):  # type: ignore[no-untyped-def]
-    def _make(llm: Any = None, retriever: Any = None, demo_cache: str = "off", tau: float = 0.7) -> Pipeline:
+    def _make(
+        llm: Any = None, retriever: Any = None, demo_cache: str = "off", tau: float = 0.7, vision: Any = None
+    ) -> Pipeline:
         settings = load_settings(
             env_file=tmp_path / "missing.env",
             text_provider="mock" if llm is not None else "none",
             retrieve_tau=tau,
             demo_cache=demo_cache,
             demo_cache_path=tmp_path / "demo_cache.json",
+            vision_provider="qwen" if vision is not None else "none",
+            vision_api_key="test" if vision is not None else None,
         )
         deps = PipelineDeps(
             settings=settings,
@@ -138,7 +142,7 @@ def make_pipeline(policy: Policy, tmp_path: Path):  # type: ignore[no-untyped-de
             retriever=retriever or FakeRetriever(),
             store=STORE,
             llm=llm,
-            vision=UnavailableVisionProvider(),
+            vision=vision or UnavailableVisionProvider(),
             demo_cache=DemoCache(settings.demo_cache_path),
             vocabulary=["Paper", "Metal", "Plastic", "Glass Bottle", "Tetra Pak", "Rechargeable Battery", "blue bin"],
         )

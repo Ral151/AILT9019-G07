@@ -50,13 +50,20 @@ interface Props {
 export function ExchangeItem({ exchange, busy, onRetry }: Props) {
   return (
     <li className="animate-rise">
-      <p className="mb-2 flex items-start gap-2 px-1 font-semibold text-stone-900">
+      <div className="mb-2 flex items-start gap-2 px-1 font-semibold text-stone-900">
         <QuestionIcon className="mt-0.5 h-5 w-5 shrink-0 text-hku-600" />
-        <span>
+        <span className="flex-1">
           <span className="sr-only">You asked: </span>
-          {exchange.question}
+          {exchange.question || (exchange.photoUrl ? 'Where does this go?' : '')}
         </span>
-      </p>
+        {exchange.photoUrl && (
+          <img
+            src={exchange.photoUrl}
+            alt="Your photo"
+            className="h-14 w-14 shrink-0 rounded-lg object-cover ring-1 ring-stone-200"
+          />
+        )}
+      </div>
       {exchange.response && <ResponseCard response={exchange.response} />}
       {exchange.error && (
         <ErrorCard message={exchange.error} disabled={busy} onRetry={() => onRetry(exchange.id)} />

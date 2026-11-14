@@ -64,7 +64,9 @@ def health() -> Any:
             "text_provider_reachable": state.provider_reachable(),
             "vision_model_primary": s.vision_model_primary,
             "vision_model_fallback": s.vision_model_fallback,
-            "vision_enabled": False,  # milestone M4
+            "vision_enabled": s.vision_enabled,
+            "vision_provider": s.vision_provider,
+            "vision_min_conf": s.vision_min_conf,
             "retrieve_tau": s.retrieve_tau,
             "demo_cache": s.demo_cache,
             "demo_cache_entries": len(state.deps.demo_cache.entries),

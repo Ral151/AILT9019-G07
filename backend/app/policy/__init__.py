@@ -34,6 +34,7 @@ class Policy:
     boundary_rules: tuple[BoundaryRule, ...]
     hazardous_items: tuple[str, ...]
     unsupported_items: tuple[str, ...]
+    vision_labels: tuple[str, ...]
     bin_vocabulary_extra: tuple[str, ...]
     redirects: dict[str, Redirect]
     templates: dict[str, Template]
@@ -74,6 +75,7 @@ def load_policy(path: Path = POLICY_FILE) -> Policy:
         boundary_rules=rules,
         hazardous_items=tuple(raw["hazardous_items"]),
         unsupported_items=tuple(raw["unsupported_items"]),
+        vision_labels=tuple(raw["vision_labels"]),
         bin_vocabulary_extra=tuple(raw["bin_vocabulary_extra"]),
         redirects=redirects,
         templates=templates,

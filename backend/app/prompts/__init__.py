@@ -11,6 +11,7 @@ PROMPT_DIR = Path(__file__).parent
 
 INTENT_PROMPT = "intent_v1"
 ANSWER_PROMPT = "answer_v1"
+VISION_PROMPT = "vision_v1"
 
 
 @lru_cache(maxsize=None)

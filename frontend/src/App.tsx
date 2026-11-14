@@ -37,7 +37,11 @@ export default function App() {
           aria-label="Ask a question"
           className="relative -mt-10 rounded-2xl bg-white p-4 shadow-xl ring-1 shadow-hku-900/10 ring-stone-200 sm:-mt-12 sm:p-6"
         >
-          <ChatInput disabled={loading} onSubmit={(m) => void submit(m)} />
+          <ChatInput
+            disabled={loading}
+            photosEnabled={health?.vision_enabled !== false}
+            onSubmit={(m, photo) => void submit(m, photo)}
+          />
           <SampleChips samples={samples} disabled={loading} onPick={(s) => void submit(s)} />
         </section>
 
@@ -78,7 +82,7 @@ export default function App() {
           </p>
           <p>
             This helper covers HKU campus recycling only. Don&apos;t include personal information in
-            your question.
+            your question, and don&apos;t upload photos that show people, faces or documents.
           </p>
           {health && (
             <p className="text-hku-100/80">

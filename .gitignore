@@ -16,6 +16,7 @@ data/chroma/
 
 # Eval: cached LLM outputs (may hold model text; regenerate any time)
 eval/.llm_cache.json
+eval/.vision_cache.json
 
 # Frontend
 frontend/node_modules/

@@ -41,6 +41,19 @@ PROVIDER_DEFAULTS: dict[str, dict[str, str]] = {
 }
 LIVE_PROVIDERS = tuple(PROVIDER_DEFAULTS)
 
+# Vision (§7). The course-sponsored Model Studio plan has no qwen3-vl-* models,
+# so the defaults are natively multimodal Qwen Flash models (both checked on
+# 15 Nov 2026 to accept base64 images and return JSON). VISION_PROVIDER=qwen
+# uses QWEN_API_KEY and QWEN_BASE_URL; unset, it is "qwen" when that key is
+# present, else "none" (photos get the text-only message).
+VISION_PROVIDERS = ("qwen",)
+DEFAULT_VISION_MODEL_PRIMARY = "qwen3.8-flash"
+DEFAULT_VISION_MODEL_FALLBACK = "qwen3.6-flash"
+# Provisional R7 gate threshold, to be set from the dev images
+# (§7.4). Self-reported confidence is not calibrated: a coarse filter only.
+DEFAULT_VISION_MIN_CONF = 0.7
+DEFAULT_VISION_MARGIN = 0.15
+
 
 def _env(name: str, default: str | None = None) -> str | None:
     value = os.environ.get(name)
@@ -69,7 +82,7 @@ class Settings:
     llm_base_url: str
     text_model: str
     intent_model: str
-    # Vision (milestone M4); recorded here so /api/health can report it.
+    # Vision (§7): "qwen" (live) or "none" (text-only message for photos).
     vision_model_primary: str
     vision_model_fallback: str
 
@@ -95,8 +108,20 @@ class Settings:
     demo_cache: str = "auto"
     demo_cache_path: Path = REPO_ROOT / "backend" / "app" / "demo_cache.json"
 
-    # Eval harness: cache LLM outputs keyed by (prompt hash, model).
+    vision_provider: str = "none"
+    vision_api_key: str | None = None
+    vision_base_url: str = PROVIDER_DEFAULTS["qwen"]["base_url"]
+    vision_min_conf: float = DEFAULT_VISION_MIN_CONF
+    vision_margin: float = DEFAULT_VISION_MARGIN
+
+    # Eval harness: cache LLM outputs keyed by (prompt hash, model), and
+    # vision outputs keyed by (image hash, prompt, model). Never set in the app.
     llm_cache_path: Path | None = None
+    vision_cache_path: Path | None = None
+
+    @property
+    def vision_enabled(self) -> bool:
+        return self.vision_provider in VISION_PROVIDERS and bool(self.vision_api_key)
 
     @property
     def llm_enabled(self) -> bool:
@@ -118,6 +143,13 @@ def _resolve_provider() -> str:
     return "none"
 
 
+def _resolve_vision_provider() -> str:
+    explicit = (_env("VISION_PROVIDER") or "").lower()
+    if explicit:
+        return explicit if explicit in VISION_PROVIDERS else "none"
+    return "qwen" if _env("QWEN_API_KEY") else "none"
+
+
 def load_settings(env_file: Path | None = None, **overrides: object) -> Settings:
     load_dotenv(env_file or REPO_ROOT / ".env", override=False)
 
@@ -125,6 +157,8 @@ def load_settings(env_file: Path | None = None, **overrides: object) -> Settings
     defaults = PROVIDER_DEFAULTS.get(provider, PROVIDER_DEFAULTS["openrouter"])
     api_key = _env(defaults["key_env"]) if provider in LIVE_PROVIDERS else None
     text_model = _env("TEXT_MODEL", defaults["model"]) or defaults["model"]
+    vision_provider = _resolve_vision_provider()
+    qwen = PROVIDER_DEFAULTS["qwen"]
 
     cors = tuple(o.strip() for o in (_env("CORS_ORIGINS", "") or "").split(",") if o.strip())
     chroma_path = Path(_env("CHROMA_PATH", str(REPO_ROOT / "data" / "chroma")) or "")
@@ -137,8 +171,13 @@ def load_settings(env_file: Path | None = None, **overrides: object) -> Settings
         llm_base_url=_env(defaults["url_env"], defaults["base_url"]) or defaults["base_url"],
         text_model=text_model,
         intent_model=_env("INTENT_MODEL", text_model) or text_model,
-        vision_model_primary=_env("VISION_MODEL_PRIMARY", "qwen3-vl-plus") or "qwen3-vl-plus",
-        vision_model_fallback=_env("VISION_MODEL_FALLBACK", "qwen3-vl-flash") or "qwen3-vl-flash",
+        vision_model_primary=_env("VISION_MODEL_PRIMARY", DEFAULT_VISION_MODEL_PRIMARY) or DEFAULT_VISION_MODEL_PRIMARY,
+        vision_model_fallback=_env("VISION_MODEL_FALLBACK", DEFAULT_VISION_MODEL_FALLBACK) or "",
+        vision_provider=vision_provider,
+        vision_api_key=_env("QWEN_API_KEY") if vision_provider == "qwen" else None,
+        vision_base_url=_env("QWEN_BASE_URL", qwen["base_url"]) or qwen["base_url"],
+        vision_min_conf=_env_float("VISION_MIN_CONF", DEFAULT_VISION_MIN_CONF),
+        vision_margin=_env_float("VISION_MARGIN", DEFAULT_VISION_MARGIN),
         chroma_path=chroma_path,
         chroma_collection=_env("CHROMA_COLLECTION", "hku_recycling") or "hku_recycling",
         embed_model=_env("EMBED_MODEL", "BAAI/bge-small-en-v1.5") or "BAAI/bge-small-en-v1.5",

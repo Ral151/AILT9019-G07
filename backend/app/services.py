@@ -7,7 +7,7 @@ from .demo_cache import DemoCache
 from .policy import get_policy
 from .policy.validators import bin_vocabulary
 from .providers.llm import build_text_llm
-from .providers.vision import UnavailableVisionProvider
+from .providers.vision import build_vision_provider
 from .retrieval.corpus import load_manifest
 from .retrieval.store import ChunkStore, HFEmbedder, Retriever
 from .workflow import PipelineDeps
@@ -30,7 +30,7 @@ def build_deps(settings: Settings) -> tuple[PipelineDeps, ChunkStore]:
         retriever=Retriever(store, embedder),
         store=store.chunks,
         llm=build_text_llm(settings),
-        vision=UnavailableVisionProvider(),
+        vision=build_vision_provider(settings, policy.vision_labels),
         demo_cache=DemoCache(settings.demo_cache_path),
         vocabulary=bin_vocabulary(policy, manifest.bin_vocabulary),
     )
