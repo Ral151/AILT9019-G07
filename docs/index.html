@@ -189,7 +189,8 @@
     <h1>Sort it right, with a cited answer.</h1>
     <p class="lede">A question-and-answer assistant that tells HKU students and staff how to sort waste on campus — based exclusively on official HKU recycling documents, and every answer shows the exact source line it came from.</p>
     <div class="hero-actions">
-      <a class="btn btn-primary" href="#example">See a real answer ↓</a>
+      <a class="btn btn-primary" href="https://hku-recycling-helper.onrender.com/" target="_blank" rel="noopener">Try the app →</a>
+      <a class="btn btn-ghost" href="#example">See a real answer ↓</a>
       <a class="btn btn-ghost" href="https://github.com/Ral151/AILT9019-G07" target="_blank" rel="noopener">GitHub repository</a>
     </div>
   </div>
@@ -346,6 +347,7 @@
   <div class="wrap">
     <div class="run">
       <h3>Run it yourself</h3>
+      <p><strong>Live app:</strong> <a href="https://hku-recycling-helper.onrender.com/" target="_blank" rel="noopener">hku-recycling-helper.onrender.com</a> (free hosting: after 15 idle minutes the first visit takes about a minute to wake up).</p>
       <p>The core path runs locally in two commands. The README walks a non-programmer through setup, and the repository ships with cached demo answers so the walkthrough still works if the API key is unavailable.</p>
       <p style="margin-bottom:6px;">1. <code>pip install -r backend/requirements.txt</code> &nbsp;·&nbsp; <code>python scripts/ingest.py</code></p>
       <p style="margin:0;">2. <code>flask --app backend.app run --debug</code> → open <code>http://127.0.0.1:5000</code></p>

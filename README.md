@@ -2,6 +2,8 @@
 
 A question-and-answer web app that tells you how to sort waste on the HKU campus, based exclusively on official HKU recycling documents. Every answer comes with an exact citation from the source text.
 
+> **Use the app:** <https://hku-recycling-helper.onrender.com/> — works on a phone. If nobody has used it for 15 minutes, the first visit takes about a minute to wake it up.
+>
 > **Project webpage:** <https://Ral151.github.io/AILT9019-G07/> — a one-page overview (problem, pipeline, results, limitations) published with GitHub Pages for the final submission.
 
 ## Current status
