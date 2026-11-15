@@ -7,9 +7,11 @@ A question-and-answer web app that tells you how to sort waste on the HKU campus
 ## Current status
 
 - Text questions work end-to-end. The test split passes 30/30 text cases with
-  0 critical failures on `qwen3.8-flash` (`eval/reports/test-20261115-012523.md`,
-  15 Nov 2026; earlier also 30/30 on `qwen3.7-plus`). Dev split: 35/42, 0
-  critical failures (`eval/reports/dev-20261115-012010.md`). Retrieval threshold
+  0 critical failures on `qwen3.8-flash` with the ONNX embedder
+  (`eval/reports/test-20261115-184438.md`, 15 Nov 2026; earlier also 30/30 on
+  `qwen3.7-plus`). Dev split: 34/42, 0 critical failures
+  (`eval/reports/dev-20261115-184239.md`; 35/42 before the ONNX switch, the
+  difference is one re-generated answer, D-001). Retrieval threshold
   `RETRIEVE_TAU` is `0.686`.
 - The answer-path faithfulness review covers 13 cases
   (`eval/faithfulness_review.md`).
@@ -71,7 +73,7 @@ location) before sending it.
 | Backend | Flask 3 (async views), pydantic v2 schemas |
 | Pipeline | LlamaIndex Workflow (`backend/app/workflow/pipeline.py`) |
 | Vector DB | ChromaDB `PersistentClient` in `data/chroma/`, built offline, read-only at runtime |
-| Embeddings | Local `BAAI/bge-small-en-v1.5` via LlamaIndex HuggingFace |
+| Embeddings | Local `BAAI/bge-small-en-v1.5` (official ONNX weights) on ONNX Runtime, no torch; the app runs in about 350 MB RAM |
 | Text LLM | Any OpenAI-compatible API. Current: `qwen3.8-flash` on the course-sponsored Alibaba Cloud Model Studio key (`TEXT_PROVIDER=qwen`, key expires 19 Nov 2026); alternative: OpenRouter `nvidia/nemotron-3.5-super-vl:free` |
 
 ### Run it locally
@@ -117,6 +119,26 @@ and 50 per day (1,000 per day once the account has bought at least $10 of
 credit). Each text question uses two LLM calls, so one full dev-split eval
 can use up a day's free requests. The eval harness caches LLM outputs, so
 re-scoring an unchanged run is free.
+
+### Deploy to Hugging Face Spaces
+
+GitHub Pages only hosts static files, so the app (Flask, Chroma, the
+embedding model and the API key) runs on a free Hugging Face Docker Space.
+The `Dockerfile` builds everything into one image on port 7860.
+
+```bash
+hf auth login                     # once; paste a token with "write" access
+python scripts/deploy_hf.py --space <hf-user>/hku-recycling-helper --push-config
+```
+
+The script creates the Space if needed and uploads only the files the image
+needs. `--push-config` copies the API keys from `.env` as Space secrets and the
+provider settings as variables; leave it out to set them by hand under the
+Space's Settings → Variables and secrets. The first build takes about 10–15
+minutes (logs on the Space page). Then check
+`https://<hf-user>-hku-recycling-helper.hf.space/api/health`. Re-run the
+script to deploy changes. Free Spaces sleep after about 48 hours without
+visitors, and the first request after that is slow.
 
 ### Commands
 

@@ -9,10 +9,12 @@ pillow==13.0.0
 
 # Orchestration + retrieval
 llama-index-core==0.14.25
-llama-index-embeddings-huggingface==0.8.0
-sentence-transformers==5.7.0
-torch==2.14.1
 chromadb==1.5.9
+# bge-small runs on ONNX Runtime instead of torch, so the app fits 512 MB RAM.
+onnxruntime==1.32.0
+tokenizers==0.23.3
+huggingface_hub==2.4.0
+numpy==2.5.4
 
 # Qwen on Alibaba Cloud Model Studio (OpenAI-compatible API)
 openai==3.33.0

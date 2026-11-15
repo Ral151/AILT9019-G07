@@ -101,6 +101,9 @@ class Settings:
     max_image_pixels: int = 40_000_000
     image_max_edge: int = 1024
     rate_limit_per_min: int = 20
+    # Reverse proxies in front of the app (1 on Hugging Face Spaces) whose
+    # X-Forwarded-For is trusted, so the rate limit sees real client IPs.
+    trust_proxy_hops: int = 0
     cors_origins: tuple[str, ...] = field(default_factory=tuple)
 
     # Demo cache (FR-10): "on" serves reviewed cached answers for sample
@@ -184,6 +187,7 @@ def load_settings(env_file: Path | None = None, **overrides: object) -> Settings
         retrieve_tau=_env_float("RETRIEVE_TAU", DEFAULT_RETRIEVE_TAU),
         provider_timeout_s=_env_float("PROVIDER_TIMEOUT_S", 15.0),
         rate_limit_per_min=_env_int("RATE_LIMIT", 20),
+        trust_proxy_hops=_env_int("TRUST_PROXY_HOPS", 0),
         cors_origins=cors,
         demo_cache=(_env("DEMO_CACHE", "auto") or "auto").lower(),
     )

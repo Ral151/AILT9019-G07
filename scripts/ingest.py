@@ -94,7 +94,7 @@ def validate(require_reviewed: bool) -> tuple[object, list]:
 def build(manifest, chunks) -> None:  # type: ignore[no-untyped-def]
     import chromadb
 
-    from backend.app.retrieval.store import HFEmbedder
+    from backend.app.retrieval.store import OnnxEmbedder
 
     settings = load_settings()
     path = settings.chroma_path
@@ -102,7 +102,7 @@ def build(manifest, chunks) -> None:  # type: ignore[no-untyped-def]
         shutil.rmtree(path)
     path.mkdir(parents=True)
 
-    embedder = HFEmbedder(settings.embed_model)
+    embedder = OnnxEmbedder(settings.embed_model)
     texts = [embedding_text(ac.chunk) for ac in chunks]
     print(f"Embedding {len(texts)} chunks with {settings.embed_model} ...")
     vectors = embedder.embed_documents(texts)

@@ -30,11 +30,11 @@ def main() -> None:
     parser.add_argument("--split", choices=["dev"], default="dev")
     args = parser.parse_args()
 
-    from backend.app.retrieval.store import ChunkStore, HFEmbedder, Retriever
+    from backend.app.retrieval.store import ChunkStore, OnnxEmbedder, Retriever
 
     settings = load_settings()
     store = ChunkStore(settings)
-    retriever = Retriever(store, HFEmbedder(settings.embed_model))
+    retriever = Retriever(store, OnnxEmbedder(settings.embed_model))
 
     rows: list[tuple[str, str, float, str, str]] = []
     for case in load_cases(args.split, "text"):

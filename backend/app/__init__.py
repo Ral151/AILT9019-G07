@@ -54,6 +54,11 @@ def create_app(settings: Settings | None = None, deps: PipelineDeps | None = Non
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s %(message)s")
     app = Flask(__name__, static_folder=None)
     app.config["MAX_CONTENT_LENGTH"] = settings.max_image_bytes + 64 * 1024
+    if settings.trust_proxy_hops > 0:
+        from werkzeug.middleware.proxy_fix import ProxyFix
+
+        hops = settings.trust_proxy_hops
+        app.wsgi_app = ProxyFix(app.wsgi_app, x_for=hops, x_proto=hops, x_host=hops)  # type: ignore[method-assign]
     app.extensions["recycling"] = AppState(
         settings=settings,
         deps=deps,
