@@ -1,0 +1,34 @@
+# Render Blueprint: one free Docker web service (Flask API + built React app).
+# In Render: New -> Blueprint -> pick this repo. Render asks for the values
+# marked `sync: false` (API keys); everything else is set here.
+# Free plan: 512 MB RAM (the app peaks at ~350 MB), sleeps after 15 min idle.
+services:
+  - type: web
+    name: hku-recycling-helper
+    runtime: docker
+    plan: free
+    region: singapore
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    envVars:
+      # Text + vision on the course-sponsored Model Studio key (expires
+      # 19 Nov 2026). After that, change TEXT_PROVIDER to openrouter.
+      - key: TEXT_PROVIDER
+        value: qwen
+      - key: QWEN_BASE_URL
+        value: https://token-plan.cn-beijing.maas.aliyuncs.com/compatible-mode/v1
+      - key: QWEN_API_KEY
+        sync: false
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: VISION_PROVIDER
+        value: qwen
+      # Calibrated on the dev split (eval/reports/tau_calibration.md).
+      - key: RETRIEVE_TAU
+        value: "0.686"
+      - key: DEMO_CACHE
+        value: auto
+      # Render's proxy sets X-Forwarded-For; trust one hop so the rate
+      # limit is per visitor.
+      - key: TRUST_PROXY_HOPS
+        value: "1"

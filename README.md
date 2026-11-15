@@ -120,25 +120,24 @@ credit). Each text question uses two LLM calls, so one full dev-split eval
 can use up a day's free requests. The eval harness caches LLM outputs, so
 re-scoring an unchanged run is free.
 
-### Deploy to Hugging Face Spaces
+### Deploy to Render (free)
 
 GitHub Pages only hosts static files, so the app (Flask, Chroma, the
-embedding model and the API key) runs on a free Hugging Face Docker Space.
-The `Dockerfile` builds everything into one image on port 7860.
+embedding model and the API key) runs as one Docker web service on Render's
+free plan. `render.yaml` describes it; the `Dockerfile` builds the frontend,
+the Chroma store and the ONNX model into the image.
 
-```bash
-hf auth login                     # once; paste a token with "write" access
-python scripts/deploy_hf.py --space <hf-user>/hku-recycling-helper --push-config
-```
+1. Sign in at <https://render.com> with GitHub.
+2. **New → Blueprint**, pick this repository, and confirm.
+3. When asked, paste `QWEN_API_KEY` (and optionally `OPENROUTER_API_KEY`).
+   Keys live only in Render's environment, never in the repo.
+4. Wait for the first build (about 10 minutes; logs on the service page),
+   then open `https://<service>.onrender.com/api/health`.
 
-The script creates the Space if needed and uploads only the files the image
-needs. `--push-config` copies the API keys from `.env` as Space secrets and the
-provider settings as variables; leave it out to set them by hand under the
-Space's Settings → Variables and secrets. The first build takes about 10–15
-minutes (logs on the Space page). Then check
-`https://<hf-user>-hku-recycling-helper.hf.space/api/health`. Re-run the
-script to deploy changes. Free Spaces sleep after about 48 hours without
-visitors, and the first request after that is slow.
+Every push to `main` redeploys. The free plan sleeps after 15 minutes
+without visitors; the first request after that takes about a minute. After
+the sponsored Qwen key expires (19 Nov 2026), set `TEXT_PROVIDER=openrouter`
+under the service's **Environment** tab unless the key is renewed.
 
 ### Commands
 
