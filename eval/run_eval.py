@@ -118,7 +118,13 @@ def score_case(case: dict[str, Any], result: PipelineResult, store: dict[str, Ch
 
     gold_cits = gold.get("citations") or []
     if not gold_cits:
-        dims["citation"] = None if not r.citations else int(r.action not in ("answer", "answer_with_caveat"))
+        # No gold citations. An answer (image case: the bin comes from retrieval
+        # + citation, and CF1 already checks the citation matches the bin) must
+        # still cite; a defer/refuse needs no citation (not applicable).
+        if r.action in ("answer", "answer_with_caveat"):
+            dims["citation"] = int(bool(r.citations))
+        else:
+            dims["citation"] = None
     else:
         allowed = {g["chunk_id"] for g in gold_cits}
         required = {g["chunk_id"] for g in gold_cits if g.get("required")}

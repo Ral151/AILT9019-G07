@@ -1,11 +1,10 @@
 # Image credits
 
 Evaluation photos live in `eval/cases/dev/images/` and `eval/cases/test/images/`.
-They come from three sources:
+They come from two sources:
 
 - **Wikimedia Commons** (CC-licensed) — most items.
-- **Web pages** — two items (ti-003, ti-006), kept for course-internal evaluation only.
-- **Shot by a team member** — one item (ti-013).
+- **Web pages** — one item (ti-003), kept for course-internal evaluation only.
 
 The "tricky" cases (blurry, very dark, multi-item) are **derived** from the
 clear photos by `eval/make_derived_photos.py` (Gaussian blur, brightness
@@ -18,29 +17,24 @@ reduction, or compositing). They are not separately sourced photos.
 | [File:Plastic Water Bottle.jpg](https://commons.wikimedia.org/wiki/File:Plastic_Water_Bottle.jpg) | Kykywinks | CC BY-SA 4.0 | di-001, ti-001 (clear bottle) |
 | [File:12-ounce Aluminum Soda Can (32167233397).jpg](https://commons.wikimedia.org/wiki/File:12-ounce_Aluminum_Soda_Can_(32167233397).jpg) | Tony Webster | CC BY 2.0 | di-002, ti-002 (clear can) |
 | [File:02 - Single Energizer Battery.jpg](https://commons.wikimedia.org/wiki/File:02_-_Single_Energizer_Battery.jpg) | Asim18 | CC BY 3.0 | di-003 (single battery) |
-| [File:18650, AA, and AAA battery with penny.jpg](https://commons.wikimedia.org/wiki/File:18650,_AA,_and_AAA_battery_with_penny.jpg) | JayCubby | CC BY-SA 4.0 | ti-007 (two batteries) |
 | [File:USB power adapter for Apple iPod, Model A1205, by Foxlink Technology Ltd-1048.jpg](https://commons.wikimedia.org/wiki/File:USB_power_adapter_for_Apple_iPod,_Model_A1205,_by_Foxlink_Technology_Ltd-1048.jpg) | Raimond Spekking | CC BY-SA 4.0 | di-004, ti-009 (charger) |
 | [File:Whisbih Liq 600cc empty glass bottle face 20161026.jpg](https://commons.wikimedia.org/wiki/File:Whisbih_Liq_600cc_empty_glass_bottle_face_20161026.jpg) | Solomon203 | CC BY-SA 4.0 | ti-004 (glass bottle) |
 | [File:Disposable paper coffee cup at Kakadu Crocodile Hotel, Jabiru, Northern Territory, 2021.jpg](https://commons.wikimedia.org/wiki/File:Disposable_paper_coffee_cup_at_Kakadu_Crocodile_Hotel,_Jabiru,_Northern_Territory,_2021.jpg) | Kgbo | CC BY-SA 4.0 | ti-005 (paper cup) |
-| [File:Power bank.JPG](https://commons.wikimedia.org/wiki/File:Power_bank.JPG) | Ilya Plekhanov | CC BY-SA 3.0 | ti-008 (power bank) |
 | [File:Small Desk Fan 1.jpg](https://commons.wikimedia.org/wiki/File:Small_Desk_Fan_1.jpg) | Couch-scratching-cats | Public domain | ti-010 (desk fan) |
+| [File:20240814Satona Kartonger.jpg](https://commons.wikimedia.org/wiki/File:20240814Satona_Kartonger.jpg) | Kolbkorr | CC BY-SA 4.0 | ti-006 (Tetra Pak carton; middle third cropped) |
+| [File:AA Battery (2176210906).jpg](https://commons.wikimedia.org/wiki/File:AA_Battery_(2176210906).jpg) | Tom Page | CC BY-SA 2.0 | ti-007 (AA battery) |
+| [File:Aukey Portable Battery Charger 2 2019-05-06.jpg](https://commons.wikimedia.org/wiki/File:Aukey_Portable_Battery_Charger_2_2019-05-06.jpg) | FASTILY | CC BY-SA 4.0 | ti-008 (power bank) |
+| [File:Empty Apartment Room Window.jpg](https://commons.wikimedia.org/wiki/File:Empty_Apartment_Room_Window.jpg) | Punker1999 | CC BY-SA 4.0 | ti-013 (no waste item) |
 
 ## Web sources
 
 | File | Item | Source |
 |---|---|---|
 | ti-003 | Stack of white paper | Quanjing (全景图库) via Baidu image search — https://pic.quanjing.com/5n/xw/QJ8561523192.jpg |
-| ti-006 | Tetra Pak juice carton | ETtoday News — https://finance.ettoday.net/news/442093 |
 
-> These two are from non-CC web sources and are intended for **course-internal
-> evaluation only**. If the project is published beyond the course, replace
-> them with CC-licensed equivalents.
-
-## Team-shot
-
-| File | Item | Source |
-|---|---|---|
-| ti-013 | Desk with no waste item | Shot by a team member |
+> This one is from a non-CC web source and is intended for **course-internal
+> evaluation only**. If the project is published beyond the course, replace it
+> with a CC-licensed equivalent.
 
 ## Derived (tricky) cases
 
