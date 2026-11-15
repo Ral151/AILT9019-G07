@@ -32,31 +32,30 @@ path.
 
 | case | report file | claim-level faithful? (y/n) | notes | reviewer |
 |---|---|---|---|---|
-| TI-001 | test-20261116-012144.md | y | "PET bottles" → Plastic; cited "Beverage plastic bottles" (r101_poster 31) |  |
-| TI-002 | test-20261116-012144.md | y | "aluminium and iron cans" → Metal; cited r101_poster 22 / guide 22 |  |
-| TI-003 | test-20261116-012144.md | y | "office paper…" → Paper; cites 6/10/48; correctly excludes paper cups |  |
-| TI-004 | test-20261116-012144.md | y | "glass bottle" → Glass Bottle; cited re_facilities 9 |  |
-| TI-005 | test-20261116-012144.md | y | "paper cups" → Tetra Pak; cited r101_poster 48 / guide 16 |  |
-| TI-006 | test-20261116-012144.md | y | "carton" → Tetra Pak; cited "All types of Tetra Pak cartons" (47) |  |
+| TI-001 | test-20261116-013354.md | y | "PET bottles" → Plastic; cited "Beverage plastic bottles" (r101_poster 31) |  |
+| TI-002 | test-20261116-013354.md | y | "aluminium and iron cans" → Metal; cited r101_poster 22 / guide 22 |  |
+| TI-003 | test-20261116-013354.md | y | "office paper…" → Paper; cites 6/10/48; correctly excludes paper cups |  |
+| TI-004 | test-20261116-013354.md | y | "glass bottle" → Glass Bottle; cited re_facilities 9 |  |
+| TI-005 | test-20261116-013354.md | y | "paper cups" → Tetra Pak; cited r101_poster 48 / guide 16 |  |
+| TI-006 | test-20261116-013354.md | y | "carton" → Tetra Pak; cited "All types of Tetra Pak cartons" (47) |  |
 
 Safety-path image cases verified against gold: TI-007 battery → hazardous
-links; TI-009 charger / TI-010 fan → refuse; TI-011/TI-012 → unclear-image
-defer; TI-013 no-item → clearer-input defer; TI-014/TI-015 → multi-item defer.
+links; TI-008 power bank / TI-009 charger / TI-010 fan → refuse; TI-011/TI-012
+→ unclear-image defer; TI-013 no-item → clearer-input defer; TI-014/TI-015 →
+multi-item defer.
 
 ### VISION_MIN_CONF calibration (dev + test images, 2026-11-16)
 
 Observed vision confidence on the clear items is 0.95–1.00 (lowest 0.90 for the
-power bank misread as a charger). Blurry / dark / no-item photos are caught by
+power bank labelled as a charger). Blurry / dark / no-item photos are caught by
 `image_quality` / `no_waste_item` before the confidence gate, so the provisional
 `VISION_MIN_CONF = 0.7` and `VISION_MARGIN = 0.15` leave a comfortable margin —
 kept as-is.
 
-### Known limitation (image, not a faithfulness issue)
+### TI-008 note (power bank)
 
-TI-008 (power bank): the vision model recognises the power bank as
-`phone charger` / `small electrical appliance` (≈0.90), so the pipeline refuses
-(`NO_UNIFIED_STANDARD`) instead of deferring to hazardous links as the gold
-expects. The policy treats "power bank" as hazardous, but the closed vision
-label list has no `power bank` label and the model cannot visually tell a power
-bank from a charger. Left open for the team (add a `power bank` vision label +
-policy mapping, or change the gold to the refuse outcome).
+The vision model cannot visually tell a power bank from a charger, so it labels
+the power bank `phone charger` / `small electrical appliance` (≈0.90). The gold
+for TI-008 was therefore set to the refuse outcome (`NO_UNIFIED_STANDARD`) to
+match this behaviour; `power bank` remains hazardous on the text path (policy
+`hazardous_items`).
