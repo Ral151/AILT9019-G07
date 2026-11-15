@@ -21,8 +21,12 @@ A question-and-answer web app that tells you how to sort waste on the HKU campus
   `qwen3.6-flash`, on the course-sponsored Model Studio key) only names the
   item from a closed label list; the bin still comes from retrieval and a
   citation. Unclear, multi-item or low-confidence photos ask for a clearer
-  photo. Not yet scored: the 21 eval photos still have to be taken, and
-  `VISION_MIN_CONF` (provisionally 0.7) must be set from the dev photos.
+  photo. The 21 eval photos are in place: mostly CC-licensed photos from
+  Wikimedia Commons, two web photos and one team photo (see
+  `IMAGE_CREDITS.md`); the tricky cases (blurry / dark / multi-item) are
+  derived from the clear photos by `eval/make_derived_photos.py`. Not yet
+  scored: `VISION_MIN_CONF` (provisionally 0.7) must still be set from the
+  dev photos.
 - Known quirk: a text answer occasionally fails its JSON-schema validation and
   returns a safe refusal ("couldn't produce an answer… won't guess") instead of
   guessing. This is transient LLM-output variance — re-ask once and it usually
