@@ -315,11 +315,11 @@
     <p class="sub">Evaluated against a fixed test set with gold labels (bin category, citation, and safety action). A case passes only if all three dimensions are correct.</p>
     <div class="stats">
       <div class="stat"><div class="v">30/30</div><div class="l">text cases passed</div></div>
+      <div class="stat"><div class="v">15/15</div><div class="l">image cases passed</div></div>
       <div class="stat"><div class="v">0</div><div class="l">critical failures</div></div>
-      <div class="stat"><div class="v">13</div><div class="l">answer-path faithfulness review</div></div>
       <div class="stat"><div class="v">6/6</div><div class="l">corpus sources reviewed</div></div>
     </div>
-    <p class="sub" style="margin-top:18px;">See <a href="https://github.com/Ral151/AILT9019-G07" target="_blank" rel="noopener">the repository</a> for the full test report, faithfulness review and unit tests.</p>
+    <p class="sub" style="margin-top:18px;">The image test set also passes — dev 6/6 and test 15/15, 0 critical failures. See <a href="https://github.com/Ral151/AILT9019-G07" target="_blank" rel="noopener">the repository</a> for the full test report, faithfulness review and unit tests.</p>
   </div>
 </section>
 
@@ -328,8 +328,8 @@
     <h2>Limitations</h2>
     <div class="grid cols-3">
       <div class="card">
-        <h3>Photo input being validated</h3>
-        <p>Photo input is implemented (it names the item, then retrieves and cites the bin); the image test set is not yet scored and the confidence threshold is still provisional.</p>
+        <h3>Photo input</h3>
+        <p>Photo input names the item, then retrieves and cites the bin; the image test set passes dev 6/6 and test 15/15. One known limit: the vision model can't tell a power bank from a charger, so that case is scored as a refusal.</p>
       </div>
       <div class="card">
         <h3>Fixed corpus</h3>

@@ -15,18 +15,23 @@ A question-and-answer web app that tells you how to sort waste on the HKU campus
   (`eval/reports/dev-20261115-184239.md`; 35/42 before the ONNX switch, the
   difference is one re-generated answer, D-001). Retrieval threshold
   `RETRIEVE_TAU` is `0.686`.
-- The answer-path faithfulness review covers 13 cases
+- The answer-path faithfulness review covers 13 text cases plus the image
+  cases (6 answer-path, and the safety-path cases TI-007–TI-015)
   (`eval/faithfulness_review.md`).
 - Photo input (backend): the vision model (`qwen3.8-flash`, fallback
   `qwen3.6-flash`, on the course-sponsored Model Studio key) only names the
   item from a closed label list; the bin still comes from retrieval and a
   citation. Unclear, multi-item or low-confidence photos ask for a clearer
   photo. The 21 eval photos are in place: mostly CC-licensed photos from
-  Wikimedia Commons, two web photos and one team photo (see
-  `IMAGE_CREDITS.md`); the tricky cases (blurry / dark / multi-item) are
-  derived from the clear photos by `eval/make_derived_photos.py`. Not yet
-  scored: `VISION_MIN_CONF` (provisionally 0.7) must still be set from the
-  dev photos.
+  Wikimedia Commons plus one web photo kept for course-internal use only
+  (see `IMAGE_CREDITS.md`); the tricky cases (blurry / dark / multi-item) are
+  derived from the clear photos by `eval/make_derived_photos.py`.
+- Image eval is scored: dev 6/6 and test 15/15 passed with 0 critical
+  failures, release gate PASS (`eval/reports/dev-20261116-011549.md`,
+  `eval/reports/test-20261116-013354.md`, 16 Nov 2026). `VISION_MIN_CONF` is
+  `0.7` and `VISION_MARGIN` is `0.15` — clear items are recognised at
+  0.95–1.00 confidence, and blurry / dark / no-item photos are caught before
+  the confidence gate (`eval/faithfulness_review.md`).
 - Known quirk: a text answer occasionally fails its JSON-schema validation and
   returns a safe refusal ("couldn't produce an answer… won't guess") instead of
   guessing. This is transient LLM-output variance — re-ask once and it usually
