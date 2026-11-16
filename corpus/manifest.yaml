@@ -84,7 +84,7 @@ sources:
     retrieved_at: "2026-10-18"
     raw_files:
       - raw/re_facilities/re-facilities.html
-    extraction: html_text
+    extraction: manual_transcription
     review: {status: reviewed, reviewer: Wu Haoyang, reviewed_at: "2026-10-20"}
 
   - source_id: green_hero_quiz

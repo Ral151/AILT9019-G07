@@ -19,7 +19,7 @@ Thermal induction fax paper
 Paper and cardboard contaminated with paint, chemicals, food, etc.
 Metals
 DOs
-Aluminium cans and iron cans ONLY
+Aluminium cans and iron cans ONLY (soda cans, Coke cans, beverage cans, tin cans, drink cans)
 DON'Ts
 Aerosol cans
 Potato chips cans
@@ -29,9 +29,9 @@ Cookware
 Chemical containers
 Plastics
 DOs
-Beverage plastic bottles
+Beverage plastic bottles (water bottles, Coke bottles, soda bottles, plastic drink bottles)
 Plastic containers
-Plastics bottles for personal care products
+Plastics bottles for personal care products (shampoo bottles, body wash bottles, soap bottles, lotion bottles)
 Plastic utensils
 Packaging materials
 CD and Polyfoam | Styrofoam
@@ -50,7 +50,7 @@ Rubber and silicon products
 Other composite materials
 Glass Bottles
 DOs
-Beverage, food and sauce glass bottles ONLY
+Beverage, food and sauce glass bottles ONLY (wine bottles, beer bottles, juice glass bottles, sauce bottles)
 DON'Ts
 Glass containers or bottles contaminated with hazardous chemicals
 Tempered · Laminated · Strengthened glass
@@ -63,6 +63,6 @@ Lead acid batteries
 Damaged batteries without protection measures
 Tetra Pak
 DOs
-All types of Tetra Pak Cartons
+All types of Tetra Pak Cartons (milk cartons, juice boxes, beverage cartons, drink boxes)
 DON'Ts
 With straws and plastic wrappings without a corner cut
